@@ -30,9 +30,11 @@ public class HomePageTestCase extends TestCase {
 
     public void testBAddPawfitToBasket() throws InterruptedException {
         Init();
-        System.out.println("添加pawfit2到购物车");
+        System.out.println(" 添加pawfit2到购物车 ");
         pawfit=driver.findElement(By.name("450"));
         pawfit.click();
+
+
 
     }
     public void testCAddCollarToBasket() throws InterruptedException {
