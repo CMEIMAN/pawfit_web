@@ -17,17 +17,13 @@ public class Demo {
     private String sessionId;
     private String urlStr;
     private MyChromeDriver myChromeDriver;
-
-    public String getNewSessionId() {
-        newSessionId=getMyChromeDriver().getSessionId().toString();
-        return newSessionId;
-    }
-
     private String newSessionId;
 
     public MyChromeDriver getMyChromeDriver() {
         try {
+
             myChromeDriver=new MyChromeDriver(new URL(getUrlStr()),getDesiredCapabilities());
+            newSessionId=myChromeDriver.getSessionId().toString();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -53,18 +49,14 @@ public class Demo {
         myChromeDriver=getMyChromeDriver();
         myChromeDriver.setSessionId(getSessionId());
         myChromeDriver.get(Const.BASE_URL);
+        myChromeDriver.setSessionId(newSessionId);
         return myChromeDriver;
     }
-    public void setNewSessionId(){
-        myChromeDriver.setSessionId(getNewSessionId());
-    }
+
 
     public void disconnect(){
-        setNewSessionId();
        myChromeDriver.quit();
     }
-
-
 //    @Test
 //    public void test(){
 //        Demo demo=new Demo();
