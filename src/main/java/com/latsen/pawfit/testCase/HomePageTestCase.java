@@ -1,5 +1,6 @@
 package com.latsen.pawfit.testCase;
 
+import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
 import junit.framework.TestCase;
 import org.junit.FixMethodOrder;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.support.ui.Select;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HomePageTestCase extends TestCase {
@@ -17,14 +19,15 @@ public class HomePageTestCase extends TestCase {
     private static WebElement strap;
     private static WebElement docks;
     private static WebElement attachment;
+    private static WebElement collarSizeSelect;
     private static WebDriver driver;
     private static Actions actions;
-    private static Demo demo;
+    private static Driver demo;
+    private Select select;
 
     public void Init() throws InterruptedException {
-        demo=new Demo();
+        demo=new Driver(Const.HOME_URL);
         driver=demo.connect();
-        Thread.sleep(10000);
         actions=new Actions(driver);
     }
 
@@ -36,10 +39,17 @@ public class HomePageTestCase extends TestCase {
         pawfit.click();
     }
     public void testCAddCollarToBasket() throws InterruptedException {
+//        修改，选择尺寸
+        driver.get(Const.PAWFIT_COLLAR_URL);
+        collarSizeSelect=driver.findElement(By.name("0"));
+        select=new Select(collarSizeSelect);
+        System.out.println("选择项圈尺寸");
+        select.getOptions().get(1);
         System.out.println("添加项圈到购物车");
         Thread.sleep(3000);
-        collar=driver.findElement(By.name("451"));
+        collar=driver.findElement(By.linkText("ADD TO BASKET"));
         collar.click();
+        driver.navigate().back();
     }
     public void testDAddStrapToBasket() throws InterruptedException {
         System.out.println("添加橡胶扣到购物车");
