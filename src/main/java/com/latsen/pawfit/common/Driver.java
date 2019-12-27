@@ -4,6 +4,7 @@ import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.driver.MyChromeDriver;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -52,7 +53,14 @@ public class Driver {
     public MyChromeDriver connect(){
         myChromeDriver=getMyChromeDriver();
         myChromeDriver.setSessionId(getSessionId());
-        myChromeDriver.get(this.testUrl);
+        try {
+            myChromeDriver.get(this.testUrl);
+
+        }
+        catch (Exception e){
+            System.out.println("出现异常");
+        }
+        myChromeDriver.manage().window().setSize(new Dimension(1920,1080));
         return myChromeDriver;
     }
 

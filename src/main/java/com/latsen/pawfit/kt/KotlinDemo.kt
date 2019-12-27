@@ -10,6 +10,8 @@ fun main(args: Array<String>) {
     for (num:Int in listUnm){
         println(num)
     }
+    var i= listOf(1,23,4,5,6).iterator()
+    while (i.hasNext()) println(i.next())
 }
 
 fun sum(a: Int = 100, b: Long = 200) = a + b;
