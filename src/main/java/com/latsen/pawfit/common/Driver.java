@@ -69,12 +69,6 @@ public class Driver {
         myChromeDriver.setSessionId(newSessionId);
         myChromeDriver.quit();
     }
-//    @Test
-//    public void test(){
-//        Demo demo=new Demo();
-//        demo.connect();
-//        demo.disconnect();
-//    }
     @Test
     public void demo() throws MalformedURLException {
         String sessinId = Const.SESSION_ID;

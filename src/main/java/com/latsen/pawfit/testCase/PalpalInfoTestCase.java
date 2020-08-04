@@ -4,6 +4,7 @@ import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
 import com.latsen.pawfit.common.utils.Tools;
 import junit.framework.TestCase;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -40,7 +41,7 @@ public class PalpalInfoTestCase extends TestCase {
     private static WebElement submitOrder;
     private static WebElement warningMessahe;
     private static Select countrySelect;
-
+    @BeforeClass
     public void Init() {
         demo=new Driver(Const.PAYPAL_URL);
         driver=demo.connect();
@@ -50,7 +51,6 @@ public class PalpalInfoTestCase extends TestCase {
 
     @Test
     public void testAcheckFitstName() {
-        Init();
         /*
         * 判空
         * */

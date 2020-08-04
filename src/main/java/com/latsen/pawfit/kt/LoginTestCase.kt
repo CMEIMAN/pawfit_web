@@ -7,19 +7,17 @@ import com.latsen.pawfit.driver.MyChromeDriver
 import junit.framework.TestCase
 import org.junit.Test
 import org.openqa.selenium.By
-import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.remote.ScreenshotException
-import org.openqa.selenium.support.FindBy
-import kotlin.math.sign
+import java.util.*
+
 
 class LoginTestCase(name: String?) : TestCase(name) {
 
     companion object {
         var webdriver: MyChromeDriver? = null
         var driver: Driver? = null
-        var maps:HashMap<WebElement,String>? =null
-        var genericLogin_button:WebElement?=null
+        var maps: HashMap<WebElement, String>? =null
+        var genericLogin_button: WebElement?=null
     }
 
     fun init() {
