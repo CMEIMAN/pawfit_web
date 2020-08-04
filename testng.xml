@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.latsen.pawfit.demo.ExtentTestNGIReporterListener1"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="D:/private/web_test/src">
+        <classes>
+            <class name="com.latsen.pawfit.common.Driver">
+        <methods>
+            <include name="demo"/>
+        </methods>
+            </class>
+            <class name="com.latsen.pawfit.demo.TestNGHelloWorld1">
+                <methods><include name="helloWorldTest1"/>
+                    <include name="helloWorldTest3"/>
+                </methods></class><class name="com.latsen.pawfit.testCase.EmailSubscriptionTestCase">
+            <methods><include name="testACheackFirstName"/>
+                <include name="testBCheckLastName"/>
+                <include name="testCCheckEmail"/></methods>
+        </class><class name="com.latsen.pawfit.testCase.HomePageTestCase"><methods><include name="testBAddPawfitToBasket"/><include name="testCAddCollarToBasket"/><include name="testDAddStrapToBasket"/><include name="testEAddDocksToBasket"/><include name="testFAddAttachmentToBasket"/></methods></class><class name="com.latsen.pawfit.testCase.PalpalInfoTestCase"><methods><include name="testAcheckFitstName"/><include name="testBcheckLastName"/><include name="testCcompany"/><include name="testDcheakAddress"/><include name="testEcheakCity"/><include name="testFcheckCountry"/><include name="testGcheckProvince"/><include name="testHcheckPostalCode"/><include name="testIcheckEmail"/><include name="testJcheckPhoneNumber"/><include name="testKcheckCheckboxOfCreateAnAccount"/><include name="testLcheckPassword"/><include name="testMcheckCheckboxOfOrderNote"/><include name="testVcheackSubmitOrder"/></methods></class><class name="com.latsen.pawfit.testCase.RegisterTestCase"><methods><include name="testAFirstName"/><include name="testBLastName"/><include name="testCCountry"/><include name="testDProvince"/><include name="testEEmail"/><include name="testFPassword"/><include name="testJRePassword"/></methods></class></classes></test></suite>
