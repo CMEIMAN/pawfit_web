@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.support.ui.Select;
-
+@org.testng.annotations.Test(groups = "Group")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HomePageTestCase {
     private static WebElement pawfit;
