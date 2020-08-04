@@ -11,6 +11,7 @@
             <include name="demo"/>
         </methods>
             </class>
+
             <class name="com.latsen.pawfit.demo.TestNGHelloWorld1">
                 <methods><include name="helloWorldTest1"/>
                     <include name="helloWorldTest3"/>
