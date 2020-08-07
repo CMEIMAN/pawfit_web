@@ -55,10 +55,10 @@ public class Const {
         return strings;
     }
     public final static String[] getEmail(){
-        String[] strings={};
-        for (int i=0;i<=100;i++){
-            strings[i]=i+"@bccto.me";
+        String[] string = new String[101];
+        for (int i=0;i<100;i++){
+            string[i]=i+"@bccto.me";
         }
-        return strings;
+        return string;
     }
 }

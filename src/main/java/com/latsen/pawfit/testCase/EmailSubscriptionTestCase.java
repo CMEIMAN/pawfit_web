@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,12 +39,10 @@ public class EmailSubscriptionTestCase {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        firstName=webDriver.findElementById("exampleInputName2");
-        lastName=webDriver.findElementById("exampleInputName3");
-        emial=webDriver.findElementById("exampleInputEmail2");
-        subscribeBtn=webDriver.findElementByXPath("//*[@id=\"mailchimp_subscribe\"]/div/div/div/form/div[8]/button");
-        backToHomePage=webDriver.findElementByXPath("/html/body/div[4]/a/button");
-        subscriptionResult=webDriver.findElementByXPath("/html/body/div[3]/div/div/p");
+        firstName=webDriver.findElement(By.id("exampleInputName2"));
+        lastName=webDriver.findElement(By.id("exampleInputName3"));
+        emial=webDriver.findElement(By.id("exampleInputEmail2"));
+        subscribeBtn=webDriver.findElement(By.xpath("//*[@id=\"mailchimp_subscribe\"]/div/div/div/form/div[8]/button"));
     }
     @Test
     public void testACheackFirstName(){
@@ -52,8 +51,10 @@ public class EmailSubscriptionTestCase {
             firstName.sendKeys(""+Const.getCommomText()[i]);
             lastName.sendKeys(""+Const.getCommomText()[i]);
             emial.sendKeys(""+Const.getEmail()[i]);
-            subscribeBtn.click();
-            backToHomePage.click();
+//            subscribeBtn.click();
+//            backToHomePage=webDriver.findElement(By.xpath("/html/body/div[4]/a/button"));
+//            subscriptionResult=webDriver.findElement(By.xpath("/html/body/div[3]/div/div/p"));
+//            backToHomePage.click();
         }
     }
     @Test
