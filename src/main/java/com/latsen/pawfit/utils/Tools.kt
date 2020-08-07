@@ -1,5 +1,6 @@
-package com.latsen.pawfit.common.utils
+package com.latsen.pawfit.utils
 
+import org.openqa.selenium.WebDriverException
 import org.openqa.selenium.WebElement
 import java.util.*
 
@@ -14,12 +15,19 @@ class Tools{
             return str
         }
         @JvmStatic
-        fun injectSQLs(element: WebElement,element_btn: WebElement?=null,times:Long=0,clear:Boolean=true) {
-            val strings = arrayOf("and ascii(substr((select database()),1,1))>64", "id=1 union select if(SUBSTRING(user(),1,4)='root',sleep(4),1),null,null", "id =-1 union select 1,2,3", "id=1' substr(database(),1,1)='t'--+", "union select count(*),2,concat(':',(select database()),':',floor(rand()*2))as a from information_schema.tables group by a", "id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)))")
+        fun injectSQLs(element: WebElement,element_btn: WebElement?=null,times:Long=0,clear:Boolean=true,list_data:Array<String>) {
+            val strings =list_data;
             for (i in strings.indices) {
-                if (i > strings.size - 2) {
+                if (i > strings.size - 3) {
+                    println(strings[i])
                     element.sendKeys(strings[i])
-                    element_btn?.click()
+                    try {
+                        element_btn?.click()
+                    }
+                    catch(e: WebDriverException){
+                        print(e)
+                    }
+
                     Thread.sleep(times)
                 } else {
                     element.sendKeys(strings[i])
@@ -27,7 +35,12 @@ class Tools{
                         element.clear()
                     }
                     Thread.sleep(times)
-                    element_btn?.click()
+                    try {
+                        element_btn?.click()
+                    }
+                    catch(e: WebDriverException){
+                        print(e)
+                    }
                 }
 
             }

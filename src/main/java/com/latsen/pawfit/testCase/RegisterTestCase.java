@@ -2,9 +2,8 @@ package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.common.utils.Tools;
+import com.latsen.pawfit.utils.Tools;
 import com.latsen.pawfit.driver.MyChromeDriver;
-import junit.framework.TestCase;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -15,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -40,7 +39,7 @@ public class RegisterTestCase {
 
 
     @BeforeClass
-    public static void beforeClass() {
+    public static void beforeClass() throws IOException {
         System.out.println("已经执行");
         driver = new Driver(Const.REGISTER_RUL);
         elementStringHashMap = new HashMap<WebElement, String>();
@@ -76,7 +75,7 @@ public class RegisterTestCase {
         //长度判断
         setTextAndClickBtn(firstName,Tools.getUUIDText(),submit);
         //SQL注入尝试,并
-        Tools.injectSQLs(firstName, submit, 1000, true);
+//        Tools.injectSQLs(firstName, submit, 1000, true);
         firstName.sendKeys(elementStringHashMap.get(firstName));
     }
 
@@ -88,7 +87,7 @@ public class RegisterTestCase {
         //长度判断
         setTextAndClickBtn(lastName,Tools.getUUIDText(),submit);
         //SQL注入尝试
-        Tools.injectSQLs(lastName, submit, 1000, true);
+//        Tools.injectSQLs(lastName, submit, 1000, true);
 
         lastName.sendKeys(elementStringHashMap.get(lastName));
     }
@@ -104,7 +103,7 @@ public class RegisterTestCase {
         setTextAndClickBtn(province,Tools.getUUIDText(),submit);
         warningMessageMap.put("省份长度判断",warningMessage.getText());
         //SQL注入尝试
-        Tools.injectSQLs(province, submit, 1000, true);
+//        Tools.injectSQLs(province, submit, 1000, true);
         province.sendKeys(elementStringHashMap.get(province));
     }
 
@@ -117,7 +116,7 @@ public class RegisterTestCase {
         setTextAndClickBtn(email,"fk_liekkas",submit);
         warningMessageMap.put("邮箱格式判断",warningMessage.getText());
         //SQL注入尝试
-        Tools.injectSQLs(email, submit, 1000, true);
+//        Tools.injectSQLs(email, submit, 1000, true);
         email.sendKeys(elementStringHashMap.get(email));
     }
 
@@ -127,7 +126,7 @@ public class RegisterTestCase {
         setTextAndClickBtn(password,Tools.getUUIDText(),submit);
         warningMessageMap.put("密码长度判断",warningMessage.getText());
         //SQL注入尝试
-        Tools.injectSQLs(password, submit, 1000, true);
+//        Tools.injectSQLs(password, submit, 1000, true);
         password.sendKeys(elementStringHashMap.get(password));
     }
 
@@ -137,7 +136,7 @@ public class RegisterTestCase {
         setTextAndClickBtn(rePassword,Tools.getUUIDText(),submit);
         warningMessageMap.put("二次密码长度判断",warningMessage.getText());
         //SQL注入尝试
-        Tools.injectSQLs(rePassword, submit, 1000, true);
+//        Tools.injectSQLs(rePassword, submit, 1000, true);
         //密码匹配判断
         setTextAndClickBtn(rePassword,"fk_liekkas",submit);
         warningMessageMap.put("密码匹配判断",warningMessage.getText());

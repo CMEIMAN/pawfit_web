@@ -2,7 +2,7 @@ package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.common.utils.Tools;
+import com.latsen.pawfit.utils.Tools;
 import junit.framework.TestCase;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -14,10 +14,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PalpalInfoTestCase extends TestCase {
@@ -42,9 +42,13 @@ public class PalpalInfoTestCase extends TestCase {
     private static WebElement warningMessahe;
     private static Select countrySelect;
     @BeforeClass
-    public void Init() {
+    public void Init() throws IOException {
         demo=new Driver(Const.PAYPAL_URL);
-        driver=demo.connect();
+        try {
+            driver=demo.connect();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         actions=new Actions(driver);
         webElements=new HashMap<WebElement, String>();
     }

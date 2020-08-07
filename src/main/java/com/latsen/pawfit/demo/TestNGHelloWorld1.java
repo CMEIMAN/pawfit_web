@@ -34,5 +34,3 @@ public class TestNGHelloWorld1 {
         System.out.println("TestNGHelloWorld1 AfterTest!");
     }
 }
-//src
-//testng.xml

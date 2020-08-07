@@ -11,7 +11,11 @@ import org.openqa.selenium.interactions.Actions;
 
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.support.ui.Select;
-@org.testng.annotations.Test(groups = "Group")
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+//@org.testng.annotations.Test(groups = "Group")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HomePageTestCase {
     private static WebElement pawfit;
@@ -25,9 +29,13 @@ public class HomePageTestCase {
     private static Driver demo;
     private static Select select;
     @BeforeClass
-    public static void beforeClass() throws InterruptedException {
+    public static void beforeClass() throws InterruptedException, IOException {
         demo=new Driver(Const.HOME_URL);
-        driver=demo.connect();
+        try {
+            driver=demo.connect();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         actions=new Actions(driver);
     }
     @Test

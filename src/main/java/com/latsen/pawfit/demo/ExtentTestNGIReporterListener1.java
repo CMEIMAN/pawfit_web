@@ -6,6 +6,7 @@ import com.aventstack.extentreports.ResourceCDN;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.*;
 import org.testng.xml.XmlSuite;
 
@@ -32,9 +33,8 @@ public class ExtentTestNGIReporterListener1 implements IReporter {
                 ITestContext context = r.getTestContext();
 
                 buildTestNodes(context.getFailedTests(), Status.FAIL);
-                buildTestNodes(context.getSkippedTests(), Status.SKIP);
+                buildTestNodes(context.getSkippedTests(),Status.SKIP);
                 buildTestNodes(context.getPassedTests(), Status.PASS);
-
             }
         }
 
@@ -48,9 +48,9 @@ public class ExtentTestNGIReporterListener1 implements IReporter {
     private void init() {
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
         htmlReporter.config().setDocumentTitle("自动化测试报告");
-        htmlReporter.config().setReportName("API自动化测试报告");
+        htmlReporter.config().setReportName("PAWFIT-SHOP:自动化测试报告");
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP); //图表位置
-        //htmlReporter.config().setTheme(Theme.STANDARD);
+//        htmlReporter.config().setTheme(Theme.STANDARD);
         htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
@@ -77,7 +77,7 @@ public class ExtentTestNGIReporterListener1 implements IReporter {
 
                 test.getModel().setStartTime(getTime(result.getStartMillis()));
                 test.getModel().setEndTime(getTime(result.getEndMillis()));
-                test.getModel().setDescription("测试案例执行！");
+                test.getModel().setDescription("测试案例执行结果！");
             }
         }
     }
