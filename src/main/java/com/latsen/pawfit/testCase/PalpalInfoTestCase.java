@@ -52,7 +52,6 @@ public class PalpalInfoTestCase extends TestCase {
         actions=new Actions(driver);
         webElements=new HashMap<WebElement, String>();
     }
-
     @Test
     public void testAcheckFitstName() {
         /*
