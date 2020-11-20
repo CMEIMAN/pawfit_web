@@ -33,6 +33,9 @@ public class DeviceManagement {
                         .setCookieSpec(CookieSpecs.STANDARD).build())
                 .build();
     }
+    /*
+    * 获取设别Device ID列表
+    * */
 
     public ArrayList<String> getDeviceIdFromTXT(String path) throws IOException {
         fileInputStream = new FileInputStream(path);
@@ -50,7 +53,9 @@ public class DeviceManagement {
         return arrayList;
 
     }
-
+    /*
+    * 网络请求库
+    * */
     public String sendRequest(String url) throws IOException {
         httpGet = new HttpGet(url);
         String result = "";
@@ -67,7 +72,6 @@ public class DeviceManagement {
             System.out.println(e);
             System.out.println("请求失败:" + url);
         } finally {
-//            closeableHttpResponse.close();
             return result;
         }
     }
@@ -79,12 +83,10 @@ public class DeviceManagement {
     public static void main(String[] args) throws IOException {
         DeviceManagement management = new DeviceManagement();
         ArrayList<String> list = management.getDeviceIdFromTXT("src/main/resources/txt/deviceIds.txt");
-//        System.out.println(list.size());
-//        long start=System.currentTimeMillis();
+
         for(String s:list){
             System.out.println(s+"---"+management.sendRequest("https://api.pawfit.cn:9000/api/v1/gettrackertype/1/1/1/6060?identity="+s));
         }
-//        System.out.println(System.currentTimeMillis()-start);
         management.closeRequest();
     }
 
