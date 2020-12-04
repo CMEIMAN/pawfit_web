@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.internal.Utils;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,13 +72,11 @@ public class PalpalInfoTestCase {
     }
 //  截图
     public void scrFile(){
-       long date=System.currentTimeMillis();
-       String path = String.valueOf(date);
-       String curPath =System.getProperty("user.dir");
-       path =path+".png";
-       String screenPath = curPath+"/"+path;
-       File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-       FileUtils.copyFile(screen,new File(screenPath));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
+        String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
+        String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
+        File srcFile = ((TakesScreenshot)webdriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
+        FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\PalpalInfo", Name+"_"+time + ".png"));
     }
 
     @Test

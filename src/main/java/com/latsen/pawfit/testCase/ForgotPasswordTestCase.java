@@ -14,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.internal.Utils;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ForgotPasswordTestCase{
@@ -42,13 +44,11 @@ public class ForgotPasswordTestCase{
 
     //截图
     public void scrFile(){
-        long date=System.currentTimeMillis();
-        String path = String.valueOf(date);
-        String curPath =System.getProperty("C:\\Users\\Admin\\web_test\\src\\img\\forgotpassword");
-        path =path+".png";
-        String screenPath = curPath+"/"+path;
-        File screen = ((TakesScreenshot) myChromeDriver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screen,new File(screenPath));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
+        String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
+        String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
+        File srcFile = ((TakesScreenshot)myChromeDriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
+        FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\forgotpassword", Name+"_"+time + ".png"));
     }
 
 
@@ -67,6 +67,15 @@ public class ForgotPasswordTestCase{
 
     @Test
     public void testBemail() {
+//        email输入空字符
+        email.sendKeys("");
+        send.click();
+        nextStep.click();
+        email.clear();
+//        输入特殊字符的email
+        email.sendKeys("$@#^&*?/+_{}|");
+        send.click();
+        email.clear();
 //        输入错误email
         email.sendKeys("11111111111");
         send.click();
