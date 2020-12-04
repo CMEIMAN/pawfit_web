@@ -2,9 +2,11 @@ package com.latsen.pawfit.kt
 
 import com.latsen.pawfit.Const.Const
 import com.latsen.pawfit.common.Driver
+import com.latsen.pawfit.common.NewDriver
 import com.latsen.pawfit.utils.Tools
-import com.latsen.pawfit.driver.MyChromeDriver
+import com.latsen.pawfit.driver.MyChromeDriverSingleton
 import junit.framework.TestCase
+import org.junit.BeforeClass
 import org.junit.Test
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement
@@ -12,17 +14,17 @@ import org.testng.annotations.AfterClass
 import java.util.*
 
 
-class LoginTestCase()  {
+class LoginTestCase {
 
     companion object {
-        var webdriver: MyChromeDriver? = null
-        var driver: Driver? = null
+        var webdriver: MyChromeDriverSingleton? = null
+        var driver: NewDriver? = null
         var maps: HashMap<WebElement, String>? =null
         var genericLogin_button: WebElement?=null
     }
-
+    @BeforeClass
     fun init() {
-        driver = Driver(Const.LOGiN_URL)
+        driver = NewDriver(Const.LOGiN_URL)
         webdriver = driver?.connect()
         genericLogin_button= webdriver?.findElement(By.xpath("//*[@id=\"genericLogin-button\"]"))
         genericLogin_button?.click();

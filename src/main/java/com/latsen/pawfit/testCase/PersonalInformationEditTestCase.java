@@ -2,7 +2,8 @@ package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import com.latsen.pawfit.utils.Tools;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -28,8 +29,8 @@ public class PersonalInformationEditTestCase {
     private static WebElement phone;
     private static WebElement city;
     private static WebElement submit;
-    private static MyChromeDriver myChromeDriver;
-    private static Driver driver;
+    private static MyChromeDriverSingleton myChromeDriver;
+    private static NewDriver driver;
     private static HashMap<WebElement, String> elementStringHashMap;
     private static Select select;
     private static WebElement warningMessage;
@@ -43,8 +44,7 @@ public class PersonalInformationEditTestCase {
 
     @BeforeClass
     public static void beforeClass() throws IOException {
-        System.out.println("已经执行");
-        driver = new Driver(Const.LOGiN_URL);
+        driver = new NewDriver(Const.LOGiN_URL);
         elementStringHashMap = new HashMap<WebElement, String>();
         warningMessageMap=new HashMap<String, String>();
         myChromeDriver = driver.connect();
@@ -66,7 +66,6 @@ public class PersonalInformationEditTestCase {
         warningMessage=myChromeDriver.findElement(By.id("formError"));
         firstName = myChromeDriver.findElement(By.id("firstName"));
         lastName = myChromeDriver.findElement(By.id("lastName"));
-        submit = myChromeDriver.findElement(By.id("submitAddress"));
         customer_country = myChromeDriver.findElement(By.id("customer_country"));
         province = myChromeDriver.findElement(By.id("stateProvince"));
         street_address = myChromeDriver.findElement(By.id("address"));
@@ -78,11 +77,12 @@ public class PersonalInformationEditTestCase {
         select = new Select(customer_country);
         select.selectByVisibleText("United Kingdom");
         elementStringHashMap.put(province, "广东省");
+        elementStringHashMap.put(postcode,"IV17 0YT");
         elementStringHashMap.put(street_address, "test");
         elementStringHashMap.put(phone, "12346625");
         elementStringHashMap.put(city, "佛山");
 
-//        清除原有数据
+        //清除原有数据
         firstName.clear();
         lastName.clear();
         province.clear();
@@ -94,6 +94,7 @@ public class PersonalInformationEditTestCase {
 
     @Test
     public void testAFirstName() {
+        submit = myChromeDriver.findElement(By.id("submitAddress"));
         //空判断
         submit.click();
         warningMessageMap.put("首名空判断",warningMessage.getText());
@@ -160,6 +161,7 @@ public class PersonalInformationEditTestCase {
         for (Map.Entry<String,String> entry:warningMessageMap.entrySet()){
             System.out.println(entry.getKey()+":"+entry.getValue());
         }
+        select.selectByVisibleText("United Kingdom");
         setText(elementStringHashMap);
         //提交
         submit.click();
@@ -169,7 +171,7 @@ public class PersonalInformationEditTestCase {
         catch (Exception e){
             System.out.println("出现异常");
         }
-        driver.disconnect();
+//        driver.disconnect();
     }
 
     public static void setText(HashMap<WebElement, String> elementStringHashMap) {

@@ -10,17 +10,15 @@ import java.util.ArrayList;
 public class Const {
     public final static String BASEURL="https://www.pawfit.com/";
     public final static String HUB_URL="http://localhost:4444/wd/hub";
-    public final static String SESSION_ID="b11187e7-60a7-45cc-840f-b04db2f5c867";
+    public final static String SESSION_ID="1018038d-fd40-4a1f-8f1b-d1005b139e9f";
     public final static String LOGiN_URL="https://www.pawfit.com/customer-account/customer-logon.html";
     public final static String REGISTER_RUL="https://www.pawfit.com/customer-account/registration.html";
     public final static String PRODUCT_URL="https://www.pawfit.com/product.html";
     public final static String HOME_URL="https://www.pawfit.com/";
-//    public final static String PAYPAL_URL="https://www.pawfit.com/shopping-order/checkout.html";
     public final static String ABOUT_URL="https://www.pawfit.com/company.html";
     public final static String SUPPORT_URL="https://www.pawfit.com/support.html";
     public final static String BLOG_URL="https://www.pawfit.com/blogs.html";
     public final static String STORY_URL="https://www.pawfit.com/stories-events.html";
-//    public final static String SHOPPINGCART_URL="https://www.pawfit.com/shopping-cart/shoppingCart.html";
     public final static String PAWFIT_COLLAR_URL="https://www.pawfit.com/product/pawfit-collar.html";
     public final static String PAWFIT2_URL="https://www.pawfit.com/product/pawfit2.html";
     public final static String ACCESSORY_URL="https://www.pawfit.com/product/accessories.html";
