@@ -12,7 +12,7 @@ import org.testng.annotations.AfterClass
 import java.util.*
 
 
-class LoginTestCase(name: String?) : TestCase(name) {
+class LoginTestCase()  {
 
     companion object {
         var webdriver: MyChromeDriver? = null
@@ -54,14 +54,12 @@ class LoginTestCase(name: String?) : TestCase(name) {
         signin_password?.clear();
         signin_password?.sendKeys("fk_liekkas0404")
         genericLogin_button?.click()
+        driver?.disconnect()
     }
     fun clearText(element: WebElement){
         element.clear()
     }
-    @AfterClass
-    fun finish(){
-        driver?.connect()
-    }
+
 
 
 }

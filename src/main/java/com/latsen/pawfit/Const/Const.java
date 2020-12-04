@@ -1,27 +1,39 @@
 package com.latsen.pawfit.Const;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.internal.Utils;
+
+import java.io.File;
 import java.util.ArrayList;
 
 public class Const {
     public final static String BASEURL="https://www.pawfit.com/";
     public final static String HUB_URL="http://localhost:4444/wd/hub";
-    public final static String SESSION_ID="a08858b1-00cc-492f-9d65-725a6f743842";
-    public final static String LOGiN_URL=BASEURL+"customer-account/customer-logon.html";
-    public final static String REGISTER_RUL="customer-account/registration.html";
-    public final static String PRODUCT_URL="http://ec2-3-9-114-57.eu-west-2.compute.amazonaws.com/shop/product/product.html";
-    public final static String HOME_URL="http://3.8.61.142:8080/";
-    public final static String PAYPAL_URL="shopping-order/checkout.html";
-    public final static String ABOUT_URL="http://ec2-3-9-114-57.eu-west-2.compute.amazonaws.com/shop/product/about.html";
-    public final static String SUPPORT_URL="http://ec2-3-9-114-57.eu-west-2.compute.amazonaws.com/shop/product/suport.html";
-    public final static String NEWANDEVENTS_URL="http://ec2-3-9-114-57.eu-west-2.compute.amazonaws.com/shop/product/news.html";
-    public final static String SHOPPINGCART_URL="http://ec2-3-9-114-57.eu-west-2.compute.amazonaws.com/shop/cart/shoppingCart.html";
-    public final static String PAWFIT_COLLAR_URL="http://ec2-3-9-114-57.eu-west-2.compute.amazonaws.com/shop/product/Pawfit%20Collar.html";
+    public final static String SESSION_ID="b11187e7-60a7-45cc-840f-b04db2f5c867";
+    public final static String LOGiN_URL="https://www.pawfit.com/customer-account/customer-logon.html";
+    public final static String REGISTER_RUL="https://www.pawfit.com/customer-account/registration.html";
+    public final static String PRODUCT_URL="https://www.pawfit.com/product.html";
+    public final static String HOME_URL="https://www.pawfit.com/";
+//    public final static String PAYPAL_URL="https://www.pawfit.com/shopping-order/checkout.html";
+    public final static String ABOUT_URL="https://www.pawfit.com/company.html";
+    public final static String SUPPORT_URL="https://www.pawfit.com/support.html";
+    public final static String BLOG_URL="https://www.pawfit.com/blogs.html";
+    public final static String STORY_URL="https://www.pawfit.com/stories-events.html";
+//    public final static String SHOPPINGCART_URL="https://www.pawfit.com/shopping-cart/shoppingCart.html";
+    public final static String PAWFIT_COLLAR_URL="https://www.pawfit.com/product/pawfit-collar.html";
+    public final static String PAWFIT2_URL="https://www.pawfit.com/product/pawfit2.html";
+    public final static String ACCESSORY_URL="https://www.pawfit.com/product/accessories.html";
+    public final static String HOW_URL="https://www.pawfit.com/how-it-works.html";
+
+    private static Utils FileUtils;
+
     public final static String[] getSQlText(){
         String[] strings={"and ascii(substr((select database()),1,1))>64", "id=1 union select if(SUBSTRING(user(),1,4)='root',sleep(4),1),null,null", "id =-1 union select 1,2,3", "id=1' substr(database(),1,1)='t'--+", "union select count(*),2,concat(':',(select database()),':',floor(rand()*2))as a from information_schema.tables group by a", "id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)))"};
-
         return strings;
 
     }
+
     public final static String[] getCommomText(){
         String[] strings={
                 "",
@@ -61,4 +73,10 @@ public class Const {
         }
         return string;
     }
+
+
+
+
+
 }
+

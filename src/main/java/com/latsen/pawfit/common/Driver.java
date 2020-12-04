@@ -31,7 +31,6 @@ public class Driver {
 
     public MyChromeDriver getMyChromeDriver() {
         try {
-
             myChromeDriver=new MyChromeDriver(new URL(getUrlStr()),getDesiredCapabilities());
             newSessionId=myChromeDriver.getSessionId().toString();
         } catch (MalformedURLException e) {

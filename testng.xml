@@ -4,19 +4,160 @@
     <listeners>
         <listener class-name="com.latsen.pawfit.demo.ExtentTestNGIReporterListener1"></listener>
     </listeners>
-    <test verbose="2" preserve-order="true" name="D:/private/web_test/src">
+    <test verbose="2" preserve-order="true" name="C:/Users/Admin/web_test/src">
         <classes>
             <class name="com.latsen.pawfit.common.Driver">
         <methods>
-            <include name="demo"/>
+            <include name="testCase"/>
         </methods>
             </class>
 
-            <class name="com.latsen.pawfit.demo.TestNGHelloWorld1">
-                <methods><include name="helloWorldTest1"/>
-                    <include name="helloWorldTest3"/>
-                </methods></class><class name="com.latsen.pawfit.testCase.EmailSubscriptionTestCase">
-            <methods><include name="testACheackFirstName"/>
-                <include name="testBCheckLastName"/>
-                <include name="testCCheckEmail"/></methods>
-        </class><class name="com.latsen.pawfit.testCase.HomePageTestCase"><methods><include name="testBAddPawfitToBasket"/><include name="testCAddCollarToBasket"/><include name="testDAddStrapToBasket"/><include name="testEAddDocksToBasket"/><include name="testFAddAttachmentToBasket"/></methods></class><class name="com.latsen.pawfit.testCase.PalpalInfoTestCase"><methods><include name="testAcheckFitstName"/><include name="testBcheckLastName"/><include name="testCcompany"/><include name="testDcheakAddress"/><include name="testEcheakCity"/><include name="testFcheckCountry"/><include name="testGcheckProvince"/><include name="testHcheckPostalCode"/><include name="testIcheckEmail"/><include name="testJcheckPhoneNumber"/><include name="testKcheckCheckboxOfCreateAnAccount"/><include name="testLcheckPassword"/><include name="testMcheckCheckboxOfOrderNote"/><include name="testVcheackSubmitOrder"/></methods></class><class name="com.latsen.pawfit.testCase.RegisterTestCase"><methods><include name="testAFirstName"/><include name="testBLastName"/><include name="testCCountry"/><include name="testDProvince"/><include name="testEEmail"/><include name="testFPassword"/><include name="testJRePassword"/></methods></class></classes></test></suite>
+            <class name="com.latsen.pawfit.testCase.BasketTestCase">
+                <methods>
+                    <include name="testAhome"/>
+                    <include name="testBproduct"/>
+                    <include name="testCpawfit2"/>
+                    <include name="testDaccessory"/>
+                    <include name="testEhow"/>
+                    <include name="testFblog"/>
+                    <include name="testGstory"/>
+                    <include name="testHsupport"/>
+                    <include name="testIdelivery"/>
+                    <include name="testJcompany"/>
+                    <include name="testKcustomer"/>
+                    <include name="testLshopping_cart"/>
+                    <include name="testMabuot_pawfit"/>
+                    <include name="testNcompany1"/>
+                    <include name="testOjoin"/>
+                    <include name="testPwhat"/>
+                    <include name="testQdelivery_info"/>
+                    <include name="testRfaq"/>
+                    <include name="testSterm"/>
+                    <include name="testTservice_agreement"/>
+                    <include name="testUprivary_policy"/>
+                    <include name="testVcontact_us"/>
+                    <include name="testWuser_manuals"/>
+                    <include name="testXsupport1"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.HomePageTestCase">
+                <methods>
+                    <include name="testAClick1"/>
+                    <include name="testBClick2"/>
+                    <include name="testCClick3"/>
+                    <include name="testDClick4"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.ProductTestCase">
+                <methods>
+                    <include name="testApawfit2"/>
+                    <include name="testBpawfit_Collar"/>
+                    <include name="testCcollar_attachment"/>
+                    <include name="testDcollar_strap"/>
+                    <include name="testEcharging_dock"/>
+                    <include name="testFread"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.Pawfit2TestCase">
+                <methods>
+                    <include name="testAAdd"/>
+                    <include name="testBImg"/>
+                    <include name="testCexplain"/>
+                    <include name="testDdetail"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.AccessoryTestCase">
+                <methods>
+                    <include name="testAClick"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.Pawfit_collarEditTestCase">
+                <methods>
+                    <include name="testAAdd"/>
+                    <include name="testBImg"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.How_it_worksTestCase">
+                <methods>
+                    <include name="testAClick"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.ArticlesTestCase">
+                <methods>
+                    <include name="testAClick"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.StoryTestCase">
+                <methods>
+                    <include name="testAClick"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.SupportTestCase">
+                <methods>
+                    <include name="testASupport"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.AboutTestCase">
+                <methods>
+                    <include name="testAput_error"/>
+                    <include name="testBput"/>
+                </methods>
+            </class>
+
+            <class name="com.latsen.pawfit.testCase.EmailSubscriptionTestCase">
+                <methods>
+                    <include name="testAAbout"/>
+                </methods>
+            </class>
+
+<!--            <class name="com.latsen.pawfit.testCase.PalpalInfoTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAcheckFitstName"/>-->
+<!--                    <include name="testBcheckLastName"/>-->
+<!--                    <include name="testCcompany"/>-->
+<!--                    <include name="testDcheakAddress"/>-->
+<!--                    <include name="testEcheakCity"/>-->
+<!--                    <include name="testFcheckCountry"/>-->
+<!--                    <include name="testGcheckProvince"/>-->
+<!--                    <include name="testHcheckPostalCode"/>-->
+<!--                    <include name="testIcheckEmail"/>-->
+<!--                    <include name="testJcheckPhoneNumber"/>-->
+<!--                    <include name="testKcheckCheckboxOfCreateAnAccount"/>-->
+<!--                    <include name="testLcheckPassword"/>-->
+<!--                    <include name="testMcheckCheckboxOfOrderNote"/>-->
+<!--                    <include name="testVcheackSubmitOrder"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+            <class name="com.latsen.pawfit.testCase.InternationalTestCase">
+                <methods>
+                    <include name="testAHome"/>
+                    <include name="testBsubscribe"/>
+                    <include name="testCagreement"/>
+                    <include name="testDproduct"/>
+                    <include name="testEhow"/>
+                    <include name="testFblog"/>
+                    <include name="testGsupport"/>
+                    <include name="testHcompany"/>
+                    <include name="testIcustomer"/>
+                    <include name="testJshopping_cart"/>
+                </methods>
+            </class>
+
+
+
+
+
+        </classes>
+    </test>
+</suite>
