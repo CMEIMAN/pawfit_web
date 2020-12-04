@@ -4,16 +4,16 @@ import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
 import com.latsen.pawfit.utils.Tools;
 import com.latsen.pawfit.driver.MyChromeDriver;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import org.junit.FixMethodOrder;
-import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,8 @@ public class RegisterTestCase {
     private static Select select;
     private static WebElement warningMessage;
     private static Map<String,String> warningMessageMap;
-
+    private static WebElement agree_email;
+    private static WebElement check;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
@@ -51,10 +52,11 @@ public class RegisterTestCase {
         lastName = myChromeDriver.findElement(By.id("lastName"));
         submit = myChromeDriver.findElement(By.id("submitRegistration"));
         country = myChromeDriver.findElement(By.id("registration_country"));
-        province = myChromeDriver.findElement(By.id("hidden_zones"));
+        province = myChromeDriver.findElement(By.id("zoners"));
         email = myChromeDriver.findElement(By.id("emailAddress"));
         password = myChromeDriver.findElement(By.id("password"));
         rePassword = myChromeDriver.findElement(By.id("passwordAgain"));
+        agree_email=myChromeDriver.findElementById("agree_email");
         elementStringHashMap.put(firstName, "Pawfit");
         elementStringHashMap.put(lastName, "latsen");
         select = new Select(country);
@@ -63,8 +65,6 @@ public class RegisterTestCase {
         elementStringHashMap.put(email, "email@test" + new Random().nextInt() + ".com");
         elementStringHashMap.put(password, "fk_liekkas04040");
         elementStringHashMap.put(rePassword, "fk_liekkas04040");
-//        setText(elementStringHashMap);
-        //初始完成，填入原始信息
     }
 
     @Test
@@ -74,8 +74,6 @@ public class RegisterTestCase {
         warningMessageMap.put("首名空判断",warningMessage.getText());
         //长度判断
         setTextAndClickBtn(firstName,Tools.getUUIDText(),submit);
-        //SQL注入尝试,并
-//        Tools.injectSQLs(firstName, submit, 1000, true);
         firstName.sendKeys(elementStringHashMap.get(firstName));
     }
 
@@ -86,9 +84,6 @@ public class RegisterTestCase {
         warningMessageMap.put("次名空判断",warningMessage.getText());
         //长度判断
         setTextAndClickBtn(lastName,Tools.getUUIDText(),submit);
-        //SQL注入尝试
-//        Tools.injectSQLs(lastName, submit, 1000, true);
-
         lastName.sendKeys(elementStringHashMap.get(lastName));
     }
 
@@ -102,8 +97,6 @@ public class RegisterTestCase {
         //长度判断
         setTextAndClickBtn(province,Tools.getUUIDText(),submit);
         warningMessageMap.put("省份长度判断",warningMessage.getText());
-        //SQL注入尝试
-//        Tools.injectSQLs(province, submit, 1000, true);
         province.sendKeys(elementStringHashMap.get(province));
     }
 
@@ -115,8 +108,6 @@ public class RegisterTestCase {
         //格式判断
         setTextAndClickBtn(email,"fk_liekkas",submit);
         warningMessageMap.put("邮箱格式判断",warningMessage.getText());
-        //SQL注入尝试
-//        Tools.injectSQLs(email, submit, 1000, true);
         email.sendKeys(elementStringHashMap.get(email));
     }
 
@@ -125,8 +116,6 @@ public class RegisterTestCase {
         //长度判断
         setTextAndClickBtn(password,Tools.getUUIDText(),submit);
         warningMessageMap.put("密码长度判断",warningMessage.getText());
-        //SQL注入尝试
-//        Tools.injectSQLs(password, submit, 1000, true);
         password.sendKeys(elementStringHashMap.get(password));
     }
 
@@ -143,6 +132,11 @@ public class RegisterTestCase {
         rePassword.sendKeys(elementStringHashMap.get(rePassword));
     }
 
+    @Test
+    public void testKagree_email() {
+        agree_email.click();
+    }
+
     @AfterClass
     public static void alterClass() {
         //输出全部错误提示
@@ -150,8 +144,12 @@ public class RegisterTestCase {
             System.out.println(entry.getKey()+":"+entry.getValue());
         }
         setText(elementStringHashMap);
-        //登录
-        submit.click();
+        //提交
+        check=myChromeDriver.findElementById("agree_email");
+        check.click();
+        submit = myChromeDriver.findElement(By.id("submitRegistration"));
+        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",submit);
+
         try {
             Thread.sleep(10000l);
         }
@@ -161,7 +159,6 @@ public class RegisterTestCase {
 
         driver.disconnect();
     }
-
 
     public static void setText(HashMap<WebElement, String> elementStringHashMap) {
         for (HashMap.Entry<WebElement, String> map : elementStringHashMap.entrySet()) {
@@ -176,6 +173,7 @@ public class RegisterTestCase {
             map.getKey().clear();
         }
     }
+
     public void setTextAndClickBtn(WebElement webElement,String content,WebElement btn){
         webElement.clear();
         webElement.sendKeys(content);

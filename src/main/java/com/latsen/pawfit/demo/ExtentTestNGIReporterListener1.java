@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class ExtentTestNGIReporterListener1 implements IReporter {
 
-    private static final String OUTPUT_FOLDER = "D:\\private\\web_test\\src\\test-output\\";
+    private static final String OUTPUT_FOLDER = "C:\\Users\\Admin\\web_test\\src\\test-output\\";
     private static final String FILE_NAME = "Extent.html";
 
     private ExtentReports extent;
