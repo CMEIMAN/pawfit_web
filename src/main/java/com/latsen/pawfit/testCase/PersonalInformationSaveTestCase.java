@@ -2,7 +2,8 @@ package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -21,12 +22,13 @@ import java.util.Calendar;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PersonalInformationSaveTestCase {
-    private static MyChromeDriver myChromeDriver;
-    private static Driver driver;
+    private static MyChromeDriverSingleton myChromeDriver;
+    private static NewDriver driver;
     private static WebElement emil;
     private static WebElement password;
     private static WebElement login;
     private static WebElement lastname;
+
     private static WebElement firstname;
     private static WebElement title;
     private static WebElement save;
@@ -36,7 +38,7 @@ public class PersonalInformationSaveTestCase {
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        driver = new Driver(Const.LOGiN_URL);
+        driver = new NewDriver(Const.LOGiN_URL);
         myChromeDriver = driver.connect();
 //        登录账号
         emil= myChromeDriver.findElementById("signin_userName");

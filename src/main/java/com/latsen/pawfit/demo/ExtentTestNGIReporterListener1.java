@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class ExtentTestNGIReporterListener1 implements IReporter {
 
-    private static final String OUTPUT_FOLDER = "C:\\Users\\Admin\\web_test\\src\\test-output\\";
+    private static final String OUTPUT_FOLDER = "D:\\private\\web_test\\src\\main\\resources\\templates\\";
     private static final String FILE_NAME = "Extent.html";
 
     private ExtentReports extent;
@@ -46,7 +46,7 @@ public class ExtentTestNGIReporterListener1 implements IReporter {
     }
 
     private void init() {
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("src/main/resources/templates/echarts.html");
         htmlReporter.config().setDocumentTitle("自动化测试报告");
         htmlReporter.config().setReportName("PAWFIT-SHOP:自动化测试报告");
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP); //图表位置
