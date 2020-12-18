@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -20,8 +20,8 @@ import java.util.Calendar;
 @org.testng.annotations.Test(groups = "Group")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class EmailSubscriptionTestCase {
-    private static Driver driver;
-    private static MyChromeDriver webDriver;
+    private static NewDriver driver;
+    private static MyChromeDriverSingleton webDriver;
     private static WebElement firstName;
     private static WebElement lastName;
     private static WebElement emial;
@@ -31,7 +31,7 @@ public class EmailSubscriptionTestCase {
 
     @BeforeClass
     public static void beforeClass() throws IOException {
-        driver=new Driver(Const.PRODUCT_URL);
+        driver=new NewDriver(Const.PRODUCT_URL);
         try {
             webDriver=driver.connect();
         } catch (MalformedURLException e) {
@@ -63,8 +63,23 @@ public class EmailSubscriptionTestCase {
         }
     }
 
+//    输入空格
     @Test
-    public void testBput(){
+    public void testBput_null(){
+        //        清除数据
+        firstName.clear();
+        lastName.clear();
+        emial.clear();
+
+        firstName.sendKeys("    ");
+        lastName.sendKeys("    ");
+        emial.sendKeys("    ");
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].click()",subscribeBtn);
+        scrFile();
+    }
+
+    @Test
+    public void testCput()throws InterruptedException{
         firstName=webDriver.findElement(By.id("exampleInputName2"));
         lastName=webDriver.findElement(By.id("exampleInputName3"));
         emial=webDriver.findElement(By.id("exampleInputEmail2"));
@@ -77,10 +92,9 @@ public class EmailSubscriptionTestCase {
         firstName.sendKeys("chen");
         lastName.sendKeys("test");
         emial.sendKeys("1790039849@qq.com");
-//        截图
-        scrFile();
 //        点击提交
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].click()",subscribeBtn);
+        Thread.sleep(2000);
         scrFile();
 //        点击Go back to Homepage按钮
         backToHomePage=webDriver.findElement(By.xpath("/html/body/div[4]/a"));

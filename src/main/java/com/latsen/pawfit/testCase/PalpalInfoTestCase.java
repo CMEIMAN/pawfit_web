@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import com.latsen.pawfit.utils.Tools;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -38,16 +38,17 @@ public class PalpalInfoTestCase {
     private static HashMap<WebElement,String> webElements;
     private static WebElement submitOrder;
     private static Select countrySelect;
-    private static MyChromeDriver driver;
-    private static Driver webdriver;
+    private static MyChromeDriverSingleton driver;
+    private static NewDriver webdriver;
     private static WebElement add;
     private static WebElement checkout;
     private Utils FileUtils;
+    private static WebElement formErrorMessage;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        webdriver = new Driver(Const.PRODUCT_URL);
+        webdriver = new NewDriver(Const.PRODUCT_URL);
         driver = webdriver.connect();
 
 //        添加商品到购物车
@@ -75,12 +76,12 @@ public class PalpalInfoTestCase {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
         String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
         String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
-        File srcFile = ((TakesScreenshot)webdriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
+        File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
         FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\PalpalInfo", Name+"_"+time + ".png"));
     }
 
     @Test
-    public void testAcheckFitstName() {
+    public void testAcheckFitstName_data() {
         /*长度判断*/
         firstName=driver.findElement(By.id("customer.firstName"));
         setAllText(firstName, Tools.getUUIDText());
@@ -91,7 +92,13 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testBcheckLastName() {
+    public void testBcheckLastName_null() {
+        formErrorMessage=driver.findElementById("formErrorMessage");
+        System.out.print("lastname输入为空："+formErrorMessage.getText());
+    }
+
+    @Test
+    public void testCcheckLastName_data() {
         lastName=driver.findElement(By.id("customer.lastName"));
         setAllText(lastName,Tools.getUUIDText());
 //        scrFile();
@@ -100,7 +107,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testCcompany() {
+    public void testDcompany() {
         company=driver.findElement(By.id("customer.billing.company"));
         setAllText(company,Tools.getUUIDText());
 //        scrFile();
@@ -109,7 +116,13 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testDcheakAddress() {
+    public void testEcheakAddress_null() {
+        formErrorMessage=driver.findElementById("formErrorMessage");
+        System.out.print("Address输入为空："+formErrorMessage.getText());
+    }
+
+    @Test
+    public void testFcheakAddress_data() {
         address=driver.findElement(By.id("customer.billing.address"));
         setAllText(address,Tools.getUUIDText());
         injectSQLs(address);
@@ -117,7 +130,13 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testEcheakCity() {
+    public void testGcheakCity_null() {
+        formErrorMessage=driver.findElementById("formErrorMessage");
+        System.out.print("City输入为空："+formErrorMessage.getText());
+    }
+
+    @Test
+    public void testHcheakCity_data() {
         city=driver.findElement(By.id("customer.billing.city"));
         setAllText(city,Tools.getUUIDText());
         injectSQLs(city);
@@ -125,7 +144,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testFcheckCountry() {
+    public void testIcheckCountry() {
         country=driver.findElement(By.id("customer.billing.country"));
         countrySelect=new Select(country);
         countrySelect.selectByVisibleText("United Kingdom");
@@ -133,7 +152,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testGcheckProvince() {
+    public void testJcheckProvince() {
         province=driver.findElement(By.name("customer.billing.stateProvince"));
         setAllText(province,Tools.getUUIDText());
         injectSQLs(province);
@@ -141,14 +160,29 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testHcheckPostalCode() {
-        postalCode=driver.findElement(By.name("customer.billing.postalCode"));
-        setAllText(postalCode,Tools.getUUIDText());
-        injectSQLs(postalCode);webElements.put(postalCode,"M2 5BQ");
+    public void testKcheckPostalCode_null() {
+        formErrorMessage=driver.findElementById("formErrorMessage");
+        System.out.print("PostalCode输入为空："+formErrorMessage.getText());
     }
 
     @Test
-    public void testIcheckEmail() {
+    public void testLcheckPostalCode_data() {
+        postalCode=driver.findElement(By.name("customer.billing.postalCode"));
+        setAllText(postalCode,Tools.getUUIDText());
+        injectSQLs(postalCode);
+        postalCode.clear();
+        postalCode.sendKeys("IV17 0YT");
+        webElements.put(postalCode,"M2 5BQ");
+    }
+
+    @Test
+    public void testMcheckEmail_null() {
+        formErrorMessage=driver.findElementById("formErrorMessage");
+        System.out.print("Email输入为空："+formErrorMessage.getText());
+    }
+
+    @Test
+    public void testNcheckEmail_data() {
         email=driver.findElement(By.id("customer.emailAddress"));
         setAllText(email,Tools.getUUIDText());
         injectSQLs(email);
@@ -156,7 +190,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testJcheckPhoneNumber() {
+    public void testOcheckPhoneNumber() {
         phoneNumber=driver.findElement(By.name("customer.billing.phone"));
         setAllText(phoneNumber,Tools.getUUIDText());
         injectSQLs(phoneNumber);
@@ -164,30 +198,36 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testKcheckCheckboxOfCreateAnAccount() {
+    public void testPcheckCheckboxOfCreateAnAccount() {
         checkboxOfCreateAnAccount.click();
     }
 
     @Test
-    public void testLcheckPassword() {
+    public void testQcheckPassword_null() {
+        formErrorMessage=driver.findElementById("formErrorMessage");
+        System.out.print("Password输入为空："+formErrorMessage.getText());
+    }
+
+    @Test
+    public void testRcheckPassword_data() {
         setAllText(password,Tools.getUUIDText());
         injectSQLs(password);
         webElements.put(password,"12345678");
     }
     @Test
-    public void testMcheckCheckboxOfOrderNote() {
+    public void testScheckCheckboxOfOrderNote() {
         setAllText(checkboxOfOrderNote,Tools.getUUIDText());
         injectSQLs(checkboxOfOrderNote);
         webElements.put(checkboxOfOrderNote,"12345678");
     }
 
     @Test
-    public void testVcheackSubmitOrder() {
+    public void testTcheackSubmitOrder()throws InterruptedException{
         clearText(webElements);
-        scrFile();
         setText(webElements);
         scrFile();
         submitOrder.click();
+        Thread.sleep(3000);
         scrFile();
         driver.navigate().back();
     }
@@ -207,7 +247,6 @@ public class PalpalInfoTestCase {
         for (int i=0;i< strings.length;i++){
             if (i>strings.length-2){
                 element.sendKeys(strings[i]);
-                scrFile();
                 submitOrder.click();
             }
             else {

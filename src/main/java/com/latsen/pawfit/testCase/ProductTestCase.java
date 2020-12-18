@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -30,15 +30,15 @@ public class ProductTestCase {
     private static WebElement collar_attachment_add;
     private static WebElement collar_strap_add;
     private static WebElement charging_dock_add;
-    private static MyChromeDriver driver;
-    private static Driver webdriver;
+    private static MyChromeDriverSingleton driver;
+    private static NewDriver webdriver;
     private Utils FileUtils;
     private static WebElement read;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        webdriver = new Driver(Const.PRODUCT_URL);
+        webdriver = new NewDriver(Const.PRODUCT_URL);
         driver = webdriver.connect();
         pawfit2=driver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[1]");
         pawfit_Collar=driver.findElementByXPath("/html/body/section[2]/div/div/div[1]/div/div/div[1]/div[3]/a/button");

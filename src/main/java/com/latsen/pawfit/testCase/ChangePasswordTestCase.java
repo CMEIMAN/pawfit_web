@@ -1,8 +1,9 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
+import org.openqa.selenium.Keys;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,13 +15,15 @@ import org.openqa.selenium.WebElement;
 import org.testng.internal.Utils;
 import java.io.File;
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ChangePasswordTestCase {
-    private static Driver driver;
-    private static MyChromeDriver myChromeDriver;
+    private static NewDriver driver;
+    private static MyChromeDriverSingleton myChromeDriver;
     private static WebElement emil;
     private static WebElement login_password;
     private static WebElement login;
@@ -32,13 +35,16 @@ public class ChangePasswordTestCase {
     private static WebElement eye1;
     private static WebElement eye2;
     private static WebElement eye3;
+    private static WebElement formError;
     private Utils FileUtils;
+    private static JavaTools assertion;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        driver = new Driver(Const.LOGiN_URL);
+        driver = new NewDriver(Const.LOGiN_URL);
         myChromeDriver = driver.connect();
+        assertion=new JavaTools();
 
         emil= myChromeDriver.findElementById("signin_userName");
         login_password= myChromeDriver.findElementById("signin_password");
@@ -55,6 +61,7 @@ public class ChangePasswordTestCase {
         eye1=myChromeDriver.findElementById("togglePassword_customer");
         eye2=myChromeDriver.findElementById("togglePassword_customer_new");
         eye3=myChromeDriver.findElementById("togglePassword_customer_repeat");
+
     }
 
     //截图
@@ -66,8 +73,14 @@ public class ChangePasswordTestCase {
         FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\ChangePassword", Name+"_"+time + ".png"));
     }
 
+    public void clear(){
+        current_password.clear();
+        new_password.clear();
+        confirm_password.clear();
+    }
+
     @Test
-    public void testApassword_error() {
+    public void testApassword_put() {
         for(int i=0;i<Const.getCommomText().length;i++) {
             current_password.sendKeys("" + Const.getCommomText()[i]);
             new_password.sendKeys("" + Const.getCommomText()[i]);
@@ -76,18 +89,176 @@ public class ChangePasswordTestCase {
         change_password_btn.click();
     }
 
+//    当前密码输入为null
     @Test
-    public void testBpassword_right() {
-       current_password.clear();
-       new_password.clear();
-       confirm_password.clear();
-       current_password.sendKeys("12345678");
-       eye1.click();
-       new_password.sendKeys("12345678");
-       eye2.click();
-       confirm_password.sendKeys("12345678");
-       eye3.click();
-       change_password_btn.click();
+    public void testBCurrentpassword_null() {
+        clear();
+        current_password.sendKeys("  ");
+        new_password.sendKeys("  ");
+        confirm_password.sendKeys("  ");
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("当前密码输入空："+formError.getText());
+        assertion.verifyassert(formError.getText(),"Please provide your current password","当前密码输入空提示错误");
+    }
+
+//    当前密码输入小于6字符
+    @Test
+    public void testCCurrentpassword_min() {
+        current_password.sendKeys("123");
+        new_password.click();
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("当前密码输入小于6字符："+formError.getText());
+        assertion.verifyassert(formError.getText(),"Your password should be between 6 and 30 characters in length.","当前密码输入小于6字符提示错误");
+        clear();
+    }
+
+//    当前密码输入大于30字符
+    @Test
+    public void testDCurrentpassword_max() {
+        current_password.sendKeys("1234658693472546462742734234374935478412132342412");
+        new_password.click();
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("当前密码输入大于30字符："+formError.getText());
+        assertion.verifyassert(formError.getText(),"Please provide a new password","当前密码大于30字符提示错误");
+        clear();
+    }
+
+//    当前密码输入特殊字符
+    @Test
+    public void testECurrentpassword_sp() {
+        current_password.sendKeys("^@#^$%#^*^&*^(^?>'");
+        new_password.click();
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("当前密码输入特殊字符："+formError.getText());
+        assertion.verifyassert(formError.getText(),"Please provide a new password","当前密码输入特殊字符提示错误");
+        clear();
+    }
+
+//    当前密码输入错误，新密码和确认密码输入正确
+    @Test
+    public void testFCurrentpassword_error()throws InterruptedException {
+        current_password.sendKeys("12dfjskskf");
+        new_password.sendKeys("12345678");
+        confirm_password.sendKeys("12345678");
+        confirm_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("当前密码输入错误："+formError.getText());
+        assertion.verifyassert(formError.getText(),"Invalid password","当前密码输入错误提示错误");
+    }
+
+//    当前密码输入正确，新密码输入为空
+    @Test
+    public void testGNewpassword_null() {
+        current_password=myChromeDriver.findElementById("currentPassword");
+        new_password=myChromeDriver.findElementById("password");
+        confirm_password=myChromeDriver.findElementById("checkPassword");
+        current_password.click();
+        current_password.sendKeys("12345678");
+        new_password.sendKeys(" ");
+        new_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("新密码输入空："+formError.getText());
+        assertion.verifyassert(formError.getText(),"Please provide a new password","新密码输入空提示错误" +
+                "");
+        clear();
+    }
+
+//    当前密码输入正确，新密码输入特殊字符
+    @Test
+    public void testHNewpassword_sp() {
+        current_password.sendKeys("12345678");
+        new_password.sendKeys("@#￥%……&*？》");
+        new_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("新密码输入特殊字符："+formError.getText());
+        assertion.verifyassert(formError.getText(),"Confirm new password","新密码输入特殊字符提示错误");
+        clear();
+    }
+
+    //    当前密码输入正确，新密码输入小于6字符
+    @Test
+    public void testINewpassword_min() {
+        current_password.sendKeys("12345678");
+        new_password.sendKeys("12");
+        new_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("新密码输入小于6字符："+formError.getText());
+        clear();
+    }
+
+    //    当前密码输入正确，新密码输入大于30字符
+    @Test
+    public void testINewpassword_max() {
+        current_password.sendKeys("12345678");
+        new_password.sendKeys("1234658693472546462742734234374935478412132342412");
+        new_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("新密码输入大于30字符："+formError.getText());
+        clear();
+    }
+
+    //    当前密码输入正确，新密码输入正确，确认密码输入空
+    @Test
+    public void testIConfirmpassword_null() {
+        current_password.sendKeys("12345678");
+        new_password.sendKeys("12345678");
+        confirm_password.sendKeys("  ");
+        confirm_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("确认密码输入空："+formError.getText());
+        clear();
+    }
+
+    //    当前密码输入正确，新密码输入特殊字符
+    @Test
+    public void testJNewpassword_sp() {
+        current_password.sendKeys("12345678");
+        new_password.sendKeys("12345678");
+        confirm_password.sendKeys("@#￥%……&*？》");
+        confirm_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("确认密码输入特殊字符："+formError.getText());
+        clear();
+    }
+
+    //    当前密码输入正确，新密码输入小于6字符
+    @Test
+    public void testKNewpassword_min() {
+        current_password.sendKeys("12345678");
+        new_password.sendKeys("12345678");
+        confirm_password.sendKeys("12");
+        confirm_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("确认密码输入小于6字符："+formError.getText());
+        clear();
+    }
+
+    //    当前密码输入正确，新密码输入大于30字符
+    @Test
+    public void testLNewpassword_max() {
+        current_password.sendKeys("12345678");
+        new_password.sendKeys("12345678");
+        confirm_password.sendKeys("1234658693472546462742734234374935478412132342412");
+        confirm_password.sendKeys(Keys.ENTER);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("确认密码输入大于30字符："+formError.getText());
+        clear();
+    }
+
+//    输入正确的密码
+    @Test
+    public void testMpassword_right() {
+        eye1=myChromeDriver.findElementById("togglePassword_customer");
+        eye2=myChromeDriver.findElementById("togglePassword_customer_new");
+        eye3=myChromeDriver.findElementById("togglePassword_customer_repeat");
+        current_password.sendKeys("12345678");
+        eye1.click();
+        new_password.sendKeys("12345678");
+        eye2.click();
+        confirm_password.sendKeys("12345678");
+        eye3.click();
+        change_password_btn=myChromeDriver.findElementById("submitChangePassword");
+        change_password_btn.click();
        scrFile();
     }
 

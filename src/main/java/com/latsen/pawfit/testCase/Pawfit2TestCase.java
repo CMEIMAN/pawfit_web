@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -55,13 +55,13 @@ public class Pawfit2TestCase {
     private static WebElement removal_close;
     private static WebElement virtual_fence;
     private static WebElement virtual_fence_close;
-    private static MyChromeDriver driver;
-    private static Driver webdriver;
+    private static MyChromeDriverSingleton driver;
+    private static NewDriver webdriver;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        webdriver = new Driver(Const.PAWFIT2_URL);
+        webdriver = new NewDriver(Const.PAWFIT2_URL);
         driver = webdriver.connect();
 
         banner_btn=driver.findElementByXPath("/html/body/section/section[3]/div/div/div/div/p[3]/button");

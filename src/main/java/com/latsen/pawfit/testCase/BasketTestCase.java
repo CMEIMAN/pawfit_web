@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -29,8 +29,8 @@ public class BasketTestCase {
     private static WebElement delivery;
     private static WebElement company;
     private static WebElement customer;
-    private static MyChromeDriver driver;
-    private static Driver webdriver;
+    private static MyChromeDriverSingleton driver;
+    private static NewDriver webdriver;
     private Utils FileUtils;
     private static WebElement p2add;
     private static WebElement checkout;
@@ -55,7 +55,7 @@ public class BasketTestCase {
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        webdriver = new Driver(Const.BASEURL);
+        webdriver = new NewDriver(Const.BASEURL);
         driver = webdriver.connect();
         home= driver.findElementByXPath("/html/body/div[1]/div/div/div/div/div[1]/a/img");
         product=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");

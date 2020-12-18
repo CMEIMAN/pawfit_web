@@ -11,6 +11,7 @@ import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import java.io.IOException;
+import org.testng.Assert;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Pawfit_collarEditTestCase{

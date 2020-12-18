@@ -11,117 +11,139 @@
             <include name="testCase"/>
         </methods>
             </class>
+            <class name="com.latsen.pawfit.testCase.HomePageTestCase"></class>
+            <class name="com.latsen.pawfit.testCase.BasketTestCase"></class>
+<!--            <class name="com.latsen.pawfit.testCase.SupportTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.Pawfit2TestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.AccessoryTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.Pawfit_collarEditTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.How_it_worksTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.ArticlesTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.StoryTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.SupportTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.AboutTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.EmailSubscriptionTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.ShoppingCartTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.ForgotPasswordTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.RegisterTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.Login_logoutTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.PersonalInformationEditTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.PersonalInformationSaveTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.Recent_orderTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.ChangePasswordTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.PalpalInfoTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.Referral_CodeTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.InternationalTestCase"></class>-->
 
-            <class name="com.latsen.pawfit.testCase.PersonalInformationEditTestCase"></class>
-            <class name="com.latsen.pawfit.testCase.PersonalInformationSaveTestCase"></class>
 
-            <!--<class name="com.latsen.pawfit.testCase.BasketTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAhome"/>-->
-                    <!--<include name="testBproduct"/>-->
-                    <!--<include name="testCpawfit2"/>-->
-                    <!--<include name="testDaccessory"/>-->
-                    <!--<include name="testEhow"/>-->
-                    <!--<include name="testFblog"/>-->
-                    <!--<include name="testGstory"/>-->
-                    <!--<include name="testHsupport"/>-->
-                    <!--<include name="testIdelivery"/>-->
-                    <!--<include name="testJcompany"/>-->
-                    <!--<include name="testKcustomer"/>-->
-                    <!--<include name="testLshopping_cart"/>-->
-                    <!--<include name="testMabuot_pawfit"/>-->
-                    <!--<include name="testNcompany1"/>-->
-                    <!--<include name="testOjoin"/>-->
-                    <!--<include name="testPwhat"/>-->
-                    <!--<include name="testQdelivery_info"/>-->
-                    <!--<include name="testRfaq"/>-->
-                    <!--<include name="testSterm"/>-->
-                    <!--<include name="testTservice_agreement"/>-->
-                    <!--<include name="testUprivary_policy"/>-->
-                    <!--<include name="testVcontact_us"/>-->
-                    <!--<include name="testWuser_manuals"/>-->
-                    <!--<include name="testXsupport1"/>-->
-                <!--</methods>-->
-            <!--</class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.HomePageTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAClick1"/>-->
-                    <!--<include name="testBClick2"/>-->
-                    <!--<include name="testCClick3"/>-->
-                    <!--<include name="testDClick4"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.BasketTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAhome"/>-->
+<!--                    <include name="testBproduct"/>-->
+<!--                    <include name="testCpawfit2"/>-->
+<!--                    <include name="testDaccessory"/>-->
+<!--                    <include name="testEhow"/>-->
+<!--                    <include name="testFblog"/>-->
+<!--                    <include name="testGstory"/>-->
+<!--                    <include name="testHsupport"/>-->
+<!--                    <include name="testIdelivery"/>-->
+<!--                    <include name="testJcompany"/>-->
+<!--                    <include name="testKcustomer"/>-->
+<!--                    <include name="testLshopping_cart"/>-->
+<!--                    <include name="testMabuot_pawfit"/>-->
+<!--                    <include name="testNcompany1"/>-->
+<!--                    <include name="testOjoin"/>-->
+<!--                    <include name="testPwhat"/>-->
+<!--                    <include name="testQdelivery_info"/>-->
+<!--                    <include name="testRfaq"/>-->
+<!--                    <include name="testSterm"/>-->
+<!--                    <include name="testTservice_agreement"/>-->
+<!--                    <include name="testUprivary_policy"/>-->
+<!--                    <include name="testVcontact_us"/>-->
+<!--                    <include name="testWuser_manuals"/>-->
+<!--                    <include name="testXsupport1"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.ProductTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testApawfit2"/>-->
-                    <!--<include name="testBpawfit_Collar"/>-->
-                    <!--<include name="testCcollar_attachment"/>-->
-                    <!--<include name="testDcollar_strap"/>-->
-                    <!--<include name="testEcharging_dock"/>-->
-                    <!--<include name="testFread"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.HomePageTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAClick1"/>-->
+<!--                    <include name="testBClick2"/>-->
+<!--                    <include name="testCClick3"/>-->
+<!--                    <include name="testDClick4"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.Pawfit2TestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAAdd"/>-->
-                    <!--<include name="testBImg"/>-->
-                    <!--<include name="testCexplain"/>-->
-                    <!--<include name="testDdetail"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.ProductTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testApawfit2"/>-->
+<!--                    <include name="testBpawfit_Collar"/>-->
+<!--                    <include name="testCcollar_attachment"/>-->
+<!--                    <include name="testDcollar_strap"/>-->
+<!--                    <include name="testEcharging_dock"/>-->
+<!--                    <include name="testFread"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.AccessoryTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAClick"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.Pawfit2TestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAAdd"/>-->
+<!--                    <include name="testBImg"/>-->
+<!--                    <include name="testCexplain"/>-->
+<!--                    <include name="testDdetail"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.Pawfit_collarEditTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAAdd"/>-->
-                    <!--<include name="testBImg"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.AccessoryTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAClick"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.How_it_worksTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAClick"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.Pawfit_collarEditTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAAdd"/>-->
+<!--                    <include name="testBImg"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.ArticlesTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAClick"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.How_it_worksTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAClick"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.StoryTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAClick"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.ArticlesTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAClick"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.SupportTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testASupport"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.StoryTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAClick"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.AboutTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAput_error"/>-->
-                    <!--<include name="testBput"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.SupportTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testASupport"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.EmailSubscriptionTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAAbout"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.AboutTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAput_error"/>-->
+<!--                    <include name="testBput"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+<!--            <class name="com.latsen.pawfit.testCase.EmailSubscriptionTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAAbout"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
 <!--            <class name="com.latsen.pawfit.testCase.PalpalInfoTestCase">-->
 <!--                <methods>-->
@@ -142,20 +164,20 @@
 <!--                </methods>-->
 <!--            </class>-->
 
-            <!--<class name="com.latsen.pawfit.testCase.InternationalTestCase">-->
-                <!--<methods>-->
-                    <!--<include name="testAHome"/>-->
-                    <!--<include name="testBsubscribe"/>-->
-                    <!--<include name="testCagreement"/>-->
-                    <!--<include name="testDproduct"/>-->
-                    <!--<include name="testEhow"/>-->
-                    <!--<include name="testFblog"/>-->
-                    <!--<include name="testGsupport"/>-->
-                    <!--<include name="testHcompany"/>-->
-                    <!--<include name="testIcustomer"/>-->
-                    <!--<include name="testJshopping_cart"/>-->
-                <!--</methods>-->
-            <!--</class>-->
+<!--            <class name="com.latsen.pawfit.testCase.InternationalTestCase">-->
+<!--                <methods>-->
+<!--                    <include name="testAHome"/>-->
+<!--                    <include name="testBsubscribe"/>-->
+<!--                    <include name="testCagreement"/>-->
+<!--                    <include name="testDproduct"/>-->
+<!--                    <include name="testEhow"/>-->
+<!--                    <include name="testFblog"/>-->
+<!--                    <include name="testGsupport"/>-->
+<!--                    <include name="testHcompany"/>-->
+<!--                    <include name="testIcustomer"/>-->
+<!--                    <include name="testJshopping_cart"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 
 
 

@@ -55,7 +55,7 @@ public class PersonalInformationEditTestCase {
         login= myChromeDriver.findElementById("genericLogin-button");
         //登录账号
         emil.sendKeys("1790039849@qq.com");
-        password.sendKeys("123456");
+        password.sendKeys("12345678");
         login.click();
         imformation=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/div[1]/ul/li[1]/a");
         imformation.click();
@@ -63,7 +63,7 @@ public class PersonalInformationEditTestCase {
         edit.click();
 
         //定位元素
-        warningMessage=myChromeDriver.findElement(By.id("formError"));
+
         firstName = myChromeDriver.findElement(By.id("firstName"));
         lastName = myChromeDriver.findElement(By.id("lastName"));
         customer_country = myChromeDriver.findElement(By.id("customer_country"));
@@ -89,7 +89,6 @@ public class PersonalInformationEditTestCase {
         street_address.clear();
         phone .clear();
         city .clear();
-        postcode.clear();
     }
 
     @Test
@@ -97,9 +96,16 @@ public class PersonalInformationEditTestCase {
         submit = myChromeDriver.findElement(By.id("submitAddress"));
         //空判断
         submit.click();
+        warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("首名空判断",warningMessage.getText());
         //长度判断
         setTextAndClickBtn(firstName, Tools.getUUIDText(),submit);
+        warningMessageMap.put("首名长度判断",warningMessage.getText());
+        //输入特殊字符
+        firstName.sendKeys("#￥%……&*？");
+        submit.click();
+        warningMessageMap.put("首名特殊字符判断判断",warningMessage.getText());
+        firstName.clear();
         firstName.sendKeys(elementStringHashMap.get(firstName));
     }
 
@@ -107,30 +113,48 @@ public class PersonalInformationEditTestCase {
     public void testBLastName() {
         //空判断
         submit.click();
+        warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("次名空判断",warningMessage.getText());
         //长度判断
         setTextAndClickBtn(lastName,Tools.getUUIDText(),submit);
+        warningMessageMap.put("次名长度判断",warningMessage.getText());
+        //输入特殊字符
+        lastName.sendKeys("#￥%……&*？");
+        submit.click();
+        warningMessageMap.put("次名特殊字符判断判断",warningMessage.getText());
+        lastName.clear();
         lastName.sendKeys(elementStringHashMap.get(lastName));
     }
 
     @Test
     public void testCCountry() {
-        select.selectByVisibleText("Romania");
+        select.selectByVisibleText("United Kingdom");
     }
 
     @Test
     public void testDProvince() {
         //长度判断
         setTextAndClickBtn(province,Tools.getUUIDText(),submit);
-        warningMessageMap.put("省份长度判断",warningMessage.getText());
+        warningMessage=myChromeDriver.findElement(By.id("formError"));
+        warningMessageMap.put("province长度判断",warningMessage.getText());
+        //特殊字符
+        province.sendKeys("#￥%……&*？=-,.");
+        warningMessageMap.put("province特殊字符判断",warningMessage.getText());
+        province.clear();
         province.sendKeys(elementStringHashMap.get(province));
     }
 
     @Test
     public void testEstreet_address() {
+
         //长度判断
         setTextAndClickBtn(street_address,Tools.getUUIDText(),submit);
-        warningMessageMap.put("street address度判断",warningMessage.getText());
+        warningMessage=myChromeDriver.findElement(By.id("formError"));
+        warningMessageMap.put("street address长度判断",warningMessage.getText());
+        //特殊字符
+        street_address.sendKeys("#￥%……&*？=-,.[|*");
+        warningMessageMap.put("street address特殊字符判断",warningMessage.getText());
+        street_address.clear();
         street_address.sendKeys(elementStringHashMap.get(street_address));
     }
 
@@ -138,21 +162,43 @@ public class PersonalInformationEditTestCase {
     public void testFphone() {
         //长度判断
         setTextAndClickBtn(phone,Tools.getUUIDText(),submit);
+        warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("电话号码长度判断",warningMessage.getText());
+        //特殊字符
+        phone.sendKeys("#￥%……&*？=-,.[|*");
+        warningMessageMap.put("phone特殊字符判断",warningMessage.getText());
+        phone.clear();
         phone.sendKeys(elementStringHashMap.get(phone));
     }
 
     @Test
     public void testJcity() {
         //长度判断
-        setTextAndClickBtn(city,Tools.getUUIDText(),submit);
+        setTextAndClickBtn(city,Tools.getUUIDText(),street_address);
+        warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("city长度判断",warningMessage.getText());
+        //特殊字符
+        city = myChromeDriver.findElement(By.id("city"));
+        city.sendKeys("#￥%……&*？=-,.[|*");
+        warningMessageMap.put("city特殊字符判断",warningMessage.getText());
+        city.clear();
+        street_address = myChromeDriver.findElement(By.id("address"));
+        street_address.click();
     }
 
     @Test
     public void testKpostcode() {
+        postcode=myChromeDriver.findElementById("billingPostalCode");
+        postcode.clear();
+        warningMessage=myChromeDriver.findElement(By.id("formError"));
+        warningMessageMap.put("postcode空判断",warningMessage.getText());
+        submit = myChromeDriver.findElement(By.id("submitAddress"));
         setTextAndClickBtn(postcode,Tools.getUUIDText(),submit);
         warningMessageMap.put("postcode长度判断",warningMessage.getText());
+        //特殊字符
+        postcode.sendKeys("#￥%……&*？=-,.[|*");
+        warningMessageMap.put("postcode特殊字符判断",warningMessage.getText());
+        postcode.clear();
     }
 
     @AfterClass
@@ -161,6 +207,7 @@ public class PersonalInformationEditTestCase {
         for (Map.Entry<String,String> entry:warningMessageMap.entrySet()){
             System.out.println(entry.getKey()+":"+entry.getValue());
         }
+//        select = new Select(customer_country);
         select.selectByVisibleText("United Kingdom");
         setText(elementStringHashMap);
         //提交

@@ -34,6 +34,7 @@ public class PersonalInformationSaveTestCase {
     private static WebElement save;
     private Utils FileUtils;
     private static Select select;
+    private static WebElement formError;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
@@ -45,7 +46,7 @@ public class PersonalInformationSaveTestCase {
         password= myChromeDriver.findElementById("signin_password");
         login= myChromeDriver.findElementById("genericLogin-button");
         emil.sendKeys("1790039849@qq.com");
-        password.sendKeys("123456");
+        password.sendKeys("12345678");
         login.click();
     }
 
@@ -59,7 +60,7 @@ public class PersonalInformationSaveTestCase {
     }
 
     @Test
-    public void testAPut1() {
+    public void testAPut() {
 //        清除原有数据
         firstname=myChromeDriver.findElementById("firstname");
         firstname.clear();
@@ -74,35 +75,86 @@ public class PersonalInformationSaveTestCase {
         }
     }
 
+//    选择title
     @Test
-    public void testBPut2() {
+    public void testBTitle() {
         title=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/div[2]/div/form/div[1]/div/div/select");
         firstname=myChromeDriver.findElementById("firstname");
         lastname=myChromeDriver.findElementById("lastName");
-        save=myChromeDriver.findElementById("submitInformation");
-
         select = new Select(title);
         select.selectByVisibleText("Miss");
         System.out.println("Title选择Miss.");
+    }
 
+//   Firstname为空
+    @Test
+    public void testCFirstname_null() {
         firstname.clear();
         lastname.clear();
-        firstname.sendKeys("Latsen");
-        lastname.sendKeys("");
-//       lastname输入空截图
-        scrFile();
+        firstname.sendKeys(" ");
+        lastname.sendKeys("Latsen");
+    }
 
-        lastname.sendKeys("*&☀♣%￥……？`△");
-//       截取输入特殊字符图片
-        scrFile();
+//    Firstname输入特殊字符
+    @Test
+    public void testDFirstname_sp() {
+        firstname.clear();
+        firstname.sendKeys("@#$%^&*&☀♣%￥……？`△");
+    }
 
+//    Firstname输入长字符
+    @Test
+    public void testEFirstname_max() {
+        firstname.clear();
+        firstname.sendKeys("pawfitdsf259dsh238dhak28dh84hs83hs83hs83hs3hs");
+    }
+
+//    Lastname输入空
+    @Test
+    public void testFLastname_null() {
+        firstname.clear();
         lastname.clear();
-        lastname.sendKeys("testchen");
+        firstname.sendKeys("Pawfit");
+        lastname.sendKeys(" ");
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("Lastname为空："+formError.getText());
+    }
+
+    //    Lastname输入特殊字符
+    @Test
+    public void testGLastname_sp() {
+        lastname.sendKeys("@#$%^&*&☀♣%￥……？`△");
+        save=myChromeDriver.findElementById("submitInformation");
+        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",save);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("Lastname为特殊字符："+formError.getText());
+        scrFile();
+    }
+
+    //    Lastname输入长字符
+    @Test
+    public void testHFirstname_max() {
+        lastname=myChromeDriver.findElementById("lastName");
+        lastname.clear();
+        lastname.sendKeys("pawfitdsf259dsh238dhak28dh84hs83hs83hs83hs3hs");
+        save=myChromeDriver.findElementById("submitInformation");
+        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",save);
+        formError=myChromeDriver.findElementById("formError");
+        System.out.println("Lastname为特殊字符："+formError.getText());
+        scrFile();
+    }
+
+    //    Lastname和firstname输入正确字符
+    @Test
+    public void testIFirstname_right() {
+        lastname=myChromeDriver.findElementById("lastName");
+        lastname.clear();
+        lastname.sendKeys("Latsen");
+        save=myChromeDriver.findElementById("submitInformation");
         ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",save);
         scrFile();
-
-        System.out.println("测试成功！");
     }
+
 
     @AfterClass
     public static void alterClass() {

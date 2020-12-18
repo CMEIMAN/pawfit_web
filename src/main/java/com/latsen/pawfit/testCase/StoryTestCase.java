@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,8 +14,8 @@ import java.io.IOException;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StoryTestCase {
-        private static MyChromeDriver myChromeDriver;
-        private static Driver driver;
+        private static MyChromeDriverSingleton myChromeDriver;
+        private static NewDriver driver;
         private static WebElement read1;
         private static WebElement read2;
         private static WebElement read3;
@@ -25,7 +25,7 @@ public class StoryTestCase {
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        driver = new Driver(Const.STORY_URL);
+        driver = new NewDriver(Const.STORY_URL);
         myChromeDriver = driver.connect();
     }
     @Test

@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -33,13 +33,13 @@ public class How_it_worksTestCase {
     private static WebElement walk_btn2;
     private static WebElement app_store;
     private static WebElement google_play;
-    private static MyChromeDriver myChromeDriver;
-    private static Driver driver;
+    private static MyChromeDriverSingleton myChromeDriver;
+    private static NewDriver driver;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        driver = new Driver(Const.HOW_URL);
+        driver = new NewDriver(Const.HOW_URL);
         myChromeDriver = driver.connect();
         live=myChromeDriver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/div/button[1]");
         live_close=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div[1]/button/span");

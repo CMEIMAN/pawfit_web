@@ -32,26 +32,7 @@ public class NewDriver {
     }
 
 
-//    public String getSessionId() throws IOException {
-//        config=new TestConfig();
-//        if(!config.readSessionId("sessionId").equals("test")){
-//            sessionId=config.readSessionId("sessionId");
-//            return sessionId;
-//        }
-//        else {
-//            sessionId="";
-//            try {
-//                config.writeSessionId(sessionId);
-//                config.close();
-//
-//            }
-//            catch (MalformedURLException e){
-//                System.out.println(e);
-//            }
-//            return sessionId;
-//        }
-//
-//    }
+
 
     public String getSessionId() throws IOException {
         config=new TestConfig();

@@ -2,7 +2,10 @@ package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.Driver;
+import com.latsen.pawfit.common.NewDriver;
 import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
+
 import org.junit.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -14,8 +17,8 @@ import org.testng.annotations.Test;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HomePageTestCase {
-    private static Driver driver;
-    private static MyChromeDriver myChromeDriver;
+    private static NewDriver driver;
+    private static MyChromeDriverSingleton myChromeDriver;
     private static WebElement walk_learn_more;
     private static WebElement shop_now;
     private static WebElement about_pawfit;
@@ -36,7 +39,7 @@ public class HomePageTestCase {
 
    @BeforeClass
     public static void beforeClass() throws IOException {
-        driver=new Driver(Const.HOME_URL);
+        driver=new NewDriver(Const.HOME_URL);
         myChromeDriver=driver.connect();
 //        walk_learn_more=myChromeDriver.findElementByXPath("/html/body/section[1]/div[1]/div/div/a/button");
     }
