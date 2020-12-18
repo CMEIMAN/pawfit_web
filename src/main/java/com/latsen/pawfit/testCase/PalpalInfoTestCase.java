@@ -1,8 +1,8 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
-import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.common.NewDriver;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import com.latsen.pawfit.utils.Tools;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import com.latsen.pawfit.utils.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PalpalInfoTestCase {
@@ -36,8 +37,8 @@ public class PalpalInfoTestCase {
     private static HashMap<WebElement,String> webElements;
     private static WebElement submitOrder;
     private static Select countrySelect;
-    private static MyChromeDriver driver;
-    private static Driver webdriver;
+    private static MyChromeDriverSingleton driver;
+    private static NewDriver webdriver;
     private static WebElement add;
     private static WebElement checkout;
     private Utils FileUtils;
@@ -45,7 +46,7 @@ public class PalpalInfoTestCase {
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        webdriver = new Driver(Const.PRODUCT_URL);
+        webdriver = new NewDriver(Const.PRODUCT_URL);
         driver = webdriver.connect();
 
 //        添加商品到购物车
@@ -62,7 +63,6 @@ public class PalpalInfoTestCase {
         checkout.click();
 
         webElements=new HashMap<WebElement, String>();
-//      定位元素
         submitOrder=driver.findElement(By.id("submitOrder"));
         checkboxOfCreateAnAccount=driver.findElementById("cbox");
         password=driver.findElementById("customer.clearPassword");
@@ -79,11 +79,12 @@ public class PalpalInfoTestCase {
        FileUtils.copyFile(screen,new File(screenPath));
     }
 
-    @Test
+    @Test//      定位元素
+
     public void testAcheckFitstName() {
         /*长度判断*/
         firstName=driver.findElement(By.id("customer.firstName"));
-        setAllText(firstName, Tools.getUUIDText());
+        Tools.setAllText(firstName,submitOrder, Tools.getUUIDText());
 //        scrFile();
         /*SQL注入*/
         injectSQLs(firstName);
@@ -93,7 +94,7 @@ public class PalpalInfoTestCase {
     @Test
     public void testBcheckLastName() {
         lastName=driver.findElement(By.id("customer.lastName"));
-        setAllText(lastName,Tools.getUUIDText());
+        Tools.setAllText(lastName,submitOrder,Tools.getUUIDText());
 //        scrFile();
         injectSQLs(lastName);
         webElements.put(lastName,"latsen");
@@ -102,7 +103,7 @@ public class PalpalInfoTestCase {
     @Test
     public void testCcompany() {
         company=driver.findElement(By.id("customer.billing.company"));
-        setAllText(company,Tools.getUUIDText());
+        Tools.setAllText(company,submitOrder,Tools.getUUIDText());
 //        scrFile();
         injectSQLs(company);
         webElements.put(company,"广东顺德雷舜信息科技有限公司");
@@ -111,7 +112,7 @@ public class PalpalInfoTestCase {
     @Test
     public void testDcheakAddress() {
         address=driver.findElement(By.id("customer.billing.address"));
-        setAllText(address,Tools.getUUIDText());
+        Tools.setAllText(address,submitOrder,Tools.getUUIDText());
         injectSQLs(address);
         webElements.put(address,"中国广东顺德大良");
     }
@@ -119,7 +120,7 @@ public class PalpalInfoTestCase {
     @Test
     public void testEcheakCity() {
         city=driver.findElement(By.id("customer.billing.city"));
-        setAllText(city,Tools.getUUIDText());
+        Tools.setAllText(city,submitOrder,Tools.getUUIDText());
         injectSQLs(city);
         webElements.put(city,"佛山");
     }
@@ -135,7 +136,7 @@ public class PalpalInfoTestCase {
     @Test
     public void testGcheckProvince() {
         province=driver.findElement(By.name("customer.billing.stateProvince"));
-        setAllText(province,Tools.getUUIDText());
+        Tools.setAllText(province,submitOrder,Tools.getUUIDText());
         injectSQLs(province);
         webElements.put(province,"广东省");
     }
@@ -143,14 +144,14 @@ public class PalpalInfoTestCase {
     @Test
     public void testHcheckPostalCode() {
         postalCode=driver.findElement(By.name("customer.billing.postalCode"));
-        setAllText(postalCode,Tools.getUUIDText());
+        Tools.setAllText(postalCode,submitOrder,Tools.getUUIDText());
         injectSQLs(postalCode);webElements.put(postalCode,"M2 5BQ");
     }
 
     @Test
     public void testIcheckEmail() {
         email=driver.findElement(By.id("customer.emailAddress"));
-        setAllText(email,Tools.getUUIDText());
+        Tools.setAllText(email,submitOrder,Tools.getUUIDText());
         injectSQLs(email);
         webElements.put(email,"1401734643@qq.com");
     }
@@ -158,7 +159,7 @@ public class PalpalInfoTestCase {
     @Test
     public void testJcheckPhoneNumber() {
         phoneNumber=driver.findElement(By.name("customer.billing.phone"));
-        setAllText(phoneNumber,Tools.getUUIDText());
+        Tools.setAllText(phoneNumber,submitOrder,Tools.getUUIDText());
         injectSQLs(phoneNumber);
         webElements.put(phoneNumber,"19197032890");
     }
@@ -170,22 +171,22 @@ public class PalpalInfoTestCase {
 
     @Test
     public void testLcheckPassword() {
-        setAllText(password,Tools.getUUIDText());
+        Tools.setAllText(password,submitOrder,Tools.getUUIDText());
         injectSQLs(password);
         webElements.put(password,"12345678");
     }
     @Test
     public void testMcheckCheckboxOfOrderNote() {
-        setAllText(checkboxOfOrderNote,Tools.getUUIDText());
+        Tools.setAllText(checkboxOfOrderNote,submitOrder,Tools.getUUIDText());
         injectSQLs(checkboxOfOrderNote);
         webElements.put(checkboxOfOrderNote,"12345678");
     }
 
     @Test
     public void testVcheackSubmitOrder() {
-        clearText(webElements);
+        Tools.clearText(webElements);
         scrFile();
-        setText(webElements);
+        Tools.setText(webElements);
         scrFile();
         submitOrder.click();
         scrFile();
@@ -219,21 +220,6 @@ public class PalpalInfoTestCase {
         }
 
     }
-    public void setAllText(WebElement element,String str){
-        element.sendKeys(str,Tools.getUUIDText());
-        submitOrder.click();
-        element.clear();
-    }
 
-    public void clearText(HashMap<WebElement,String> maps){
-        for (Map.Entry<WebElement,String> hashMap:maps.entrySet()) {
-            hashMap.getKey().clear();
-        }
-    }
-    public void setText(HashMap<WebElement,String> maps){
-        for (Map.Entry<WebElement,String> hashMap:maps.entrySet()) {
-            hashMap.getKey().sendKeys(hashMap.getValue());
-        }
-    }
 
 }

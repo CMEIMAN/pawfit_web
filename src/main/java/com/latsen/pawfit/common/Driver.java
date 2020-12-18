@@ -2,6 +2,7 @@ package com.latsen.pawfit.common;
 
 import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.driver.MyChromeDriver;
+import com.latsen.pawfit.utils.Tools;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -82,12 +83,10 @@ public class Driver {
 
         }
         catch (Exception e){
-            System.out.println("出现异常");
+            System.out.println(e.getCause());
         }
         myChromeDriver.manage().window().setSize(new Dimension(1920,1080));
         myChromeDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-//        new WebDriverWait(myChromeDriver,10, (long) 0.5).until(ExpectedConditions.visibilityOf(myChromeDriver.findElementById("exampleInputEmail2")));
         return myChromeDriver;
     }
 
@@ -108,9 +107,12 @@ public class Driver {
         String newSessionId1 = driver1.getSessionId().toString();
         try {
             driver.setSessionId(newSessionId1);
-            driver.get("http://www.baidu.com");
-            driver.findElement(By.cssSelector("#kw")).sendKeys("good");
-            driver.findElement(By.cssSelector("#su")).click();
+            driver.get("https://www.baidu.com/");
+            Boolean exists=Tools.checkElementExistsById(driver,"kdkdkdkdkdkekd",30);
+            System.out.println(exists);
+
+//            driver.findElement(By.cssSelector("#kw")).sendKeys("good");
+//            driver.findElement(By.cssSelector("#su")).click();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
