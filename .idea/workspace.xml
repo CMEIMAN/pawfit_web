@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="添加login和register断言&#10;添加JavaTool封装断言">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/JavaTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/JavaTools.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\Admin\AppData\Local\JetBrains\Toolbox\apps\IDEA-C\ch-0\202.6397.94\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1fla0pnneG5m2ojoR4feGY8lVjh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/pythonrepo" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager" selected="TestNG.RegisterTestCase">
+    <configuration name="RegisterTestCase (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="seleiumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.RegisterTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTestCase (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="seleiumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.RegisterTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTestCase (3)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="seleiumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.RegisterTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="seleiumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.RegisterTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterTestCase.testKEmail_long" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="seleiumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.RegisterTestCase" />
+      <option name="METHOD_NAME" value="testKEmail_long" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.RegisterTestCase" />
+        <item itemvalue="TestNG.RegisterTestCase (3)" />
+        <item itemvalue="TestNG.RegisterTestCase.testKEmail_long" />
+        <item itemvalue="TestNG.RegisterTestCase (2)" />
+        <item itemvalue="TestNG.RegisterTestCase (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="" />
+      <created>1596794912476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596794912476</updated>
+    </task>
+    <task id="LOCAL-00001" summary="练习">
+      <created>1596798486008</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596798486008</updated>
+    </task>
+    <task id="LOCAL-00002" summary="美满用例添加">
+      <created>1607047365116</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607047365116</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改截图方法和forgotPassword的testcase">
+      <created>1607066630661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607066630661</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加login和register断言&#10;添加JavaTool封装断言">
+      <created>1608258366629</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608258366629</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="练习" />
+    <MESSAGE value="美满用例添加" />
+    <MESSAGE value="修改截图方法和forgotPassword的testcase" />
+    <MESSAGE value="修改和完善changePasword，EmailSubscription，forgotPassword，login，Palpalinfo，PersonalInformationEdit,PersonalInformationSave,referral_code,Register的testCase" />
+    <MESSAGE value="添加login和register断言&#10;添加JavaTool封装断言" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加login和register断言&#10;添加JavaTool封装断言" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="736" y="413" width="447" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599893183704">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="736" y="413" width="447" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1599893183704" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1600244936224">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600244936224" />
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1608199429159">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429159" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1608199429159">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429159" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1608199429158">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429158" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1608199429159">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429159" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1607066774714">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607066774714" />
+    <state x="595" y="280" key="MultipleFileMergeDialog" timestamp="1608258398009">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="595" y="280" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608258398009" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1607334689992">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607334689992" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608275757064">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608275757064" />
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608258378725">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608258378725" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.openqa.selenium.remote.ScreenshotException" package="org.openqa.selenium.remote" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

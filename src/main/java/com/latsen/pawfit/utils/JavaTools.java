@@ -1,5 +1,10 @@
 package com.latsen.pawfit.utils;
+import com.latsen.pawfit.common.NewDriver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import com.latsen.pawfit.driver.MyChromeDriverSingleton;
+import com.latsen.pawfit.Const.Const;
 
 
 public class JavaTools {
@@ -7,6 +12,9 @@ public class JavaTools {
     public static boolean currentFlog() {
         return flog;
     }
+    private static NewDriver driver;
+    private static MyChromeDriverSingleton myChromeDriver;
+
     /*
      * 封装断言
      */
@@ -35,5 +43,18 @@ public class JavaTools {
             setFlag(false);
         }
     }
+
+
+//通过js点击
+     public void clickByJs(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
+        //第二种点击方法
+         //        ((JavascriptExecutor) driver).executeScript("arguments[0].click()", question);
+            }
+
+
+
+
 
 }
