@@ -39,7 +39,7 @@ public class RegisterTestCase {
     private static Map<String,String> warningMessageMap;
     private static WebElement agree_email;
     private static WebElement check;
-    private static JavaTools assertion;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
@@ -49,7 +49,7 @@ public class RegisterTestCase {
         warningMessageMap=new HashMap<String, String>();
         myChromeDriver = driver.connect();
         webDriverWait=new WebDriverWait(myChromeDriver,10l,1l);
-        assertion=new JavaTools();
+        javaTools=new JavaTools();
 
         warningMessage=myChromeDriver.findElement(By.id("registrationError"));
         firstName = myChromeDriver.findElement(By.id("firstName"));
@@ -76,7 +76,7 @@ public class RegisterTestCase {
         //空判断
         submit.click();
         warningMessageMap.put("首名空判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Last name is required","测试首名空提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Last name is required","测试首名空提示错误：");
     }
 
     @Test
@@ -90,7 +90,7 @@ public class RegisterTestCase {
     public void testCFirstName_sp() {
         firstName.clear();
         firstName.sendKeys("@#$%^^&*△?");
-        assertion.verifyassert(warningMessage.getText(),"Last name is required","测试首名特殊字符提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Last name is required","测试首名特殊字符提示错误：");
     }
 
     @Test
@@ -98,7 +98,7 @@ public class RegisterTestCase {
         //空判断
         submit.click();
         warningMessageMap.put("次名空判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Last name is required","测试次名空提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Last name is required","测试次名空提示错误：");
     }
 
     @Test
@@ -113,7 +113,7 @@ public class RegisterTestCase {
         lastName.clear();
         lastName.sendKeys("@#$%^^&*△?");
         warningMessageMap.put("次名特殊字符判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Fields cannot be blank strings or too long.","测试次名特殊字符提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Fields cannot be blank strings or too long.","测试次名特殊字符提示错误：");
     }
 
     @Test
@@ -133,14 +133,14 @@ public class RegisterTestCase {
     public void testIProvince_sp() {
         province.clear();
         province.sendKeys("@#$%^^&*△?");
-        assertion.verifyassert(warningMessage.getText(),"Email address is required","测试Province特殊字符提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Email address is required","测试Province特殊字符提示错误：");
     }
 
     @Test
     public void testJEmail_null() {
         email.click();
         warningMessageMap.put("邮箱空判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Email address is required","测试邮箱空提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Email address is required","测试邮箱空提示错误：");
     }
 
     @Test
@@ -150,7 +150,7 @@ public class RegisterTestCase {
         email.sendKeys("112111111111111111112322323235454565654343434");
         password.click();
         warningMessageMap.put("邮箱长度判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Fields cannot be blank strings or too long.","测试邮箱长度判断提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Fields cannot be blank strings or too long.","测试邮箱长度判断提示错误：");
     }
 
     @Test
@@ -159,7 +159,7 @@ public class RegisterTestCase {
         email.sendKeys("@#$%^^&*△?");
         password.click();
         warningMessageMap.put("邮箱特殊字符判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Please provide a valid email address.","测试邮箱特殊字符提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Please provide a valid email address.","测试邮箱特殊字符提示错误：");
 
     }
 
@@ -176,7 +176,7 @@ public class RegisterTestCase {
     public void testNPassword_null() {
         password.click();
         warningMessageMap.put("密码空判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Fields cannot be blank strings or too long.","测试密码空提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Fields cannot be blank strings or too long.","测试密码空提示错误：");
     }
 
     @Test
@@ -191,14 +191,14 @@ public class RegisterTestCase {
         password.sendKeys("123");
         rePassword.click();
         warningMessageMap.put("密码长度判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Your password should be between 6 and 30 characters in length.","测试密码长度提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Your password should be between 6 and 30 characters in length.","测试密码长度提示错误：");
     }
     @Test
     public void testPPassword_sp(){
         password.clear();
         password.sendKeys("@#$%^^&*△?");
         warningMessageMap.put("密码长度特殊字符判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Please enter a password","测试密码特殊字符提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Please enter a password","测试密码特殊字符提示错误：");
     }
 
     @Test
@@ -216,7 +216,7 @@ public class RegisterTestCase {
         //长度判断
         setTextAndClickBtn(rePassword,Tools.getUUIDText(),submit);
         warningMessageMap.put("二次密码长度判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Please repeat the password","测试确认密码长度提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Please repeat the password","测试确认密码长度提示错误：");
     }
 
     @Test
@@ -224,7 +224,7 @@ public class RegisterTestCase {
         rePassword.clear();
         rePassword.sendKeys("@#$%^^&*△?");
         warningMessageMap.put("二次密码特殊字符判断",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Please repeat the password","测试确认密码特殊字符提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Please repeat the password","测试确认密码特殊字符提示错误：");
     }
 
     @Test
@@ -237,11 +237,16 @@ public class RegisterTestCase {
         rePassword.clear();
         rePassword.sendKeys("444444444");
         password.click();
-        assertion.verifyassert(warningMessage.getText(),"Both password must match","测试确认密码错误提示错误：");
+        javaTools.verifyassert(warningMessage.getText(),"Both password must match","测试确认密码错误提示错误：");
     }
 
+    //邮箱已经注册过
     @Test
-    public void testUagree_email() {
+    public void testUEmail_exit() {
+
+    }
+    @Test
+    public void testVagree_email() {
         agree_email.click();
     }
 

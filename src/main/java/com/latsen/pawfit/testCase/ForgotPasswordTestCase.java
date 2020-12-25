@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ForgotPasswordTestCase{
@@ -34,12 +35,15 @@ public class ForgotPasswordTestCase{
     private static WebElement eye1;
     private static WebElement eye2;
     private Utils FileUtils;
+    private static JavaTools javaTools;
+
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         driver = new NewDriver(Const.LOGiN_URL);
         myChromeDriver = driver.connect();
         System.out.println("已经执行");
+        javaTools=new JavaTools();
 
         forgot_btn=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/form/p[1]/a");
         forgot_btn.click();
@@ -49,14 +53,14 @@ public class ForgotPasswordTestCase{
         nextStep=myChromeDriver.findElementById("NextStep");
     }
 
-    //截图
-    public void scrFile(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
-        String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
-        String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
-        File srcFile = ((TakesScreenshot)myChromeDriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
-        FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\forgotpassword", Name+"_"+time + ".png"));
-    }
+//    //截图
+//    public void scrFile(){
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
+//        String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
+//        String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
+//        File srcFile = ((TakesScreenshot)myChromeDriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
+//        FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\forgotpassword", Name+"_"+time + ".png"));
+//    }
 
     @Test
     public void testAput() {
@@ -83,13 +87,14 @@ public class ForgotPasswordTestCase{
     }
 
     @Test
-    public void testCemail_sp() throws InterruptedException{
+    public void testCemail_sp() throws InterruptedException, IOException {
         //        输入特殊字符的email
         email.sendKeys("$@#^&*?/+_{}|");
         send.click();
         Thread.sleep(3000);
         formError1=myChromeDriver.findElementById("formError");
         System.out.print("email输入特殊字符："+formError1.getText());
+        javaTools.scrFile(myChromeDriver);
         email.clear();
     }
 
@@ -245,7 +250,7 @@ public class ForgotPasswordTestCase{
         eye1.click();
         eye2.click();
         confirm.click();
-        scrFile();
+//        scrFile();
     }
 
 

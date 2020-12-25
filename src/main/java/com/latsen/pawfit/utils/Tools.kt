@@ -186,6 +186,7 @@ class Tools {
                         webDriver.findElement(By.tagName(webElementName))
                     }
                     flag = true
+                    Thread.sleep(1000)
                     return flag;
                 }
                 catch (exception:Exception){

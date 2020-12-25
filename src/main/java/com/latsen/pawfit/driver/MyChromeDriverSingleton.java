@@ -31,7 +31,7 @@ public class MyChromeDriverSingleton extends RemoteWebDriver {
         }
     }
 
-    private MyChromeDriverSingleton() {
+    public MyChromeDriverSingleton() {
         super(url,desiredCapabilities);
     }
     @Override

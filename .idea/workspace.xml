@@ -23,7 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="添加login和register断言&#10;添加JavaTool封装断言">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/driver/MyChromeDriverSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/driver/MyChromeDriverSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ForgotPasswordTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ForgotPasswordTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Login_logoutTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Login_logoutTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/RegisterTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/RegisterTestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/JavaTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/JavaTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/Tools.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/Tools.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/Const/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/Const/Const.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/common/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/common/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/common/NewDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/common/NewDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/demo/Demo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/demo/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/demo/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/driver/MyChromeDriverSingleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/driver/MyChromeDriverSingleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/RegisterTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/RegisterTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/JavaTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/JavaTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +80,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/pythonrepo" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="TestNG.RegisterTestCase">
-    <configuration name="RegisterTestCase (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ForgotPasswordTestCase.testCemail_sp">
+    <configuration name="ForgotPasswordTestCase.testCemail_sp" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="seleiumtest" />
       <extension name="coverage">
         <pattern>
@@ -70,15 +90,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.RegisterTestCase" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.ForgotPasswordTestCase" />
+      <option name="METHOD_NAME" value="testCemail_sp" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegisterTestCase (2)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Login_logoutTestCase.testCboth_sp" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="seleiumtest" />
       <extension name="coverage">
         <pattern>
@@ -87,8 +108,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.RegisterTestCase" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.Login_logoutTestCase" />
+      <option name="METHOD_NAME" value="testCboth_sp" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -149,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ForgotPasswordTestCase.testCemail_sp" />
+        <item itemvalue="TestNG.Login_logoutTestCase.testCboth_sp" />
         <item itemvalue="TestNG.RegisterTestCase" />
         <item itemvalue="TestNG.RegisterTestCase (3)" />
         <item itemvalue="TestNG.RegisterTestCase.testKEmail_long" />
-        <item itemvalue="TestNG.RegisterTestCase (2)" />
-        <item itemvalue="TestNG.RegisterTestCase (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608258366629</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加login和register断言&#10;添加JavaTool封装断言">
+      <created>1608285186431</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608285186431</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,30 +247,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="添加login和register断言&#10;添加JavaTool封装断言" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="736" y="413" width="447" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599893183704">
+    <state x="572" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608809253839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="736" y="413" width="447" height="221" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1599893183704" />
+    <state x="572" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608809253839" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1600244936224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600244936224" />
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1608199429159">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1608811564158">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429159" />
-    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1608199429159">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608811564158" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1608811564158">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429159" />
-    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1608199429158">
+    <state width="1877" height="375" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608811564158" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1608811564158">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429158" />
-    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1608199429159">
+    <state width="1877" height="375" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608811564158" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1608811564158">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608199429159" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608811564158" />
     <state x="184" y="86" key="MergeDialog" timestamp="1607066774714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -254,14 +283,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607334689992" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608275757064">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608285192581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608275757064" />
-    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608258378725">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608285192581" />
+    <state x="466" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1608806434280">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608258378725" />
+    <state x="466" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608806434280" />
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608285220851">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608285220851" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

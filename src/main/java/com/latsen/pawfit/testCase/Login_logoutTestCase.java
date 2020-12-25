@@ -3,6 +3,7 @@ package com.latsen.pawfit.testCase;
 import com.latsen.pawfit.Const.Const;
 import com.latsen.pawfit.common.NewDriver;
 import com.latsen.pawfit.driver.MyChromeDriverSingleton;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -28,7 +29,7 @@ public class Login_logoutTestCase {
     private static WebElement logout;
     private static Map<String,String> warningMessageMap;
     private static HashMap<WebElement, String> elementStringHashMap;
-    private static JavaTools assertion;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
@@ -37,7 +38,7 @@ public class Login_logoutTestCase {
         myChromeDriver = driver.connect();
         warningMessageMap=new HashMap<String, String>();
         elementStringHashMap = new HashMap<WebElement, String>();
-        assertion =new JavaTools();
+        javaTools =new JavaTools();
 
         email=myChromeDriver.findElementById("signin_userName");
         password=myChromeDriver.findElementById("signin_password");
@@ -67,20 +68,23 @@ public class Login_logoutTestCase {
         Thread.sleep(2000);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email和Password输入空",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
     }
 
     @Test
-    public void testCboth_sp() {
+    public void testCboth_sp() throws IOException {
         //        email和password输入特殊字符
-        email.sendKeys("&%……￥#@*？~");
-        password.sendKeys("&%……￥#@*？~");
-        submit.click();
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
-        warningMessageMap.put("Email和Password输入特殊字符",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-        email.clear();
-        password.clear();
+        javaTools.inputText(myChromeDriver,"&%……￥#@*？~",email);
+        javaTools.inputText(myChromeDriver,"&%……￥#@*？~",password);
+//        email.sendKeys("&%……￥#@*？~");
+//        password.sendKeys("&%……￥#@*？~");
+        javaTools.click(submit);
+
+//        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+//        warningMessageMap.put("Email和Password输入特殊字符",warningMessage.getText());
+//        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+//        email.clear();
+//        password.clear();
     }
 
     @Test
@@ -91,7 +95,7 @@ public class Login_logoutTestCase {
         submit.click();
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入空",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         email.clear();
     }
 
@@ -103,7 +107,7 @@ public class Login_logoutTestCase {
         submit.click();
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email错误，Password输入正确",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         email.clear();
         password.clear();
     }
@@ -116,7 +120,7 @@ public class Login_logoutTestCase {
         submit.click();
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email输入特殊字符，Password输入正确误",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         email.clear();
         password.clear();
     }
@@ -129,7 +133,7 @@ public class Login_logoutTestCase {
         submit.click();
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入特殊字符",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         email.clear();
         password.clear();
     }
@@ -142,7 +146,7 @@ public class Login_logoutTestCase {
         submit.click();
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入小于6字符长度",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         email.clear();
         password.clear();
     }
@@ -155,7 +159,7 @@ public class Login_logoutTestCase {
         submit.click();
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入大于30字符长度",warningMessage.getText());
-        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         email.clear();
         password.clear();
     }
