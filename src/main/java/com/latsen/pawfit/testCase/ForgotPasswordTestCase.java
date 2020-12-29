@@ -8,14 +8,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.testng.internal.Utils;
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -34,7 +28,6 @@ public class ForgotPasswordTestCase{
     private static WebElement formError1;
     private static WebElement eye1;
     private static WebElement eye2;
-    private Utils FileUtils;
     private static JavaTools javaTools;
 
 
@@ -53,14 +46,6 @@ public class ForgotPasswordTestCase{
         nextStep=myChromeDriver.findElementById("NextStep");
     }
 
-//    //截图
-//    public void scrFile(){
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
-//        String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
-//        String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
-//        File srcFile = ((TakesScreenshot)myChromeDriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
-//        FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\forgotpassword", Name+"_"+time + ".png"));
-//    }
 
     @Test
     public void testAput() {
@@ -68,78 +53,78 @@ public class ForgotPasswordTestCase{
             email.sendKeys("" + Const.getCommomText()[i]);
             emailCode.sendKeys("" + Const.getCommomText()[i]);
         }
-        email.clear();
-        emailCode.clear();
+        javaTools.clear(email);
+        javaTools.clear(emailCode);
     }
 
     @Test
     public void testBemail_null() throws InterruptedException{
 //        email输入空字符
-        email.sendKeys("");
-        send.click();
-        Thread.sleep(2000);
+        javaTools.inputText(myChromeDriver,"",email);
+        javaTools.click(send);
+        javaTools.sleep(2000);
         formError1=myChromeDriver.findElementById("formError");
         System.out.println("email输入空,点击发送验证码："+formError1.getText());
-        nextStep.click();
+        javaTools.click(nextStep);
         formError1=myChromeDriver.findElementById("formError");
         System.out.print("email输入空，点击下一步："+formError1.getText());
-        email.clear();
+        javaTools.clear(email);
     }
 
     @Test
     public void testCemail_sp() throws InterruptedException, IOException {
         //        输入特殊字符的email
-        email.sendKeys("$@#^&*?/+_{}|");
-        send.click();
-        Thread.sleep(3000);
+        javaTools.inputText(myChromeDriver,"$@#^&*?/+_{}|",email);
+        javaTools.click(send);
+        javaTools.sleep(2000);
         formError1=myChromeDriver.findElementById("formError");
         System.out.print("email输入特殊字符："+formError1.getText());
         javaTools.scrFile(myChromeDriver);
-        email.clear();
+        javaTools.clear(email);
     }
 
     @Test
     public void testDemail_error() throws InterruptedException{
         //        输入错误email
-        email.sendKeys("11111111111");
-        send.click();
-        Thread.sleep(3000);
+        javaTools.inputText(myChromeDriver,"11111111111",email);
+        javaTools.click(send);
+        javaTools.sleep(2000);
         formError1=myChromeDriver.findElementById("formError");
         System.out.print("email输入错误："+formError1.getText());
-        email.clear();
+        javaTools.clear(email);
     }
 
     @Test
     public void testEemail_right() {
         //        输入正确email
-        email.sendKeys("1790039849@qq.com");
-        send.click();
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
+        javaTools.clear(email);
     }
 
     @Test
     public void testFcode_error() throws InterruptedException{
         //        输入错误验证码
-        emailCode.sendKeys("111111111");
-        nextStep.click();
-        Thread.sleep(3000);
+        javaTools.inputText(myChromeDriver,"111111111",emailCode);
+        javaTools.click(nextStep);
+        javaTools.sleep(2000);
         formError1=myChromeDriver.findElementById("formError");
         System.out.print("验证码输入错误："+formError1.getText());
-        emailCode.clear();
+        javaTools.clear(emailCode);
     }
 
     //输入特殊字符验证码
     @Test
     public void testGcode_error()throws InterruptedException {
-        emailCode.sendKeys("$@#^&*?/+_{}|");
-        nextStep.click();
+        javaTools.inputText(myChromeDriver,"$@#^&*?/+_{}|",emailCode);
+        javaTools.click(nextStep);
         formError1=myChromeDriver.findElementById("formError");
         System.out.println("验证码输入特殊字符："+formError1.getText());
-        emailCode.clear();
+        javaTools.clear(emailCode);
 
         //输入正确验证码，手动输入
-        send.click();
+        javaTools.click(send);
         System.out.println("等待25s,手动输入验证码！");
-        Thread.sleep(25000);
+        javaTools.sleep(25000);
     }
 
     @Test
@@ -150,8 +135,8 @@ public class ForgotPasswordTestCase{
             newepassword.sendKeys("" + Const.getCommomText()[i]);
             confirmpassword.sendKeys("" + Const.getCommomText()[i]);
         }
-        newepassword.clear();
-        confirmpassword.clear();
+        javaTools.clear(newepassword);
+        javaTools.clear(confirmpassword);
     }
 
     //输入新密码为空
@@ -160,8 +145,8 @@ public class ForgotPasswordTestCase{
         newepassword=myChromeDriver.findElementById("password");
         confirm=myChromeDriver.findElementById("NextStep");
         formError=myChromeDriver.findElementById("formError");
-        newepassword.sendKeys("");
-        confirm.click();
+        javaTools.inputText(myChromeDriver,"",newepassword);
+        javaTools.click(confirm);
         System.out.println("新密码为空："+formError.getText());
     }
 
@@ -171,10 +156,10 @@ public class ForgotPasswordTestCase{
         newepassword=myChromeDriver.findElementById("password");
         confirm=myChromeDriver.findElementById("NextStep");
         formError=myChromeDriver.findElementById("formError");
-        newepassword.sendKeys("$@#^&*?/+_{}|");
-        confirm.click();
+        javaTools.inputText(myChromeDriver,"$@#^&*?/+_{}|",newepassword);
+        javaTools.click(confirm);
         System.out.println("新密码为特殊字符："+formError.getText());
-        newepassword.clear();
+        javaTools.clear(newepassword);
     }
 
     //输入正确新密码，确认密码为空
@@ -184,9 +169,9 @@ public class ForgotPasswordTestCase{
         confirmpassword=myChromeDriver.findElementById("checkPassword");
         confirm=myChromeDriver.findElementById("NextStep");
         formError=myChromeDriver.findElementById("formError");
-        newepassword.sendKeys("12345678");
-        confirmpassword.sendKeys("");
-        confirm.click();
+        javaTools.inputText(myChromeDriver,"12345678",newepassword);
+        javaTools.inputText(myChromeDriver,"",confirmpassword);
+        javaTools.click(confirm);
         System.out.println("确认密码为空："+formError.getText());
     }
 
@@ -197,11 +182,11 @@ public class ForgotPasswordTestCase{
         confirmpassword=myChromeDriver.findElementById("checkPassword");
         confirm=myChromeDriver.findElementById("NextStep");
         formError=myChromeDriver.findElementById("formError");
-        newepassword.sendKeys("12345678");
-        confirmpassword.sendKeys("$@#^&*?/+_{}|");
-        confirm.click();
+        javaTools.inputText(myChromeDriver,"12345678",newepassword);
+        javaTools.inputText(myChromeDriver,"$@#^&*?/+_{}|",confirmpassword);
+        javaTools.click(confirm);
         System.out.println("确认密码为特殊字符："+formError.getText());
-        confirmpassword.clear();
+        javaTools.clear(confirmpassword);
     }
 
     //输入的确认密码和新密码不一致
@@ -211,12 +196,12 @@ public class ForgotPasswordTestCase{
         confirmpassword=myChromeDriver.findElementById("checkPassword");
         confirm=myChromeDriver.findElementById("NextStep");
         formError=myChromeDriver.findElementById("formError");
-        newepassword.sendKeys("12345678");
-        confirmpassword.sendKeys("123456");
-        confirm.click();
+        javaTools.inputText(myChromeDriver,"12345678",newepassword);
+        javaTools.inputText(myChromeDriver,"123456",confirmpassword);
+        javaTools.click(confirm);
         System.out.println("新密码和确认密码不一致："+formError.getText());
-        confirmpassword.clear();
-        newepassword.clear();
+        javaTools.clear(confirmpassword);
+        javaTools.clear(newepassword);
     }
 
     //输入小于6字符长度的新密码
@@ -226,31 +211,31 @@ public class ForgotPasswordTestCase{
         confirmpassword=myChromeDriver.findElementById("checkPassword");
         confirm=myChromeDriver.findElementById("NextStep");
         formError=myChromeDriver.findElementById("formError");
-        newepassword.sendKeys("1234");
-        confirmpassword.sendKeys("1234");
-        confirm.click();
+        javaTools.inputText(myChromeDriver,"123",newepassword);
+        javaTools.inputText(myChromeDriver,"123",confirmpassword);
+        javaTools.click(confirm);
         System.out.println("密码长度小于6字符："+formError.getText());
-        confirmpassword.clear();
-        newepassword.clear();
+        javaTools.clear(confirmpassword);
+        javaTools.clear(newepassword);
     }
 
 
     //输入正确的新密码和确认密码
     @Test
-    public void testOconfirmpassword_right() {
+    public void testOconfirmpassword_right() throws IOException {
         newepassword=myChromeDriver.findElementById("password");
         confirmpassword=myChromeDriver.findElementById("checkPassword");
         confirm=myChromeDriver.findElementById("NextStep");
         formError=myChromeDriver.findElementById("formError");
-        newepassword.sendKeys("12345678");
-        confirmpassword.sendKeys("12345678");
+        javaTools.inputText(myChromeDriver,"12345678",newepassword);
+        javaTools.inputText(myChromeDriver,"12345678",confirmpassword);
         //显示密码
         eye1=myChromeDriver.findElementById("togglePassword_customer_new");
         eye2=myChromeDriver.findElementById("togglePassword_customer_repeat");
-        eye1.click();
-        eye2.click();
-        confirm.click();
-//        scrFile();
+        javaTools.click(eye1);
+        javaTools.click(eye2);
+        javaTools.click(confirm);
+        javaTools.scrFile(myChromeDriver);
     }
 
 

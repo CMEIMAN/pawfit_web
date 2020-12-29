@@ -2,13 +2,9 @@ package com.latsen.pawfit.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import com.latsen.pawfit.driver.MyChromeDriverSingleton;
-import com.latsen.pawfit.common.NewDriver;
-
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -61,12 +57,15 @@ public class JavaTools {
         File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
         File file=new File("C:\\Users\\Admin\\web_test\\src\\img\\"+Name1);
         if(!file.exists()){//如果文件夹不存在
-            file.mkdir();//创建文件夹
+            try {
+                file.mkdir();//创建文件夹
+                System.out.println("创建文件路径成功");
+            }catch (Exception e){
+                System.out.println("创建文件失败");
+            }
         }
-        else
-            System.out.print("已存在该文件夹！");
 
-        FileUtils.copyFile(srcFile, new File(file, Name1+"_"+Name2+"_"+time + ".png"));
+        FileUtils.copyFile(srcFile, new File(file, Name2+"_"+time + ".png"));
     }
 
     //通过js点击
@@ -80,23 +79,42 @@ public class JavaTools {
         element.click();
     }
 
-    //js输入文本
+    //输入文本
     public void inputText(WebDriver driver,String text, WebElement element) {
         element.sendKeys(text);
     }
 
-    //js清空文本
+    //清空文本
     public void clear(WebElement element) {
         element.clear();
     }
 
+    //返回上一页
+    public void back(WebDriver driver) {
+        driver.navigate().back();
+    }
+
+    //返回下一页
+    public void forward(WebDriver driver) {
+        driver.navigate().forward();
+    }
+
+    //刷新
+    public void refresh(WebDriver driver) {
+        driver.navigate().refresh();
+    }
+
     //滚动到最上方
-    public void scrollToTop() {
+    public void scrollToTop(WebDriver driver) {
                 ((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0);");
         //        JavascriptExecutor js = (JavascriptExecutor) driver;
         //        js.executeScript("window.scrollTo(0,0);");
             }
 
+    //下滑到底部
+    public void scrollTobottom(WebDriver driver){
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
 
     //生成随机数字和字母
     public String getStringRandom(int length) {
@@ -122,6 +140,7 @@ public class JavaTools {
             e.printStackTrace();
         }
     }
+
 
 
 

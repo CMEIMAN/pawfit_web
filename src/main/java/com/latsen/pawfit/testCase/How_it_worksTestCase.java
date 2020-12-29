@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
+import com.latsen.pawfit.utils.JavaTools;
 
 public class How_it_worksTestCase {
     private static WebElement live;
@@ -35,12 +36,14 @@ public class How_it_worksTestCase {
     private static WebElement google_play;
     private static MyChromeDriverSingleton myChromeDriver;
     private static NewDriver driver;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
         driver = new NewDriver(Const.HOW_URL);
         myChromeDriver = driver.connect();
+        javaTools = new JavaTools();
         live=myChromeDriver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/div/button[1]");
         live_close=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div[1]/button/span");
         light_sound=myChromeDriver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/div/button[2]");
@@ -67,33 +70,33 @@ public class How_it_worksTestCase {
 
     @Test
     public void testAClick() {
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",live);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",live_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",light_sound);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",light_sound_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",active);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",active_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",rest);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",rest_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",calories);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",calories_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",distance);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",distance_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",temperature);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",temperature_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",removal);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",removal_close);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",virtual_fence);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",virtual_fence_close);
+        javaTools.jsclick(myChromeDriver,live);
+        javaTools.jsclick(myChromeDriver,live_close);
+        javaTools.jsclick(myChromeDriver,light_sound);
+        javaTools.jsclick(myChromeDriver,light_sound_close);
+        javaTools.jsclick(myChromeDriver,active);
+        javaTools.jsclick(myChromeDriver,active_close);
+        javaTools.jsclick(myChromeDriver,rest);
+        javaTools.jsclick(myChromeDriver,rest_close);
+        javaTools.jsclick(myChromeDriver,calories);
+        javaTools.jsclick(myChromeDriver,calories_close);
+        javaTools.jsclick(myChromeDriver,distance);
+        javaTools.jsclick(myChromeDriver,distance_close);
+        javaTools.jsclick(myChromeDriver,temperature);
+        javaTools.jsclick(myChromeDriver,temperature_close);
+        javaTools.jsclick(myChromeDriver,removal);
+        javaTools.jsclick(myChromeDriver,removal_close);
+        javaTools.jsclick(myChromeDriver,virtual_fence);
+        javaTools.jsclick(myChromeDriver,virtual_fence_close);
 //        walk模块按钮切换
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",walk_btn1);
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",walk_btn2);
+        javaTools.jsclick(myChromeDriver,walk_btn1);
+        javaTools.jsclick(myChromeDriver,walk_btn2);
 //        APP
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",app_store);
-        myChromeDriver.navigate().back();
+        javaTools.jsclick(myChromeDriver,app_store);
+        javaTools.back(myChromeDriver);
         google_play=myChromeDriver.findElementByXPath("/html/body/div[3]/div[9]/div/div/div[2]/div/a[2]/img");
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",google_play);
-        myChromeDriver.navigate().back();
+        javaTools.jsclick(myChromeDriver,google_play);
+        javaTools.back(myChromeDriver);
 
         System.out.println("测试完成！");
     }

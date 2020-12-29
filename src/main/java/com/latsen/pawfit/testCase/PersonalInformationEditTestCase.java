@@ -1,7 +1,6 @@
 package com.latsen.pawfit.testCase;
 
 import com.latsen.pawfit.Const.Const;
-import com.latsen.pawfit.common.Driver;
 import com.latsen.pawfit.common.NewDriver;
 import com.latsen.pawfit.driver.MyChromeDriverSingleton;
 import com.latsen.pawfit.utils.Tools;
@@ -13,14 +12,13 @@ import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PersonalInformationEditTestCase {
-    private static WebDriverWait webDriverWait;
     private static WebElement firstName;
     private static WebElement lastName;
     private static WebElement customer_country;
@@ -36,11 +34,12 @@ public class PersonalInformationEditTestCase {
     private static WebElement warningMessage;
     private static Map<String,String> warningMessageMap;
     private static WebElement postcode;
-    private static WebElement emil;
+    private static WebElement email;
     private static WebElement password;
     private static WebElement login;
     private static WebElement imformation;
     private static WebElement edit;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
@@ -48,19 +47,19 @@ public class PersonalInformationEditTestCase {
         elementStringHashMap = new HashMap<WebElement, String>();
         warningMessageMap=new HashMap<String, String>();
         myChromeDriver = driver.connect();
-        webDriverWait=new WebDriverWait(myChromeDriver,10l,1l);
+        javaTools = new JavaTools();
 
-        emil= myChromeDriver.findElementById("signin_userName");
+        email= myChromeDriver.findElementById("signin_userName");
         password= myChromeDriver.findElementById("signin_password");
         login= myChromeDriver.findElementById("genericLogin-button");
         //登录账号
-        emil.sendKeys("1790039849@qq.com");
-        password.sendKeys("12345678");
-        login.click();
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
+        javaTools.inputText(myChromeDriver,"12345678",password);
+        javaTools.click(login);
         imformation=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/div[1]/ul/li[1]/a");
-        imformation.click();
+        javaTools.click(imformation);
         edit =myChromeDriver.findElementByXPath("/html/body/div[3]/div[2]/div[2]/div/span/p/span[2]/a/button");
-        edit.click();
+        javaTools.click(edit);
 
         //定位元素
 
@@ -83,19 +82,19 @@ public class PersonalInformationEditTestCase {
         elementStringHashMap.put(city, "佛山");
 
         //清除原有数据
-        firstName.clear();
-        lastName.clear();
-        province.clear();
-        street_address.clear();
-        phone .clear();
-        city .clear();
+        javaTools.clear(firstName);
+        javaTools.clear(lastName);
+        javaTools.clear(province);
+        javaTools.clear(street_address);
+        javaTools.clear(phone);
+        javaTools.clear(city);
     }
 
     @Test
     public void testAFirstName() {
         submit = myChromeDriver.findElement(By.id("submitAddress"));
         //空判断
-        submit.click();
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("首名空判断",warningMessage.getText());
         //长度判断
@@ -103,9 +102,9 @@ public class PersonalInformationEditTestCase {
         warningMessageMap.put("首名长度判断",warningMessage.getText());
         //输入特殊字符
         firstName.sendKeys("#￥%……&*？");
-        submit.click();
+        javaTools.click(submit);
         warningMessageMap.put("首名特殊字符判断判断",warningMessage.getText());
-        firstName.clear();
+        javaTools.clear(firstName);
         firstName.sendKeys(elementStringHashMap.get(firstName));
     }
 
@@ -120,9 +119,9 @@ public class PersonalInformationEditTestCase {
         warningMessageMap.put("次名长度判断",warningMessage.getText());
         //输入特殊字符
         lastName.sendKeys("#￥%……&*？");
-        submit.click();
+        javaTools.click(submit);
         warningMessageMap.put("次名特殊字符判断判断",warningMessage.getText());
-        lastName.clear();
+        javaTools.clear(lastName);
         lastName.sendKeys(elementStringHashMap.get(lastName));
     }
 

@@ -10,11 +10,8 @@ import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.internal.Utils;
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BasketTestCase {
@@ -31,13 +28,13 @@ public class BasketTestCase {
     private static WebElement customer;
     private static MyChromeDriverSingleton driver;
     private static NewDriver webdriver;
-    private Utils FileUtils;
     private static WebElement p2add;
     private static WebElement checkout;
 
     private static WebElement abuot_pawfit;
     private static WebElement company1;
     private static WebElement join;
+    private static WebElement join_close;
     private static WebElement what;
     private static WebElement delivery_info;
     private static WebElement faq;
@@ -52,287 +49,241 @@ public class BasketTestCase {
     private static WebElement referral;
     private static WebElement fcc;
 
+    private static JavaTools javaTools;
+
     @BeforeClass
     public static void beforeClass() throws IOException {
+        javaTools = new JavaTools();
         System.out.println("已经执行");
         webdriver = new NewDriver(Const.BASEURL);
         driver = webdriver.connect();
         home= driver.findElementByXPath("/html/body/div[1]/div/div/div/div/div[1]/a/img");
         product=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
         customer=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[6]/a");
-
-        abuot_pawfit=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[1]/li[1]/a");
-        company1=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[1]/li[2]/a");
-        join=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[1]/li[3]/a");
-        what=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[1]/li[4]/a");
-        delivery_info=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[1]/li[5]/a");
-        faq=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[1]/li[6]");
-        term=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[2]/a");
-        service_agreement=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[5]/a");
-        privary_policy=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[1]/b/a");
-        contact_us=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[2]/li[4]/a");
-        user_manuals=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[2]/li[5]");
-        support1=driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[2]/li[6]/a");
-        legal= driver.findElementByXPath("/html/body/div[8]/div/div[1]/ul[2]/li[1]/a");
-        referral= driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[3]/a");
-        fcc=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[4]/a");
-    }
-
-    //截图
-    public void scrFile(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
-        String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
-        String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
-        File srcFile = ((TakesScreenshot)webdriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
-        FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\Basket", Name+"_"+time + ".png"));
-    }
-
-    //下滑到底部
-    public void scroll(){
-        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
 //    顶部导航栏
     @Test
-    public void testAhome() {
+    public void testAhome() throws IOException {
 //        点击跳转到home页面
-        home.click();
-        scrFile();
+        home= driver.findElementByXPath("/html/body/div[1]/div/div/div/div/div[1]/a/img");
+        javaTools.click(home);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testBproduct() {
+    public void testBproduct() throws IOException {
 //        点击跳转到product页面
         product=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
-        product.click();
-        scrFile();
+        javaTools.click(product);
+        javaTools.scrFile(driver);
     }
     @Test
-    public void testCpawfit2() {
+    public void testCpawfit2() throws IOException {
 //        点击跳转到Pawfit 2页面
         pawfit2=driver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/section/div/div[2]/div[1]/a");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
-        pawfit2.click();
-        scrFile();
+        javaTools.click(pawfit2);
+        javaTools.scrFile(driver);
     }
     @Test
-    public void testDaccessory() {
+    public void testDaccessory() throws IOException {
 //        点击跳转到配件页
         accessory=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/section/div/div[2]/div[2]");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
-        accessory.click();
-        scrFile();
+        javaTools.click(accessory);
+        javaTools.scrFile(driver);
     }
     @Test
-    public void testEhow() {
+    public void testEhow() throws IOException {
 //        点击跳转到how it works页面
         how=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[2]/a");
-        how.click();
-        scrFile();
+        javaTools.click(how);
+        javaTools.scrFile(driver);
     }
     @Test
-    public void testFblog() {
+    public void testFblog() throws IOException {
 //        点击跳转到blog页面
         blog=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[3]/a");
-        blog.click();
-        scrFile();
+        javaTools.click(blog);
+        javaTools.scrFile(driver);
     }
     @Test
-    public void testGstory() {
+    public void testGstory() throws IOException {
 //        点击跳转到story页面
         story=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[3]/section/div/div[2]/div[2]");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Blog")).perform();
-        story.click();
-        scrFile();
+        javaTools.click(story);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testHsupport() {
+    public void testHsupport() throws IOException {
 //        点击跳转到support页面
         support=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[4]/a");
-        support.click();
-        scrFile();
+        javaTools.click(support);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testIdelivery() {
+    public void testIdelivery() throws IOException {
 //        点击跳转到delicery页面
         delivery=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[4]/section/div/div[2]/div[2]");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/nav/ul/li[4]/a"))).perform();
-        delivery.click();
-        scrFile();
+        javaTools.click(delivery);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testJcompany() {
+    public void testJcompany() throws IOException {
 //        点击跳转到company页面
         company=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[5]/a");
-        company.click();
-        scrFile();
+        javaTools.click(company);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testKcustomer() {
+    public void testKcustomer() throws IOException {
 //        点击跳转到customer页面
         customer=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[6]/a");
-        customer.click();
-        scrFile();
+        javaTools.click(customer);
+        javaTools.scrFile(driver);
     }
 
 //添加商品到购物车并跳转购物车页面
     @Test
-    public void testLshopping_cart() throws InterruptedException {
+    public void testLshopping_cart() throws IOException {
         product=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
-        product.click();
-        Thread.sleep(3000);
+        javaTools.click(product);
+        javaTools.sleep(3000);
         p2add=driver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[2]");
-        p2add.click();
+        javaTools.click(p2add);
         checkout=driver.findElementByLinkText("Checkout");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/div[1]/button"))).perform();
-        checkout.click();
-        scrFile();
+        javaTools.click(checkout);
+        javaTools.scrFile(driver);
     }
 
 //    footer
     @Test
-    public void testMabuot_pawfit() {
+    public void testMabuot_pawfit() throws IOException {
 //        滑动到底部
-        scroll();
+        javaTools.scrollTobottom(driver);
 //        点击about pawfit
         abuot_pawfit=driver.findElementByLinkText("About Pawfit");
-        abuot_pawfit.click();
-        scrFile();
+        javaTools.click(abuot_pawfit);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testNcompany1() {
-        scroll();
+    public void testNcompany1() throws IOException {
+        javaTools.scrollTobottom(driver);
 //        点击Company
         company1=driver.findElementByLinkText("Company");
-        company1.click();
-        scrFile();
+        javaTools.click(company1);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testOjoin() {
-        scroll();
+    public void testOjoin() throws IOException {
+        javaTools.scrollTobottom(driver);
 //        点击Join Our Affiliate Programme
         join=driver.findElementByLinkText("Join Our Affiliate Programme");
-        join.click();
-        scrFile();
+        javaTools.click(join);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testPwhat() {
-        scroll();
+    public void testPwhat() throws IOException {
+        javaTools.scrollTobottom(driver);
 //        点击What Our Customers Say
         what=driver.findElementByLinkText("What Our Customers Say");
-        what.click();
-        scrFile();
-        driver.navigate().back();
+        javaTools.click(what);
+        javaTools.scrFile(driver);
+        javaTools.back(driver);
     }
 
     @Test
-    public void testQdelivery_info() {
-        scroll();
+    public void testQdelivery_info() throws IOException {
+        javaTools.scrollTobottom(driver);
         //        点击Delivery Info
         delivery_info=driver.findElementByLinkText("Delivery Info");
-        delivery_info.click();
-        scrFile();
+        javaTools.click(delivery_info);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testRfaq() {
-        scroll();
+    public void testRfaq() throws IOException {
+        javaTools.scrollTobottom(driver);
 //        点击FAQ's
         faq=driver.findElementByLinkText("FAQ's");
-        faq.click();
-        scrFile();
+        javaTools.click(faq);
+        javaTools.sleep(3000);
+        javaTools.scrFile(driver);
+        join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span/svg");
     }
 
-//    @Test
-//    public void testSterm() {
-//        scroll();
-////        点击Terms of Use
-//        term=driver.findElementByLinkText("Terms of Use");
-//        term.click();
-//        scrFile();
-//    }
-//
-//    @Test
-//    public void testTservice_agreement() {
-//        scroll();
-////        点击Service Agreement
-//        service_agreement=driver.findElementByLinkText("Service Agreement");
-//        service_agreement.click();
-//        scrFile();
-//    }
-//
-//    @Test
-//    public void testUprivary_policy() {
-//        scroll();
-////        点击Privacy Policy
-//        privary_policy=driver.findElementByLinkText("Privacy Policy");
-//        privary_policy.click();
-//        scrFile();
-//    }
-
     @Test
-    public void testSlegal() {
-        scroll();
+    public void testSlegal() throws IOException {
+        javaTools.scrollTobottom(driver);
 //        点击Legal
         legal=driver.findElementByLinkText("Legal");
-        legal.click();
-        scrFile();
+        javaTools.click(legal);
+        javaTools.scrFile(driver);
 
-        term.click();
-        scrFile();
+        term=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[2]/a");
+        javaTools.click(term);
+        javaTools.scrFile(driver);
 
-        referral.click();
-        scrFile();
+        referral=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[4]/a");
+        javaTools.click(referral);
+        javaTools.scrFile(driver);
 
-        fcc.click();
-        scrFile();
+        fcc=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[5]/a");
+        javaTools.click(fcc);
+        javaTools.scrFile(driver);
 
-        service_agreement.click();
-        scrFile();
+        service_agreement=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[3]/a");
+        javaTools.click(service_agreement);
+        javaTools.scrFile(driver);
 
-        privary_policy.click();
-        scrFile();
+        privary_policy=driver.findElementByXPath("/html/body/div[3]/div[2]/div/div[2]/div/ul/li[1]/a");
+        javaTools.click(privary_policy);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testVcontact_us() {
-        scroll();
+    public void testVcontact_us() throws IOException {
+        javaTools.scrollTobottom(driver);
 //        点击Contact Us
         contact_us=driver.findElementByLinkText("Contact Us");
-        contact_us.click();
-        scrFile();
+        javaTools.click(contact_us);
+        javaTools.scrFile(driver);
     }
 
     @Test
-    public void testWuser_manuals() {
-        scroll();
+    public void testWuser_manuals() throws IOException {
+        javaTools.scrollTobottom(driver);
 //        点击User Manuals
         user_manuals=driver.findElementByLinkText("User Manuals");
-        user_manuals.click();
-        scrFile();
+        javaTools.click(user_manuals);
+        javaTools.scrFile(driver);
         close=driver.findElementByXPath("/html/body/div[5]/div/div/div[1]/img");
-        close.click();
+        javaTools.click(close);
     }
 
     @Test
-    public void testXsupport1() {
+    public void testXsupport1() throws IOException {
 //        点击Support
-        scroll();
+        javaTools.scrollTobottom(driver);
         support1=driver.findElementByLinkText("Support");
-        support1.click();
-        scrFile();
+        javaTools.click(support1);
+        javaTools.scrFile(driver);
     }
 
     @AfterClass

@@ -8,10 +8,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Pawfit2TestCase {
@@ -56,13 +55,15 @@ public class Pawfit2TestCase {
     private static WebElement virtual_fence;
     private static WebElement virtual_fence_close;
     private static MyChromeDriverSingleton driver;
-    private static NewDriver webdriver;
+    private static NewDriver newDriver;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        webdriver = new NewDriver(Const.PAWFIT2_URL);
-        driver = webdriver.connect();
+        newDriver = new NewDriver(Const.PAWFIT2_URL);
+        driver = newDriver.connect();
+        javaTools = new JavaTools();
 
         banner_btn=driver.findElementByXPath("/html/body/section/section[3]/div/div/div/div/p[3]/button");
         pawfit2_btn=driver.findElementByXPath("/html/body/section/div[2]/div/div/div/div[1]/div[1]/div/div[2]/div/div[2]/div/h4/button");
@@ -104,89 +105,80 @@ public class Pawfit2TestCase {
         virtual_fence=driver.findElementByXPath("/html/body/section/div[5]/div[3]/div[1]/div/button[3]");
         virtual_fence_close=driver.findElementByXPath("/html/body/section/div[9]/div/div/div[1]/button/span");
     }
-    /**
-     * 控制滚动条向上拉到顶
-     * @param driver 浏览器驱动
-     */
-    public static void scrolltoTop(WebDriver driver) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        //向上拉到顶
-        js.executeScript("window.scrollTo(0,1)");
-    }
 
 //   点击页面所有添加pawfit 2到购物车的按钮
     @Test
     public void testAAdd() throws InterruptedException {
         banner_btn=driver.findElementByXPath("/html/body/section/section[3]/div/div/div/div/p[3]/button");
-        banner_btn.click();
-        Thread.sleep(3000);
-        pawfit2_btn.click();
-        Thread.sleep(3000);
-        center_btn.click();
-        Thread.sleep(3000);
+        javaTools.click(banner_btn);
+        javaTools.sleep(3000);
+        javaTools.click(pawfit2_btn);
+        javaTools.sleep(3000);
+        javaTools.click(center_btn);
+        javaTools.sleep(3000);
         footer_btn=driver.findElementByXPath(("/html/body/section/div[4]/div/p[3]/button"));
-        footer_btn.click();
+        javaTools.click(footer_btn);
     }
 
     @Test
     public void testBImg() {
 //        点击商品图片和视频
-        scrolltoTop(driver);
-        img1.click();
-        img2.click();
-        img3.click();
-        video.click();
-        close1.click();
+        javaTools.scrollToTop(driver);
+        javaTools.click(img1);
+        javaTools.click(img2);
+        javaTools.click(img3);
+        javaTools.click(video);
+        javaTools.click(close1);
 //        点击Compare our subscription plans here
-        subscription.click();
-        close2.click();
+        javaTools.click(subscription);
+        javaTools.click(close2);
         System.out.println("测试完成！");
     }
 
 //    Pawfit 2 and the Pawfit App
     @Test
     public void testCexplain() {
-        explain1.click();
-        explain2.click();
-        explain3.click();
-        explain4.click();
-        explain5.click();
-        explain6.click();
-        explain7.click();
-        explain8.click();
+        javaTools.click(explain1);
+        javaTools.click(explain2);
+        javaTools.click(explain3);
+        javaTools.click(explain4);
+        javaTools.click(explain5);
+        javaTools.click(explain6);
+        javaTools.click(explain7);
+        javaTools.click(explain8);
 
-        specifications.click();
-        box.click();
-        manuals.click();
+        javaTools.click(specifications);
+        javaTools.click(box);
+        javaTools.click(manuals);
         System.out.println("测试完成！");
     }
 
     @Test
     public void testDdetail() {
-        live.click();
-        live_close.click();
-        light_sound.click();
-        light_sound_close.click();
-        active.click();
-        active_close.click();
-        rest.click();
-        rest_close.click();
-        calories.click();
-        calories_close.click();
-        distance.click();
-        distance_close.click();
-        temperature.click();
-        temperature_close.click();
-        removal.click();
-        removal_close.click();
-        virtual_fence.click();
-        virtual_fence_close.click();
+        javaTools.click(live);
+        javaTools.click(live_close);
+        javaTools.click(light_sound);
+        javaTools.click(light_sound_close);
+        javaTools.click(active);
+        javaTools.click(active_close);
+        javaTools.click(rest);
+        javaTools.click(rest_close);
+        javaTools.click(calories);
+        javaTools.click(calories_close);
+        javaTools.click(distance);
+        javaTools.click(distance_close);
+        javaTools.click(temperature);
+        javaTools.click(temperature_close);
+        javaTools.click(removal);
+        javaTools.click(removal_close);
+        javaTools.click(virtual_fence);
+        javaTools.click(virtual_fence_close);
         System.out.println("测试完成！");
     }
 
     @AfterClass
     public static void afterClass(){
-        webdriver.disconnect();
+        newDriver.disconnect();
     }
 }
 

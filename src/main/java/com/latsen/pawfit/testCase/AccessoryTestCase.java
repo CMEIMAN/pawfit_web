@@ -10,6 +10,7 @@ import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AccessoryTestCase {
@@ -22,9 +23,11 @@ public class AccessoryTestCase {
     private static WebElement charging_add;
     private static NewDriver driver;
     private static MyChromeDriverSingleton myChromeDriver;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
+        javaTools = new JavaTools();
         System.out.println("已经执行");
         driver = new NewDriver(Const.ACCESSORY_URL);
         myChromeDriver = driver.connect();
@@ -34,35 +37,35 @@ public class AccessoryTestCase {
     @Test
     public void testAClick() {
         System.out.println("点击pawfit collar的learn more");
-        pawfit_collar.click();
-        myChromeDriver.navigate().back();
+        javaTools.click(pawfit_collar);
+        javaTools.back(myChromeDriver);
 
         //定位元素并点击
         collar_attachment=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div[1]/div/div/div[3]/a/button");
         collar_attachment_add=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div[1]/div/div/div[3]/button");
         System.out.println("点击collar attachment加入购物车");
-        collar_attachment_add.click();
+        javaTools.click(collar_attachment_add);
         System.out.println("点击collar attachment的learn more");
-        collar_attachment.click();
-        myChromeDriver.navigate().back();
+        javaTools.click(collar_attachment);
+        javaTools.back(myChromeDriver);
 
         //定位元素并点击
         collar_strap=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div[2]/div/div/div[3]/a/button");
         collar_strap_add=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div[2]/div/div/div[3]/button");
         System.out.println("点击collar strap加入购物车");
-        collar_strap_add.click();
+        javaTools.click(collar_strap_add);
         System.out.println("点击collar strap的learn more");
-        collar_strap.click();
-        myChromeDriver.navigate().back();
+        javaTools.click(collar_strap);
+        javaTools.back(myChromeDriver);
 
         //定位元素并点击
         charging=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div[3]/div/div/div[3]/a/button");
         charging_add=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div[3]/div/div/div[3]/button");
         System.out.println("点击Charging Dock and Cable加入购物车");
-        charging_add.click();
+        javaTools.click(charging_add);
         System.out.println("点击Charging Dock and Cable 的learn more");
-        charging.click();
-        myChromeDriver.navigate().back();
+        javaTools.click(charging);
+        javaTools.back(myChromeDriver);
     }
     @AfterClass
     public static void alterClass(){

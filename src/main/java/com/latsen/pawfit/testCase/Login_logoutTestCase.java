@@ -53,19 +53,19 @@ public class Login_logoutTestCase {
             email.sendKeys("" + Const.getCommomText()[i]);
             password.sendKeys("" + Const.getCommomText()[i]);
         }
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",submit);
+        javaTools.jsclick(myChromeDriver,submit);
     }
 
     @Test
     public void testBboth_null() throws InterruptedException{
 //        清除输入框数据
-        email.clear();
-        password.clear();
+        javaTools.clear(email);
+        javaTools.clear(password);
 //        email和password输入为空
-        email.sendKeys("");
-        password.sendKeys("");
-        submit.click();
-        Thread.sleep(2000);
+        javaTools.inputText(myChromeDriver,"",email);
+        javaTools.inputText(myChromeDriver,"",password);
+        javaTools.click(submit);
+        javaTools.sleep(3000);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email和Password输入空",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
@@ -76,101 +76,99 @@ public class Login_logoutTestCase {
         //        email和password输入特殊字符
         javaTools.inputText(myChromeDriver,"&%……￥#@*？~",email);
         javaTools.inputText(myChromeDriver,"&%……￥#@*？~",password);
-//        email.sendKeys("&%……￥#@*？~");
-//        password.sendKeys("&%……￥#@*？~");
         javaTools.click(submit);
 
-//        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
-//        warningMessageMap.put("Email和Password输入特殊字符",warningMessage.getText());
-//        assertion.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-//        email.clear();
-//        password.clear();
+        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessageMap.put("Email和Password输入特殊字符",warningMessage.getText());
+        javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
+        javaTools.clear(email);
+        javaTools.clear(password);
     }
 
     @Test
     public void testDpassword_null() {
 //        email输入正确，password输入为空
-        email.sendKeys("1790039849@qq.com");
-        password.sendKeys("");
-        submit.click();
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
+        javaTools.inputText(myChromeDriver,"",password);
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入空",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-        email.clear();
+        javaTools.clear(email);
     }
 
     @Test
     public void testEemail_error() {
         //     email输入错误，password输入错误
-        email.sendKeys("111111111111");
-        password.sendKeys("12345678");
-        submit.click();
+        javaTools.inputText(myChromeDriver,"111111111111",email);
+        javaTools.inputText(myChromeDriver,"12345688",password);
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email错误，Password输入正确",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-        email.clear();
-        password.clear();
+        javaTools.clear(email);
+        javaTools.clear(password);
     }
 
     @Test
     public void testFemail_sp() {
         //      email输入特殊字符，password输入正确
-        email.sendKeys("&%……￥#@*？~/*");
-        password.sendKeys("12345678");
-        submit.click();
+        javaTools.inputText(myChromeDriver,"&%……￥#@*？~/*",email);
+        javaTools.inputText(myChromeDriver,"12345678",password);
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email输入特殊字符，Password输入正确误",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-        email.clear();
-        password.clear();
+        javaTools.clear(email);
+        javaTools.clear(password);
     }
 
     @Test
     public void testGpassword_sp() {
         //     email输入正确，password输入特殊字符
-        email.sendKeys("1790039849@qq.com");
-        password.sendKeys("&%……￥#@*？~/*");
-        submit.click();
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
+        javaTools.inputText(myChromeDriver,"&%……￥#@*？~/*",password);
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入特殊字符",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-        email.clear();
-        password.clear();
+        javaTools.clear(email);
+        javaTools.clear(password);
     }
 
     @Test
     public void testHmin6() {
         //     email输入正确，password输入小于6字符长度
-        email.sendKeys("1790039849@qq.com");
-        password.sendKeys("12");
-        submit.click();
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
+        javaTools.inputText(myChromeDriver,"12",password);
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入小于6字符长度",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-        email.clear();
-        password.clear();
+        javaTools.clear(email);
+        javaTools.clear(password);
     }
 
     @Test
     public void testImax30() {
         //     email输入正确，password输入大于30字符长度
-        email.sendKeys("1790039849@qq.com");
-        password.sendKeys("1213233455565767878243435645657678782342323243434454565465234435223234123");
-        submit.click();
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
+        javaTools.inputText(myChromeDriver,"1213233455565767878243435645657678782342323243434454565465234435223234123",password);
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
         warningMessageMap.put("Email正确，Password输入大于30字符长度",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
-        email.clear();
-        password.clear();
+        javaTools.clear(email);
+        javaTools.clear(password);
     }
 
     @Test
     public void testJright() {
         //      输入正确的email和password
-        email.sendKeys("1790039849@qq.com");
-        password.sendKeys("12345678");
-        eye.click();
-        ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",submit);
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
+        javaTools.inputText(myChromeDriver,"12345678",password);
+        javaTools.click(eye);
+        javaTools.jsclick(myChromeDriver,submit);
         System.out.println("登录成功！");
     }
 
@@ -178,7 +176,7 @@ public class Login_logoutTestCase {
     @Test
     public void testKCancel2() {
         logout=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/div[1]/ul/li[4]/a");
-        logout.click();
+        javaTools.click(logout);
         System.out.println("注销成功！");
     }
 

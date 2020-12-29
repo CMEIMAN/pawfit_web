@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ShoppingCartTestCase {
@@ -27,26 +28,20 @@ public class ShoppingCartTestCase {
     private static WebElement cancal;
     private static WebElement continue_shopping;
     private Utils FileUtils;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
         driver = new NewDriver(Const.PRODUCT_URL);
         myChromeDriver = driver.connect();
+        javaTools = new JavaTools();
 
         pawfit2_add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[2]/button");
     }
-    //截图
-    public void scrFile(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  //转换时间格式
-        String time = dateFormat.format(Calendar.getInstance().getTime());  //获取当前时间
-        String Name = Thread.currentThread().getStackTrace()[2].getMethodName();//获取当前类名
-        File srcFile = ((TakesScreenshot)myChromeDriver).getScreenshotAs(OutputType.FILE);  //执行屏幕截取
-        FileUtils.copyFile(srcFile, new File("C:\\Users\\Admin\\web_test\\src\\img\\ShoppingCart", Name+"_"+time + ".png"));
-    }
 
     @Test
-    public void testAClick() {
+    public void testAClick() throws IOException {
         //        添加pawfit2加入购物车
         pawfit2_add.click();
         //        点击购物车跳转购物车页面
@@ -55,26 +50,26 @@ public class ShoppingCartTestCase {
         myChromeDriver.findElementByClassName("checkout-bg").click();
         //增加商品数量
         add=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[1]/table/tbody/tr[1]/td[2]/img[1]");
-        add.click();
-        add.click();
+        javaTools.click(add);
+        javaTools.click(add);
         //        减少商品数量
         reduce=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[1]/table/tbody/tr[1]/td[2]/img[2]");
-        reduce.click();
-        scrFile();
+        javaTools.click(reduce);
+        javaTools.scrFile(myChromeDriver);
        //点击contine shopping按钮
         continue_shopping=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[2]/div[1]/div/a");
-        continue_shopping.click();
-        scrFile();
-        myChromeDriver.navigate().back();
+        javaTools.click(continue_shopping);
+        javaTools.scrFile(myChromeDriver);
+        javaTools.back(myChromeDriver);
         //        点击跳转checkout页面
         checkout=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[2]/div[2]/div/a");
-        checkout.click();
-        scrFile();
-        myChromeDriver.navigate().back();
+        javaTools.click(checkout);
+        javaTools.scrFile(myChromeDriver);
+        javaTools.back(myChromeDriver);
         //        删除购物车商品
         cancal=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[1]/table/tbody/tr/td[4]/div/a");
-        cancal.click();
-        scrFile();
+        javaTools.click(cancal);
+        javaTools.scrFile(myChromeDriver);
 
         System.out.println("测试成功！");
     }

@@ -11,6 +11,7 @@ import org.junit.runners.MethodSorters;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import java.io.IOException;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StoryTestCase {
@@ -21,30 +22,32 @@ public class StoryTestCase {
         private static WebElement read3;
         private static WebElement see_all_story1;
         private static WebElement see_all_story2;
+        private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
         driver = new NewDriver(Const.STORY_URL);
         myChromeDriver = driver.connect();
+        javaTools = new JavaTools();
     }
     @Test
     public void testAClick() {
 //        点击read the story
             read1=myChromeDriver.findElementByXPath("/html/body/section/div/div/div[1]/div[1]/div[2]/a");
-            read1.click();
-            myChromeDriver.navigate().back();
+            javaTools.click(read1);
+            javaTools.back(myChromeDriver);
             read2=myChromeDriver.findElementByXPath("/html/body/section/div/div/div[1]/div[3]/div[2]/a");
-            read2.click();
-            myChromeDriver.navigate().back();
+            javaTools.click(read2);
+            javaTools.back(myChromeDriver);
             read3=myChromeDriver.findElementByXPath("/html/body/section/div/div/div[2]/div[2]/div[2]/a");
-            read3.click();
+            javaTools.click(read3);
 //            点击See all stories
             see_all_story1=myChromeDriver.findElementByLinkText("See all stories");
-            see_all_story1.click();
-            myChromeDriver.navigate().back();
+            javaTools.click(see_all_story1);
+            javaTools.back(myChromeDriver);
             see_all_story2=myChromeDriver.findElementByXPath("/html/body/div[4]/div[2]/p[6]/a");
-            ((JavascriptExecutor) myChromeDriver).executeScript("arguments[0].click()",see_all_story2);
+            javaTools.jsclick(myChromeDriver,see_all_story2);
             System.out.println("测试成功！");
     }
 
