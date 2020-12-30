@@ -13,11 +13,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.internal.Utils;
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
-import com.latsen.pawfit.utils.*;
+import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PalpalInfoTestCase {
@@ -42,16 +40,18 @@ public class PalpalInfoTestCase {
     private static WebElement add;
     private static WebElement checkout;
     private Utils FileUtils;
+    private static JavaTools javaTools;
 
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
         webdriver = new NewDriver(Const.PRODUCT_URL);
         driver = webdriver.connect();
+        javaTools = new JavaTools();
 
 //        添加商品到购物车
         add= driver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[2]/button");
-        add.click();
+        javaTools.click(add);
 
 //        点击购物车跳转购物车页面
         Actions action=new Actions(driver);
@@ -60,7 +60,7 @@ public class PalpalInfoTestCase {
 
 //        点击跳转checkout页面
         checkout=driver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[2]/div[2]/div/a");
-        checkout.click();
+        javaTools.click(checkout);
 
         webElements=new HashMap<WebElement, String>();
         submitOrder=driver.findElement(By.id("submitOrder"));
@@ -68,20 +68,11 @@ public class PalpalInfoTestCase {
         password=driver.findElementById("customer.clearPassword");
         checkboxOfOrderNote=driver.findElementById("comments");
     }
-//  截图
-    public void scrFile(){
-       long date=System.currentTimeMillis();
-       String path = String.valueOf(date);
-       String curPath =System.getProperty("user.dir");
-       path =path+".png";
-       String screenPath = curPath+"/"+path;
-       File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-       FileUtils.copyFile(screen,new File(screenPath));
-    }
+
 
     @Test//      定位元素
 
-    public void testAcheckFitstName() {
+    public void testAcheckFitstName() throws IOException {
         /*长度判断*/
         firstName=driver.findElement(By.id("customer.firstName"));
         Tools.setAllText(firstName,submitOrder, Tools.getUUIDText());
@@ -92,7 +83,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testBcheckLastName() {
+    public void testBcheckLastName() throws IOException {
         lastName=driver.findElement(By.id("customer.lastName"));
         Tools.setAllText(lastName,submitOrder,Tools.getUUIDText());
 //        scrFile();
@@ -101,7 +92,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testCcompany() {
+    public void testCcompany() throws IOException {
         company=driver.findElement(By.id("customer.billing.company"));
         Tools.setAllText(company,submitOrder,Tools.getUUIDText());
 //        scrFile();
@@ -110,7 +101,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testDcheakAddress() {
+    public void testDcheakAddress() throws IOException {
         address=driver.findElement(By.id("customer.billing.address"));
         Tools.setAllText(address,submitOrder,Tools.getUUIDText());
         injectSQLs(address);
@@ -118,7 +109,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testEcheakCity() {
+    public void testEcheakCity() throws IOException {
         city=driver.findElement(By.id("customer.billing.city"));
         Tools.setAllText(city,submitOrder,Tools.getUUIDText());
         injectSQLs(city);
@@ -130,11 +121,11 @@ public class PalpalInfoTestCase {
         country=driver.findElement(By.id("customer.billing.country"));
         countrySelect=new Select(country);
         countrySelect.selectByVisibleText("United Kingdom");
-        submitOrder.click();
+        javaTools.click(submitOrder);
     }
 
     @Test
-    public void testGcheckProvince() {
+    public void testGcheckProvince() throws IOException {
         province=driver.findElement(By.name("customer.billing.stateProvince"));
         Tools.setAllText(province,submitOrder,Tools.getUUIDText());
         injectSQLs(province);
@@ -142,14 +133,14 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testHcheckPostalCode() {
+    public void testHcheckPostalCode() throws IOException {
         postalCode=driver.findElement(By.name("customer.billing.postalCode"));
         Tools.setAllText(postalCode,submitOrder,Tools.getUUIDText());
         injectSQLs(postalCode);webElements.put(postalCode,"M2 5BQ");
     }
 
     @Test
-    public void testIcheckEmail() {
+    public void testIcheckEmail() throws IOException {
         email=driver.findElement(By.id("customer.emailAddress"));
         Tools.setAllText(email,submitOrder,Tools.getUUIDText());
         injectSQLs(email);
@@ -157,7 +148,7 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testJcheckPhoneNumber() {
+    public void testJcheckPhoneNumber() throws IOException {
         phoneNumber=driver.findElement(By.name("customer.billing.phone"));
         Tools.setAllText(phoneNumber,submitOrder,Tools.getUUIDText());
         injectSQLs(phoneNumber);
@@ -170,27 +161,27 @@ public class PalpalInfoTestCase {
     }
 
     @Test
-    public void testLcheckPassword() {
+    public void testLcheckPassword() throws IOException {
         Tools.setAllText(password,submitOrder,Tools.getUUIDText());
         injectSQLs(password);
         webElements.put(password,"12345678");
     }
     @Test
-    public void testMcheckCheckboxOfOrderNote() {
+    public void testMcheckCheckboxOfOrderNote() throws IOException {
         Tools.setAllText(checkboxOfOrderNote,submitOrder,Tools.getUUIDText());
         injectSQLs(checkboxOfOrderNote);
         webElements.put(checkboxOfOrderNote,"12345678");
     }
 
     @Test
-    public void testVcheackSubmitOrder() {
+    public void testVcheackSubmitOrder() throws IOException {
         Tools.clearText(webElements);
-        scrFile();
+        javaTools.scrFile(driver);
         Tools.setText(webElements);
-        scrFile();
-        submitOrder.click();
-        scrFile();
-        driver.navigate().back();
+        javaTools.scrFile(driver);
+        javaTools.click(submitOrder);
+        javaTools.scrFile(driver);
+        javaTools.back(driver);
     }
 
     @AfterClass
@@ -198,7 +189,7 @@ public class PalpalInfoTestCase {
         webdriver.disconnect();
     }
 
-    public void injectSQLs(WebElement element){
+    public void injectSQLs(WebElement element) throws IOException {
         String[] strings={
                 "and ascii(substr((select database()),1,1))>64",
                 "id=1 union select if(SUBSTRING(user(),1,4)='root',sleep(4),1),null,null",
@@ -208,12 +199,12 @@ public class PalpalInfoTestCase {
         for (int i=0;i< strings.length;i++){
             if (i>strings.length-2){
                 element.sendKeys(strings[i]);
-                scrFile();
-                submitOrder.click();
+                javaTools.scrFile(driver);
+                javaTools.click(submitOrder);
             }
             else {
                 element.sendKeys(strings[i]);
-                submitOrder.click();
+                javaTools.click(submitOrder);
                 element.clear();
             }
 

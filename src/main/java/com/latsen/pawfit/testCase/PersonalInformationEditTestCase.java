@@ -101,7 +101,7 @@ public class PersonalInformationEditTestCase {
         setTextAndClickBtn(firstName, Tools.getUUIDText(),submit);
         warningMessageMap.put("首名长度判断",warningMessage.getText());
         //输入特殊字符
-        firstName.sendKeys("#￥%……&*？");
+        javaTools.inputText(myChromeDriver,"#￥%……&*？",firstName);
         javaTools.click(submit);
         warningMessageMap.put("首名特殊字符判断判断",warningMessage.getText());
         javaTools.clear(firstName);
@@ -111,14 +111,14 @@ public class PersonalInformationEditTestCase {
     @Test
     public void testBLastName() {
         //空判断
-        submit.click();
+        javaTools.click(submit);
         warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("次名空判断",warningMessage.getText());
         //长度判断
         setTextAndClickBtn(lastName,Tools.getUUIDText(),submit);
         warningMessageMap.put("次名长度判断",warningMessage.getText());
         //输入特殊字符
-        lastName.sendKeys("#￥%……&*？");
+        javaTools.inputText(myChromeDriver,"#￥%……&*？",lastName);
         javaTools.click(submit);
         warningMessageMap.put("次名特殊字符判断判断",warningMessage.getText());
         javaTools.clear(lastName);
@@ -137,23 +137,22 @@ public class PersonalInformationEditTestCase {
         warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("province长度判断",warningMessage.getText());
         //特殊字符
-        province.sendKeys("#￥%……&*？=-,.");
+        javaTools.inputText(myChromeDriver,"#￥%……&*？=-,.",province);
         warningMessageMap.put("province特殊字符判断",warningMessage.getText());
-        province.clear();
+        javaTools.clear(province);
         province.sendKeys(elementStringHashMap.get(province));
     }
 
     @Test
     public void testEstreet_address() {
-
         //长度判断
         setTextAndClickBtn(street_address,Tools.getUUIDText(),submit);
         warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("street address长度判断",warningMessage.getText());
         //特殊字符
-        street_address.sendKeys("#￥%……&*？=-,.[|*");
+        javaTools.inputText(myChromeDriver,"#￥%……&*？=-,.[|*",street_address);
         warningMessageMap.put("street address特殊字符判断",warningMessage.getText());
-        street_address.clear();
+        javaTools.clear(street_address);
         street_address.sendKeys(elementStringHashMap.get(street_address));
     }
 
@@ -164,9 +163,9 @@ public class PersonalInformationEditTestCase {
         warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("电话号码长度判断",warningMessage.getText());
         //特殊字符
-        phone.sendKeys("#￥%……&*？=-,.[|*");
+        javaTools.inputText(myChromeDriver,"#￥%……&*？=-,.[|*",phone);
         warningMessageMap.put("phone特殊字符判断",warningMessage.getText());
-        phone.clear();
+        javaTools.clear(phone);
         phone.sendKeys(elementStringHashMap.get(phone));
     }
 
@@ -178,26 +177,26 @@ public class PersonalInformationEditTestCase {
         warningMessageMap.put("city长度判断",warningMessage.getText());
         //特殊字符
         city = myChromeDriver.findElement(By.id("city"));
-        city.sendKeys("#￥%……&*？=-,.[|*");
+        javaTools.inputText(myChromeDriver,"#￥%……&*？=-,.[|*",city);
         warningMessageMap.put("city特殊字符判断",warningMessage.getText());
-        city.clear();
+        javaTools.clear(city);
         street_address = myChromeDriver.findElement(By.id("address"));
-        street_address.click();
+        javaTools.click(street_address);
     }
 
     @Test
     public void testKpostcode() {
         postcode=myChromeDriver.findElementById("billingPostalCode");
-        postcode.clear();
+        javaTools.clear(postcode);
         warningMessage=myChromeDriver.findElement(By.id("formError"));
         warningMessageMap.put("postcode空判断",warningMessage.getText());
         submit = myChromeDriver.findElement(By.id("submitAddress"));
         setTextAndClickBtn(postcode,Tools.getUUIDText(),submit);
         warningMessageMap.put("postcode长度判断",warningMessage.getText());
         //特殊字符
-        postcode.sendKeys("#￥%……&*？=-,.[|*");
+        javaTools.inputText(myChromeDriver,"#￥%……&*？=-,.[|*",postcode);
         warningMessageMap.put("postcode特殊字符判断",warningMessage.getText());
-        postcode.clear();
+        javaTools.clear(postcode);
     }
 
     @AfterClass
