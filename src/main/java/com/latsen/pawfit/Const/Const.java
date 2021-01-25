@@ -8,21 +8,46 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class Const {
-    public final static String BASEURL="https://www.pawfit.com/";
+//    public final static String BASEURL="https://www.pawfit.com/";
+//    public final static String HUB_URL="http://localhost:4444/wd/hub";
+//    public final static String SESSION_ID="1018038d-fd40-4a1f-8f1b-d1005b139e9f";
+//    public final static String LOGiN_URL="https://www.pawfit.com/customer-account/customer-logon.html";
+//    public final static String REGISTER_RUL="https://www.pawfit.com/customer-account/registration.html";
+//    public final static String PRODUCT_URL="https://www.pawfit.com/product.html";
+//    public final static String HOME_URL="https://www.pawfit.com/";
+//    public final static String ABOUT_URL="https://www.pawfit.com/company.html";
+//    public final static String SUPPORT_URL="https://www.pawfit.com/support.html";
+//    public final static String BLOG_URL="https://www.pawfit.com/blogs.html";
+//    public final static String STORY_URL="https://www.pawfit.com/stories-events.html";
+//    public final static String PAWFIT_COLLAR_URL="https://www.pawfit.com/product/pawfit-collar.html";
+//    public final static String PAWFIT2_URL="https://www.pawfit.com/product/pawfit2.html";
+//    public final static String ACCESSORY1_URL=" https://www.pawfit.com/product/harnesses-leashes-collars.html";
+//    public final static String ACCESSORY2_URL="https://www.pawfit.com/product/accessories.html";
+//    public final static String HOW_URL="https://www.pawfit.com/how-it-works.html";
+//    public final static String PAWFIT2_BUNDLE_DEAL="https://www.pawfit.com/product/pawfit-2-gift-deal.html";
+//    public final static String PAWFIT_LEASH="https://www.pawfit.com/product/pawfit-leash.html";
+//    public final static String PAWFIT_HARNESS_FOR_DOGS="https://www.pawfit.com/product/pawfit-harness-for-dogs.html";
+
+    public final static String BASEURL="http://3.8.61.142:8080/";
     public final static String HUB_URL="http://localhost:4444/wd/hub";
     public final static String SESSION_ID="1018038d-fd40-4a1f-8f1b-d1005b139e9f";
-    public final static String LOGiN_URL="https://www.pawfit.com/customer-account/customer-logon.html";
-    public final static String REGISTER_RUL="https://www.pawfit.com/customer-account/registration.html";
-    public final static String PRODUCT_URL="https://www.pawfit.com/product.html";
-    public final static String HOME_URL="https://www.pawfit.com/";
-    public final static String ABOUT_URL="https://www.pawfit.com/company.html";
-    public final static String SUPPORT_URL="https://www.pawfit.com/support.html";
-    public final static String BLOG_URL="https://www.pawfit.com/blogs.html";
-    public final static String STORY_URL="https://www.pawfit.com/stories-events.html";
-    public final static String PAWFIT_COLLAR_URL="https://www.pawfit.com/product/pawfit-collar.html";
-    public final static String PAWFIT2_URL="https://www.pawfit.com/product/pawfit2.html";
-    public final static String ACCESSORY_URL="https://www.pawfit.com/product/accessories.html";
-    public final static String HOW_URL="https://www.pawfit.com/how-it-works.html";
+    public final static String LOGiN_URL="http://3.8.61.142:8080/customer-account/customer-logon.html";
+    public final static String REGISTER_RUL="http://3.8.61.142:8080/customer-account/registration.html";
+    public final static String PRODUCT_URL="http://3.8.61.142:8080/product.html";
+    public final static String HOME_URL="http://3.8.61.142:8080/";
+    public final static String ABOUT_URL="http://3.8.61.142:8080/company.html";
+    public final static String SUPPORT_URL="http://3.8.61.142:8080/support.html";
+    public final static String BLOG_URL="http://3.8.61.142:8080/blogs.html";
+    public final static String STORY_URL="http://3.8.61.142:8080/stories-events.html";
+    public final static String PAWFIT_COLLAR_URL="http://3.8.61.142:8080/product/pawfit-collar.html";
+    public final static String PAWFIT2_URL="http://3.8.61.142:8080/product/pawfit2.html";
+    public final static String ACCESSORY1_URL="http://3.8.61.142:8080/product/harnesses-leashes-collars.html";
+    public final static String ACCESSORY2_URL="http://3.8.61.142:8080/product/accessories.html";
+    public final static String HOW_URL="http://3.8.61.142:8080/how-it-works.html";
+    public final static String PAWFIT2_BUNDLE_DEAL="http://3.8.61.142:8080/product/pawfit-2-gift-deal.html";
+    public final static String PAWFIT_LEASH="http://3.8.61.142:8080/product/pawfit-leash.html";
+    public final static String PAWFIT_HARNESS_FOR_DOGS="http://3.8.61.142:8080/product/pawfit-harness-for-dogs.html";
+
 
     private static Utils FileUtils;
 

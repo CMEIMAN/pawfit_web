@@ -2,7 +2,6 @@ package com.latsen.pawfit.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +12,6 @@ import java.util.Random;
 
 public class JavaTools {
     static boolean flog = true;
-    private static WebDriver driver;
 
     public static boolean currentFlog() {
         return flog;
@@ -140,9 +138,5 @@ public class JavaTools {
             e.printStackTrace();
         }
     }
-
-
-
-
-
+    
     }

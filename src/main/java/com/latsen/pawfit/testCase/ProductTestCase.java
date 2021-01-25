@@ -18,14 +18,11 @@ import com.latsen.pawfit.utils.JavaTools;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProductTestCase {
     private static WebElement pawfit2;
-    private static WebElement pawfit_Collar;
-    private static WebElement collar_attachment;
-    private static WebElement collar_strap;
-    private static WebElement charging_dock;
     private static WebElement pawfit2_add;
-    private static WebElement collar_attachment_add;
-    private static WebElement collar_strap_add;
-    private static WebElement charging_dock_add;
+    private static WebElement p2GD;
+    private static WebElement p2GD_add;
+    private static WebElement accessory1;
+    private static WebElement accessory2;
     private static MyChromeDriverSingleton driver;
     private static NewDriver webdriver;
     private Utils FileUtils;
@@ -39,71 +36,50 @@ public class ProductTestCase {
         driver = webdriver.connect();
         javaTools = new JavaTools();
         pawfit2=driver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[1]");
-        pawfit_Collar=driver.findElementByXPath("/html/body/section[2]/div/div/div[1]/div/div/div[1]/div[3]/a/button");
-        collar_attachment=driver.findElementByXPath("/html/body/section[2]/div/div/div[2]/div/div/div/div[1]/div[3]/a[1]/button");
-        collar_strap=driver.findElementByXPath("/html/body/section[2]/div/div/div[3]/div/div/div[1]/div[3]/a[1]/button");
-        charging_dock=driver.findElementByXPath("/html/body/section[2]/div/div/div[4]/div/div/div/div[1]/div[3]/a[1]/button");
         pawfit2_add=driver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[2]");
+        p2GD=driver.findElementByXPath("/html/body/section[1]/div/div[2]/div[1]/div/div/div[3]/div[3]/a[1]");
+        p2GD_add=driver.findElementByXPath("/html/body/section[1]/div/div[2]/div[1]/div/div/div[3]/div[3]/a[2]");
+        accessory1=driver.findElementByXPath("/html/body/section[2]/div/div/div/div/div/div[2]/div[3]/a/button");
+        accessory2=driver.findElementByXPath("/html/body/section[3]/div/div/div/div/div/div[2]/div[3]/a/button");
     }
 
     //   点击pawfit 2模块
     @Test
     public void testApawfit2() throws IOException {
         javaTools.click(pawfit2_add);
-        javaTools.scrFile(driver);
         javaTools.click(pawfit2);
         javaTools.scrFile(driver);
         javaTools.back(driver);
     }
 
-    //   点击pawfit Colla模块
+    //   点击pawfit2 bundle deal模块
     @Test
-    public void testBpawfit_Collar() throws IOException {
-        pawfit_Collar=driver.findElementByXPath("/html/body/section[2]/div/div/div[1]/div/div/div[1]/div[3]/a/button");
-        javaTools.click(pawfit_Collar);
+    public void testBpawfit2_Bundle_Deal() throws IOException {
+        javaTools.click(p2GD_add);
+        javaTools.click(p2GD);
         javaTools.scrFile(driver);
         javaTools.back(driver);
     }
 
-    //   点击collar attachment模块
+    //   点击HARNESSES, LEASHES & COLLARS模块
     @Test
-    public void testCcollar_attachment() throws IOException {
-        collar_attachment_add=driver.findElementByXPath("/html/body/section[2]/div/div/div[2]/div/div/div/div[1]/div[3]/a[2]/button");
-        javaTools.click(collar_attachment_add);
-        javaTools.scrFile(driver);
-        collar_attachment=driver.findElementByXPath("/html/body/section[2]/div/div/div[2]/div/div/div/div[1]/div[3]/a[1]/button");
-        javaTools.click(collar_attachment);
+    public void testCaccessory1() throws IOException {
+        javaTools.click(accessory1);
         javaTools.scrFile(driver);
         javaTools.back(driver);
     }
 
     //   点击collar strap模块
     @Test
-    public void testDcollar_strap() throws IOException {
-        collar_strap_add=driver.findElementByXPath("/html/body/section[2]/div/div/div[3]/div/div/div[1]/div[3]/a[2]/button");
-        javaTools.click(collar_strap_add);
-        javaTools.scrFile(driver);
-        collar_strap=driver.findElementByXPath("/html/body/section[2]/div/div/div[3]/div/div/div[1]/div[3]/a[1]/button");
-        javaTools.click(collar_strap);
-        javaTools.scrFile(driver);
-        javaTools.back(driver);
-    }
-
-    //   点击Charging Dock and Cable 模块
-    @Test
-    public void testEcharging_dock() throws IOException {
-        charging_dock_add=driver.findElementByXPath("/html/body/section[2]/div/div/div[4]/div/div/div/div[1]/div[3]/a[2]/button");
-        javaTools.click(charging_dock_add);
-        javaTools.scrFile(driver);
-        charging_dock=driver.findElementByXPath("/html/body/section[2]/div/div/div[4]/div/div/div/div[1]/div[3]/a[1]/button");
-        javaTools.click(charging_dock);
+    public void testDaccessory2() throws IOException {
+        javaTools.click(accessory2);
         javaTools.scrFile(driver);
         javaTools.back(driver);
     }
 
     //  点击下方read按钮
     @Test
-    public void testFread() throws IOException {
+    public void testEread() throws IOException {
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
         read=driver.findElementByXPath("/html/body/section[3]/div/div[3]/div/a/button");
         javaTools.click(read);

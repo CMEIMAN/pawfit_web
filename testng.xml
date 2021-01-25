@@ -11,13 +11,13 @@
             <include name="testCase"/>
         </methods>
             </class>
-            <class name="com.latsen.pawfit.testCase.HomePageTestCase"></class>
-            <class name="com.latsen.pawfit.testCase.BasketTestCase"></class>
-<!--            <class name="com.latsen.pawfit.testCase.SupportTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.HomePageTestCase"></class>-->
+<!--            <class name="com.latsen.pawfit.testCase.BasketTestCase"></class>-->
+            <class name="com.latsen.pawfit.testCase.SupportTestCase"></class>
 <!--            <class name="com.latsen.pawfit.testCase.Pawfit2TestCase"></class>-->
 <!--            <class name="com.latsen.pawfit.testCase.AccessoryTestCase"></class>-->
 <!--            <class name="com.latsen.pawfit.testCase.Pawfit_collarEditTestCase"></class>-->
-<!--            <class name="com.latsen.pawfit.testCase.How_it_worksTestCase"></class>-->
+            <class name="com.latsen.pawfit.testCase.How_it_worksTestCase"></class>
 <!--            <class name="com.latsen.pawfit.testCase.ArticlesTestCase"></class>-->
 <!--            <class name="com.latsen.pawfit.testCase.StoryTestCase"></class>-->
 <!--            <class name="com.latsen.pawfit.testCase.SupportTestCase"></class>-->

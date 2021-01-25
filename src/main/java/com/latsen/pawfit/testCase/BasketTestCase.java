@@ -90,7 +90,7 @@ public class BasketTestCase {
     @Test
     public void testDaccessory() throws IOException {
 //        点击跳转到配件页
-        accessory=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/section/div/div[2]/div[2]");
+        accessory=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/section/div/div[2]/div[4]");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
         javaTools.click(accessory);
@@ -196,6 +196,8 @@ public class BasketTestCase {
         join=driver.findElementByLinkText("Join Our Affiliate Programme");
         javaTools.click(join);
         javaTools.scrFile(driver);
+        join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span/svg");
+        javaTools.click(join_close);
     }
 
     @Test

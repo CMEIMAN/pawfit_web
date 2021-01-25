@@ -27,7 +27,7 @@ public class HomePageTestCase {
     private static WebElement wear;
     private static WebElement p2_learn_more;
     private static WebElement p2_add;
-    private static WebElement pawfit_collar;
+    private static WebElement accessory;
     private static WebElement story_learn_more;
     private static WebElement latsen_articles;
     private static WebElement read_all_articel1;
@@ -93,8 +93,8 @@ public class HomePageTestCase {
         javaTools.back(myChromeDriver);
         p2_add=myChromeDriver.findElementByXPath("/html/body/section[6]/div/div/div[1]/div/div/div[3]/div[2]/a[2]/button");
         javaTools.jsclick(myChromeDriver,p2_add);
-        pawfit_collar=myChromeDriver.findElementByXPath("/html/body/section[7]/div/div/div/div/div[2]/div/div[3]/a/button");
-        javaTools.jsclick(myChromeDriver,pawfit_collar);
+        accessory=myChromeDriver.findElementByXPath("/html/body/section[7]/div/div/div/div/div/div[2]/div[3]/a/button");
+        javaTools.jsclick(myChromeDriver,accessory);
         javaTools.back(myChromeDriver);
 
         System.out.println("点击learn more跳转到story");

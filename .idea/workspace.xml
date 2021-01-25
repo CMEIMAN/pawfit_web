@@ -22,13 +22,34 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="封装函数后修改截图点击输入文本等方法">
+    <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="修改点击，输入文本等方法的使用">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Accessory1TestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/InternationalTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/InternationalTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PalpalInfoTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PalpalInfoTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Referral_CodeTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Referral_CodeTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/Const/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/Const/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/AccessoryTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Accessory2TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/BasketTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/BasketTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/HomePageTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/HomePageTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ProductTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ProductTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/JavaTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/utils/JavaTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/echarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/echarts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/EmailSubscriptionTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/EmailSubscriptionTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ForgotPasswordTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ForgotPasswordTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/InternationalTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/InternationalTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit_collarEditTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit_collarEditTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ProductTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ProductTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Recent_orderTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Recent_orderTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Referral_CodeTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Referral_CodeTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ShoppingCartTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ShoppingCartTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/StoryTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/StoryTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/SupportTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/SupportTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/JavaTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/JavaTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/echarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/echarts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,24 +86,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/pythonrepo" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunManager" selected="TestNG.Pawfit_collarEditTestCase.testAAdd">
-    <configuration name="BasketTestCase (3)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="seleiumtest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.BasketTestCase" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.C:/Users/Admin/web_test/testng.xml">
     <configuration name="BasketTestCase.testSlegal" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="seleiumtest" />
       <extension name="coverage">
@@ -95,6 +99,16 @@
       <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.BasketTestCase" />
       <option name="METHOD_NAME" value="testSlegal" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/Admin/web_test/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="seleiumtest" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -156,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/Admin/web_test/testng.xml" />
         <item itemvalue="TestNG.Pawfit_collarEditTestCase.testAAdd" />
         <item itemvalue="TestNG.How_it_worksTestCase" />
         <item itemvalue="TestNG.HomePageTestCase.testAClick1" />
         <item itemvalue="TestNG.BasketTestCase.testSlegal" />
-        <item itemvalue="TestNG.BasketTestCase (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609208564592</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改点击，输入文本等方法的使用">
+      <created>1609314811871</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609314811871</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,29 +266,30 @@
     <MESSAGE value="添加login和register断言&#10;添加JavaTool封装断言" />
     <MESSAGE value="java封装点击，输入文本，截图，清空等函数" />
     <MESSAGE value="封装函数后修改截图点击输入文本等方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="封装函数后修改截图点击输入文本等方法" />
+    <MESSAGE value="修改点击，输入文本等方法的使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改点击，输入文本等方法的使用" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608809253839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="572" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608809253839" />
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom" timestamp="1609293993520">
+    <state width="1877" height="228" key="GridCell.Tab.0.bottom" timestamp="1609756331962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609293993520" />
-    <state width="1877" height="179" key="GridCell.Tab.0.center" timestamp="1609293993520">
+    <state width="1877" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609756331962" />
+    <state width="1877" height="228" key="GridCell.Tab.0.center" timestamp="1609756331962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609293993520" />
-    <state width="1877" height="179" key="GridCell.Tab.0.left" timestamp="1609293993520">
+    <state width="1877" height="228" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609756331962" />
+    <state width="1877" height="228" key="GridCell.Tab.0.left" timestamp="1609756331962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609293993520" />
-    <state width="1877" height="179" key="GridCell.Tab.0.right" timestamp="1609293993520">
+    <state width="1877" height="228" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609756331962" />
+    <state width="1877" height="228" key="GridCell.Tab.0.right" timestamp="1609756331962">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609293993520" />
+    <state width="1877" height="228" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609756331962" />
     <state x="184" y="86" key="MergeDialog" timestamp="1607066774714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -280,18 +302,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609142851920" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609208574933">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1609314819054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609208574933" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609314819054" />
     <state x="466" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1608806434280">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="466" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608806434280" />
-    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609208601577">
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609314875193">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609208601577" />
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609314875193" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608965215896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
