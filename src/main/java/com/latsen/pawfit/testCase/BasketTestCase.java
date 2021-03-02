@@ -74,14 +74,14 @@ public class BasketTestCase {
     @Test
     public void testBproduct() throws IOException {
 //        点击跳转到product页面
-        product=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
+        product=driver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/a");
         javaTools.click(product);
         javaTools.scrFile(driver);
     }
     @Test
     public void testCpawfit2() throws IOException {
 //        点击跳转到Pawfit 2页面
-        pawfit2=driver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/section/div/div[2]/div[1]/a");
+        pawfit2=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[1]/a");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
         javaTools.click(pawfit2);
@@ -126,6 +126,7 @@ public class BasketTestCase {
         support=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[4]/a");
         javaTools.click(support);
         javaTools.scrFile(driver);
+        javaTools.back(driver);
     }
 
     @Test
@@ -196,7 +197,7 @@ public class BasketTestCase {
         join=driver.findElementByLinkText("Join Our Affiliate Programme");
         javaTools.click(join);
         javaTools.scrFile(driver);
-        join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span/svg");
+        join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span");
         javaTools.click(join_close);
     }
 
@@ -228,6 +229,7 @@ public class BasketTestCase {
         javaTools.sleep(3000);
         javaTools.scrFile(driver);
         join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span/svg");
+        join_close.click();
     }
 
     @Test

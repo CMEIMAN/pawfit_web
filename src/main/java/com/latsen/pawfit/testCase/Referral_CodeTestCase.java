@@ -33,6 +33,7 @@ public class Referral_CodeTestCase {
     private static WebElement submit;
     private static WebElement email1;
     private static WebElement formError;
+    private static WebElement learn_more;
 
     @BeforeClass
     public static void beforeClass() throws IOException, InterruptedException {
@@ -59,7 +60,9 @@ public class Referral_CodeTestCase {
         javaTools.jsclick(myChromeDriver,add);
         javaTools.sleep(3000);
 //        添加配件
-        add1=myChromeDriver.findElementByXPath("/html/body/section[2]/div/div/div[2]/div/div/div/div[1]/div[3]/a[2]/button");
+        learn_more=myChromeDriver.findElementByXPath("/html/body/section[2]/div/div/div/div/div/div[2]/div[3]/a/button");
+        javaTools.click(learn_more);
+        add1=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div/div/div[3]/div/div/div[3]/button");
         javaTools.jsclick(myChromeDriver,add1);
 
         //        点击购物车跳转购物车页面
@@ -131,7 +134,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementById("discount");
         apply=myChromeDriver.findElementByCssSelector("#summaryRows > tr:nth-child(4) > td > div > button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"LWFHCJ",code);
+        javaTools.inputText(myChromeDriver,"5WBGSY",code);
         javaTools.jsclick(myChromeDriver,apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -150,7 +153,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementById("discount");
         apply=myChromeDriver.findElementByCssSelector("#summaryRows > tr:nth-child(4) > td > div > button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"BI9FRQ",code);
+        javaTools.inputText(myChromeDriver,"N5JD7X",code);
         javaTools.jsclick(myChromeDriver,apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -174,7 +177,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementById("discount");
         apply=myChromeDriver.findElementByCssSelector("#summaryRows > tr:nth-child(4) > td > div > button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"BI9FRQ",code);
+        javaTools.inputText(myChromeDriver,"N5JD7X",code);
         javaTools.click(apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -212,7 +215,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementById("discount");
         apply=myChromeDriver.findElementByCssSelector("#summaryRows > tr:nth-child(4) > td > div > button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"4XXXXXX",code);
+        javaTools.inputText(myChromeDriver,"4UYHQ8",code);
         javaTools.jsclick(myChromeDriver,apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -233,7 +236,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/input");
         apply=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"BI9FRQ",code);
+        javaTools.inputText(myChromeDriver,"JSQM97",code);
         javaTools.jsclick(myChromeDriver,apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -246,7 +249,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/input");
         apply=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"XXXXXX2",code);
+        javaTools.inputText(myChromeDriver,"4UYHQ8",code);
         javaTools.click(apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -259,7 +262,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/input");
         apply=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"LWFHCJ",code);
+        javaTools.inputText(myChromeDriver,"4UYHQ8",code);
         javaTools.click(apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -278,7 +281,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/input");
         apply=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"BZVJ6M",code);
+        javaTools.inputText(myChromeDriver,"5WBGSY",code);
         javaTools.click(apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -328,7 +331,7 @@ public class Referral_CodeTestCase {
         code=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/input");
         apply=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/form/div[2]/div/div[1]/table/tbody/tr[3]/td/div/button");
         javaTools.clear(code);
-        javaTools.inputText(myChromeDriver,"LWFHCJ",code);
+        javaTools.inputText(myChromeDriver,"4UYHQ8",code);
         javaTools.jsclick(myChromeDriver,apply);
         javaTools.sleep(3000);
         formError=myChromeDriver.findElementByClassName("cart-error");
@@ -363,7 +366,7 @@ public class Referral_CodeTestCase {
         //        新用户
         email1=myChromeDriver.findElementById("customer.emailAddress");
         javaTools.clear(email);
-        javaTools.inputText(myChromeDriver,"22222222@qq.com",email);
+        javaTools.inputText(myChromeDriver,"22222223@qq.com",email);
         code=myChromeDriver.findElementById("discount");
         javaTools.clear(code);
         javaTools.inputText(myChromeDriver,"VE0JZI",code);

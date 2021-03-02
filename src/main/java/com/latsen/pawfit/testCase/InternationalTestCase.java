@@ -21,6 +21,9 @@ public class InternationalTestCase {
     private static WebElement English;
     private static WebElement french;
     private static WebElement german;
+    private static WebElement store;
+    private static WebElement North_America;
+    private static WebElement Europe;
     private static JavaTools javaTools;
     private static WebElement product;
     private static WebElement pawfit2;
@@ -75,8 +78,10 @@ public class InternationalTestCase {
         System.out.println(currentURL);
     }
 
+
 //    切换英法德语言
     public void International() throws InterruptedException, IOException {
+//        切换到法语
         langage=myChromeDriver.findElementById("dropdownMenu2");
         javaTools.jsclick(myChromeDriver,langage);
         french=myChromeDriver.findElementByLinkText("French (Français)");
@@ -84,6 +89,7 @@ public class InternationalTestCase {
         url();
         javaTools.sleep(3000);
         javaTools.scrFile(myChromeDriver);
+//        切换到德语
         langage=myChromeDriver.findElementById("dropdownMenu2");
         javaTools.jsclick(myChromeDriver,langage);
         german=myChromeDriver.findElementByLinkText("German (Deutsch)");
@@ -91,6 +97,7 @@ public class InternationalTestCase {
         url();
         javaTools.sleep(3000);
         javaTools.scrFile(myChromeDriver);
+//        切换到英语
         langage=myChromeDriver.findElementById("dropdownMenu2");
         javaTools.jsclick(myChromeDriver,langage);
         English=myChromeDriver.findElementByLinkText("English (English)");
@@ -100,10 +107,35 @@ public class InternationalTestCase {
         javaTools.scrFile(myChromeDriver);
     }
 
+
+    //    切换商店
+    public void store() throws IOException, InterruptedException {
+//        切换成美国商店
+        store=myChromeDriver.findElementById("store");
+        javaTools.jsclick(myChromeDriver,store);
+        North_America=myChromeDriver.findElementByLinkText("North America");
+        javaTools.jsclick(myChromeDriver,North_America);
+        url();
+        javaTools.sleep(3000);
+        javaTools.scrFile(myChromeDriver);
+        International();
+
+//        切换到英国商店
+        store=myChromeDriver.findElementById("store");
+        javaTools.jsclick(myChromeDriver,store);
+        Europe=myChromeDriver.findElementByLinkText("Europe");
+        javaTools.jsclick(myChromeDriver,Europe);
+        url();
+        javaTools.sleep(3000);
+        javaTools.scrFile(myChromeDriver);
+        International();
+    }
+
+
 //    首页国际化
     @Test
     public void testAHome() throws InterruptedException, IOException {
-        International();
+        store();
     }
 
 //    订阅页面国际化
@@ -115,45 +147,45 @@ public class InternationalTestCase {
         subscribe_btn=myChromeDriver.findElementByXPath("/html/body/div[6]/div/div/div/form/div[8]/button");
         javaTools.jsclick(myChromeDriver,subscribe_btn);
         javaTools.sleep(3000);
-        International();
+        store();
     }
 
 //    服务协议和contant us国际化
     @Test
     public void testCagreement() throws InterruptedException, IOException {
         javaTools.scrollTobottom(myChromeDriver);
-        legal=myChromeDriver.findElementByXPath("/html/body/div[7]/div/div[1]/ul[2]/li[1]/a");
+        legal=myChromeDriver.findElementByLinkText("Legal");
         javaTools.jsclick(myChromeDriver,legal);
 //        Terms of Use
         term=myChromeDriver.findElementByLinkText("Terms of Use");
         javaTools.jsclick(myChromeDriver,term);
-        International();
+        store();
 
 //      Referrals Programme
         referral=myChromeDriver.findElementByLinkText("Referrals Programme");
         javaTools.jsclick(myChromeDriver,referral);
-        International();
+        store();
 
         //      FCC Compliance Statement
         fcc=myChromeDriver.findElementByLinkText("FCC Compliance Statement");
         javaTools.jsclick(myChromeDriver,fcc);
-        International();
+        store();
 
 //        Service Agreement
         service=myChromeDriver.findElementByLinkText("Service Agreement");
         javaTools.jsclick(myChromeDriver,service);
-        International();
+        store();
 
 //        Privacy Policy
         privary_policy=myChromeDriver.findElementByLinkText("Privacy Policy");
         javaTools.jsclick(myChromeDriver,privary_policy);
-        International();
+        store();
 
 //        Contact Us
         javaTools.scrollTobottom(myChromeDriver);
         contact_us=myChromeDriver.findElementByLinkText("Contact Us");
         javaTools.jsclick(myChromeDriver,contact_us);
-        International();
+        store();
     }
 
     @Test
@@ -161,58 +193,60 @@ public class InternationalTestCase {
 //        点击跳转到product页面
         product=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
         javaTools.click(product);
-        International();
+        store();
 
 //        点击跳转到Pawfit 2页面
         Actions action=new Actions(myChromeDriver);
         action.moveToElement(myChromeDriver.findElementByLinkText("Products")).perform();
-        pawfit2=myChromeDriver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/section/div/div[2]/div[1]/a");
+        pawfit2=myChromeDriver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[1]/a");
         javaTools.jsclick(myChromeDriver,pawfit2);
         javaTools.sleep(3000);
-        International();
+        store();
 
 //        点击跳转到配件页
-        accessory=myChromeDriver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/section/div/div[2]/div[2]/a");
+        accessory=myChromeDriver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[4]/a");
         Actions action1=new Actions(myChromeDriver);
         action1.moveToElement(myChromeDriver.findElementByLinkText("Products")).perform();
         javaTools.click(accessory);
-        International();
+        store();
     }
+
     @Test
     public void testEhow() throws InterruptedException, IOException {
 //        点击跳转到how it works页面
         how=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[2]/a");
         javaTools.click(how);
-        International();
+        store();
     }
+
     @Test
     public void testFblog() throws InterruptedException, IOException {
 //        点击跳转到blog页面
         blog=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[3]/a");
         javaTools.click(blog);
-        International();
+        store();
 
 //        点击跳转到story页面
         story=myChromeDriver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[3]/section/div/div[2]/div[2]/a");
         Actions action=new Actions(myChromeDriver);
         action.moveToElement(myChromeDriver.findElementByLinkText("Blog")).perform();
         javaTools.click(story);
-        International();
+        store();
     }
 
     @Test
     public void testGsupport() throws InterruptedException, IOException {
-//        点击跳转到support页面
-        support=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[4]/a");
-        javaTools.click(support);
-        International();
+////        点击跳转到support页面
+//        support=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[4]/a");
+//        javaTools.click(support);
+//        store();
 
 //        点击跳转到delicery页面
         delivery=myChromeDriver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[4]/section/div/div[2]/div[2]/a");
         Actions action=new Actions(myChromeDriver);
         action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/nav/ul/li[4]/a"))).perform();
-        javaTools.click(delivery);
-        International();
+        javaTools.jsclick(myChromeDriver,delivery);
+        store();
     }
 
     @Test
@@ -220,7 +254,7 @@ public class InternationalTestCase {
 //        点击跳转到company页面
         company=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[5]/a");
         javaTools.click(company);
-        International();
+        store();
     }
 
     @Test
@@ -228,19 +262,19 @@ public class InternationalTestCase {
 //        点击跳转到customer页面
         customer=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[6]/a");
         javaTools.click(customer);
-        International();
+        store();
 
 //        注册
         register=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[2]/a");
         javaTools.click(register);
-        International();
+        store();
         customer=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[6]/a");
         javaTools.click(customer);
 
 //        忘记密码
         forget_password=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/form/p[1]/a");
         javaTools.click(forget_password);
-        International();
+        store();
         customer=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[6]/a");
         javaTools.click(customer);
 
@@ -249,61 +283,61 @@ public class InternationalTestCase {
         login_password=myChromeDriver.findElementById("signin_password");
         login=myChromeDriver.findElementById("genericLogin-button");
         javaTools.inputText(myChromeDriver,"1790039849@qq.com",login_email_address);
-        javaTools.inputText(myChromeDriver,"123456",login_password);
+        javaTools.inputText(myChromeDriver,"12345678",login_password);
         javaTools.click(login);
         javaTools.sleep(3000);
-        International();
+        store();
 
 //        用户个人信息页面
         shopping_information=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/div[1]/ul/li[1]/a");
         javaTools.click(shopping_information);
-        International();
+        store();
 
 //        用户个人信息编辑
         shopping_information_edit=myChromeDriver.findElementByXPath("/html/body/div[3]/div[2]/div[2]/div/span/p/span[2]/a/button");
         javaTools.click(shopping_information_edit);
-        International();
+        store();
 
 //        订单页面
         //        点击订单列表
         recent_order=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/ul/li[2]/a");
         javaTools.click(recent_order);
-        International();
+        store();
 
 //        点击跳转订单详情页面
         details=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div[2]/div/div[1]/table/tbody/tr[1]/td[6]/a");
         javaTools.click(details);
-        International();
+        store();
 
 //        返回订单列表
         list_of_orders=myChromeDriver.findElementByXPath("/html/body/div[3]/div[3]/div[4]/div[2]/form[1]/button");
         javaTools.click(list_of_orders);
-        International();
+        store();
 
 //        修改密码页面
         changepassword=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div[1]/ul/li[3]/a");
         javaTools.click(changepassword);
-        International();
+        store();
     }
 
     //添加商品到购物车并跳转购物车页面
     @Test
     public void testJshopping_cart() throws InterruptedException, IOException {
-        product=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
+        product=myChromeDriver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/a");
         javaTools.click(product);
         javaTools.sleep(3000);
-        p2add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[2]");
+        p2add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div[1]/div[1]/div/div/div[3]/div[3]/a[2]/button");
         javaTools.click(p2add);
         checkout=myChromeDriver.findElementByLinkText("Checkout");
         Actions action=new Actions(myChromeDriver);
         action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/div[1]/button"))).perform();
         javaTools.click(checkout);
-        International();
+        store();
 
 //        跳转下订单页面
         proceed_to_checkout=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[2]/div[2]/div/a");
         javaTools.click(proceed_to_checkout);
-        International();
+        store();
     }
 
     @AfterClass

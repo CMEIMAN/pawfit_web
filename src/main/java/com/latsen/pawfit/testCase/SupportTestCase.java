@@ -34,18 +34,20 @@ public class SupportTestCase {
 //    进入support页面
     @Test
     public void testASupport() {
-//        点击第一个问题
-        item=myChromeDriver.findElementByXPath("/html/body/div[4]/div/ul[1]/div[1]/a");
-        javaTools.click(item);
-//        点击下一个
-        item_next=myChromeDriver.findElementByXPath("/html/body/div[4]/div[2]/div[3]/a");
-        javaTools.click(item_next);
-//        点击上一个
-        prev=myChromeDriver.findElementByXPath("/html/body/div[4]/div[2]/div[1]/a");
-//        prev.click();
-        javaTools.jsclick(myChromeDriver,prev);
+////        点击第一个问题
+//        item=myChromeDriver.findElementByXPath("/html/body/div[4]/div/ul[1]/div[1]/a");
+//        javaTools.click(item);
+////        点击下一个
+//        item_next=myChromeDriver.findElementByXPath("/html/body/div[4]/div[2]/div[3]/a");
+//        javaTools.click(item_next);
+////        点击上一个
+//        prev=myChromeDriver.findElementByXPath("/html/body/div[4]/div[2]/div[1]/a");
+////        prev.click();
+//        javaTools.jsclick(myChromeDriver,prev);
+//        javaTools.back(myChromeDriver);
+//        System.out.println("Support测试成功！");
+        javaTools.sleep(5000);
         javaTools.back(myChromeDriver);
-        System.out.println("Support测试成功！");
  }
 
 // 点击进入Delivery

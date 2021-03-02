@@ -99,30 +99,30 @@ public class HomePageTestCase {
 
         System.out.println("点击learn more跳转到story");
         story_learn_more=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div/div[1]/p[1]/a");
-        javaTools.jsclick(myChromeDriver,story_learn_more);
+        javaTools.click(story_learn_more);
         javaTools.back(myChromeDriver);
     }
 
     @Test
     public void testDClick4() {
         System.out.println("点击跳转到articles");
-        latsen_articles=myChromeDriver.findElementByXPath("/html/body/section[11]/div/div[1]/h3/a");
+        latsen_articles=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div[1]/h3/a");
         javaTools.jsclick(myChromeDriver,latsen_articles);
         javaTools.back(myChromeDriver);
 
-        read_all_articel=myChromeDriver.findElementByXPath("/html/body/section[11]/div/div[3]/div/a");
+        read_all_articel=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div[3]/div/a/button");
         javaTools.jsclick(myChromeDriver,read_all_articel);
         javaTools.back(myChromeDriver);
 
-        read_all_articel1=myChromeDriver.findElementByXPath("/html/body/section[11]/div/div[2]/div[1]/div[2]/a");
+        read_all_articel1=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div[2]/div[1]/div[2]/a");
         javaTools.jsclick(myChromeDriver,read_all_articel1);
         javaTools.back(myChromeDriver);
 
-        read_all_articel2=myChromeDriver.findElementByXPath("/html/body/section[11]/div/div[2]/div[2]/div[2]/a");
+        read_all_articel2=myChromeDriver.findElementByXPath("/html/body/section[12]/div/div[2]/div[2]/div[2]/a");
         javaTools.jsclick(myChromeDriver,read_all_articel2);
         javaTools.back(myChromeDriver);
 
-        read_all_articel3=myChromeDriver.findElementByXPath("/html/body/section[11]/div/div[2]/div[3]/div[2]/a");
+        read_all_articel3=myChromeDriver.findElementByXPath("/html/body/section[12]/div/div[2]/div[3]/div[2]/a");
         javaTools.jsclick(myChromeDriver,read_all_articel3);
         javaTools.back(myChromeDriver);
     }

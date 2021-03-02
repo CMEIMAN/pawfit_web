@@ -14,7 +14,6 @@ import com.latsen.pawfit.utils.JavaTools;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Accessory2TestCase{
-    private static WebElement pawfit_collar;
     private static WebElement collar_attachment;
     private static WebElement collar_attachment_add;
     private static WebElement collar_strap;
@@ -31,7 +30,6 @@ public class Accessory2TestCase{
         System.out.println("已经执行");
         driver = new NewDriver(Const.ACCESSORY2_URL);
         myChromeDriver = driver.connect();
-        pawfit_collar=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div/div/div[2]/div/div[3]/a/button");
     }
 
     @Test
@@ -44,8 +42,11 @@ public class Accessory2TestCase{
         System.out.println("点击collar attachment的learn more");
         javaTools.click(collar_attachment);
         javaTools.back(myChromeDriver);
+    }
 
-        //定位元素并点击
+    @Test
+    public void testBClick() {
+//定位元素并点击
         collar_strap=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div/div/div[1]/div/div/div[3]/a/button");
         collar_strap_add=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div/div/div[1]/div/div/div[3]/button");
         System.out.println("点击collar strap加入购物车");
@@ -53,8 +54,11 @@ public class Accessory2TestCase{
         System.out.println("点击collar strap的learn more");
         javaTools.click(collar_strap);
         javaTools.back(myChromeDriver);
+    }
 
-        //定位元素并点击
+    @Test
+    public void testCClick() {
+//定位元素并点击
         charging=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div/div/div[3]/div/div/div[3]/a/button");
         charging_add=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div/div/div/div[3]/div/div/div[3]/button");
         System.out.println("点击Charging Dock and Cable加入购物车");
@@ -63,6 +67,7 @@ public class Accessory2TestCase{
         javaTools.click(charging);
         javaTools.back(myChromeDriver);
     }
+
     @AfterClass
     public static void alterClass(){
         driver.disconnect();

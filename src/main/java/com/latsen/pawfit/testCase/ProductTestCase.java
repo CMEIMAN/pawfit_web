@@ -55,6 +55,8 @@ public class ProductTestCase {
     //   点击pawfit2 bundle deal模块
     @Test
     public void testBpawfit2_Bundle_Deal() throws IOException {
+        p2GD=driver.findElementByXPath("/html/body/section[1]/div/div[2]/div[1]/div/div/div[3]/div[3]/a[1]");
+        p2GD_add=driver.findElementByXPath("/html/body/section[1]/div/div[2]/div[1]/div/div/div[3]/div[3]/a[2]");
         javaTools.click(p2GD_add);
         javaTools.click(p2GD);
         javaTools.scrFile(driver);
@@ -64,6 +66,7 @@ public class ProductTestCase {
     //   点击HARNESSES, LEASHES & COLLARS模块
     @Test
     public void testCaccessory1() throws IOException {
+        accessory1=driver.findElementByXPath("/html/body/section[2]/div/div/div/div/div/div[2]/div[3]/a/button");
         javaTools.click(accessory1);
         javaTools.scrFile(driver);
         javaTools.back(driver);
@@ -72,6 +75,7 @@ public class ProductTestCase {
     //   点击collar strap模块
     @Test
     public void testDaccessory2() throws IOException {
+        accessory2=driver.findElementByXPath("/html/body/section[3]/div/div/div/div/div/div[2]/div[3]/a/button");
         javaTools.click(accessory2);
         javaTools.scrFile(driver);
         javaTools.back(driver);

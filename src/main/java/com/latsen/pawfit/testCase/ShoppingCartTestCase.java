@@ -37,7 +37,7 @@ public class ShoppingCartTestCase {
         myChromeDriver = driver.connect();
         javaTools = new JavaTools();
 
-        pawfit2_add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[2]/button");
+        pawfit2_add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div[1]/div[1]/div/div/div[3]/div[3]/a[2]/button");
     }
 
     @Test

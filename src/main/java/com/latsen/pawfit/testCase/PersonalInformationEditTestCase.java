@@ -74,9 +74,11 @@ public class PersonalInformationEditTestCase {
         elementStringHashMap.put(firstName, "Pawfit");
         elementStringHashMap.put(lastName, "latsen");
         select = new Select(customer_country);
-        select.selectByVisibleText("United Kingdom");
+//        select.selectByVisibleText("United Kingdom");
+        select.selectByVisibleText("United States");
         elementStringHashMap.put(province, "广东省");
-        elementStringHashMap.put(postcode,"IV17 0YT");
+//        elementStringHashMap.put(postcode,"IV17 0YT");
+        elementStringHashMap.put(postcode,"12345");
         elementStringHashMap.put(street_address, "test");
         elementStringHashMap.put(phone, "12346625");
         elementStringHashMap.put(city, "佛山");
@@ -127,7 +129,8 @@ public class PersonalInformationEditTestCase {
 
     @Test
     public void testCCountry() {
-        select.selectByVisibleText("United Kingdom");
+//        select.selectByVisibleText("United Kingdom");
+        select.selectByVisibleText("United States");
     }
 
     @Test
@@ -206,7 +209,8 @@ public class PersonalInformationEditTestCase {
             System.out.println(entry.getKey()+":"+entry.getValue());
         }
 //        select = new Select(customer_country);
-        select.selectByVisibleText("United Kingdom");
+//        select.selectByVisibleText("United Kingdom");
+        select.selectByVisibleText("United States");
         setText(elementStringHashMap);
         //提交
         submit.click();

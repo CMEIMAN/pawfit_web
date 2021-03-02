@@ -120,7 +120,8 @@ public class PalpalInfoTestCase {
     public void testFcheckCountry() {
         country=driver.findElement(By.id("customer.billing.country"));
         countrySelect=new Select(country);
-        countrySelect.selectByVisibleText("United Kingdom");
+//        countrySelect.selectByVisibleText("United Kingdom");
+        countrySelect.selectByVisibleText("United States");
         javaTools.click(submitOrder);
     }
 
@@ -136,7 +137,8 @@ public class PalpalInfoTestCase {
     public void testHcheckPostalCode() throws IOException {
         postalCode=driver.findElement(By.name("customer.billing.postalCode"));
         Tools.setAllText(postalCode,submitOrder,Tools.getUUIDText());
-        injectSQLs(postalCode);webElements.put(postalCode,"M2 5BQ");
+//        injectSQLs(postalCode);webElements.put(postalCode,"M2 5BQ");
+        injectSQLs(postalCode);webElements.put(postalCode,"12345");
     }
 
     @Test
@@ -181,13 +183,13 @@ public class PalpalInfoTestCase {
         javaTools.scrFile(driver);
         javaTools.click(submitOrder);
         javaTools.scrFile(driver);
-        javaTools.back(driver);
+//        javaTools.back(driver);
     }
 
-    @AfterClass
-    public static void alterClass() {
-        webdriver.disconnect();
-    }
+//    @AfterClass
+//    public static void alterClass() {
+//        webdriver.disconnect();
+//    }
 
     public void injectSQLs(WebElement element) throws IOException {
         String[] strings={
@@ -199,7 +201,7 @@ public class PalpalInfoTestCase {
         for (int i=0;i< strings.length;i++){
             if (i>strings.length-2){
                 element.sendKeys(strings[i]);
-                javaTools.scrFile(driver);
+//                javaTools.scrFile(driver);
                 javaTools.click(submitOrder);
             }
             else {
