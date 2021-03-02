@@ -22,48 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="增加新配件页的测试用例">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/Const/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/Const/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Accessory2TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Accessory2TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/BasketTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/BasketTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/HomePageTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/HomePageTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/InternationalTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/InternationalTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Login_logoutTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Login_logoutTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PalpalInfoTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PalpalInfoTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ProductTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ProductTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Referral_CodeTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Referral_CodeTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/RegisterTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/RegisterTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ShoppingCartTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ShoppingCartTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/SupportTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/SupportTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/Const/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/Const/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/AboutTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/AboutTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/AccessoryTestCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ArticlesTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ArticlesTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/BasketTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/BasketTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/EmailSubscriptionTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/EmailSubscriptionTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ForgotPasswordTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ForgotPasswordTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/HomePageTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/HomePageTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/How_it_worksTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/How_it_worksTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/InternationalTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/InternationalTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit2TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit2TestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit_collarEditTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit_collarEditTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ProductTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ProductTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Recent_orderTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Recent_orderTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Referral_CodeTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Referral_CodeTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/RegisterTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/RegisterTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ShoppingCartTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ShoppingCartTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/StoryTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/StoryTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/SupportTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/SupportTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/echarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/echarts.html" afterDir="false" />
-    </list>
+    <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="元素变化修改定位&#10;增加美国商店切换&#10;取消faq" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -278,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611568539061</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="元素变化修改定位&#10;增加美国商店切换&#10;取消faq">
+      <created>1614653508493</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614653508493</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,7 +269,8 @@
     <MESSAGE value="封装函数后修改截图点击输入文本等方法" />
     <MESSAGE value="修改点击，输入文本等方法的使用" />
     <MESSAGE value="增加新配件页的测试用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加新配件页的测试用例" />
+    <MESSAGE value="元素变化修改定位&#10;增加美国商店切换&#10;取消faq" />
+    <option name="LAST_COMMIT_MESSAGE" value="元素变化修改定位&#10;增加美国商店切换&#10;取消faq" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="161" key="#Plugins" timestamp="1612344641395">
@@ -346,10 +313,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1612340231199" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614653409345">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614653588790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614653409345" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614653588790" />
     <state x="466" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1608806434280">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
