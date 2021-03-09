@@ -132,13 +132,13 @@ public class InternationalTestCase {
     }
 
 
-//    首页国际化
+//    首页
     @Test
     public void testAHome() throws InterruptedException, IOException {
         store();
     }
 
-//    订阅页面国际化
+//    订阅页面
     @Test
     public void testBsubscribe() throws InterruptedException, IOException {
         javaTools.scrollTobottom(myChromeDriver);
@@ -166,7 +166,7 @@ public class InternationalTestCase {
         javaTools.jsclick(myChromeDriver,referral);
         store();
 
-        //      FCC Compliance Statement
+//      FCC Compliance Statement
         fcc=myChromeDriver.findElementByLinkText("FCC Compliance Statement");
         javaTools.jsclick(myChromeDriver,fcc);
         store();
@@ -191,20 +191,28 @@ public class InternationalTestCase {
     @Test
     public void testDproduct() throws InterruptedException, IOException {
 //        点击跳转到product页面
-        product=myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
+        product = myChromeDriver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/a");
         javaTools.click(product);
         store();
+    }
 
+    @Test
+    public void testDPawfit2() throws InterruptedException, IOException {
 //        点击跳转到Pawfit 2页面
-        Actions action=new Actions(myChromeDriver);
+        javaTools.sleep(3000);
+        Actions action = new Actions(myChromeDriver);
         action.moveToElement(myChromeDriver.findElementByLinkText("Products")).perform();
-        pawfit2=myChromeDriver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[1]/a");
-        javaTools.jsclick(myChromeDriver,pawfit2);
+        pawfit2 = myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/nav/ul/li[1]/ul/li[1]");
+        javaTools.click(pawfit2);
         javaTools.sleep(3000);
         store();
+    }
 
+    @Test
+    public void testDaccessory() throws InterruptedException, IOException {
 //        点击跳转到配件页
-        accessory=myChromeDriver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[4]/a");
+        javaTools.sleep(3000);
+        accessory=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div[2]/nav/ul/li[1]/ul/li[4]/a");
         Actions action1=new Actions(myChromeDriver);
         action1.moveToElement(myChromeDriver.findElementByLinkText("Products")).perform();
         javaTools.click(accessory);
@@ -323,19 +331,19 @@ public class InternationalTestCase {
     //添加商品到购物车并跳转购物车页面
     @Test
     public void testJshopping_cart() throws InterruptedException, IOException {
-        product=myChromeDriver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/a");
+        product=myChromeDriver.findElementByXPath("/html/body/div[2]/div[2]/div/div/div/nav/ul/li[1]/a");
         javaTools.click(product);
         javaTools.sleep(3000);
-        p2add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div[1]/div[1]/div/div/div[3]/div[3]/a[2]/button");
+        p2add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div/div[1]/div/div/div[3]/div[3]/a[2]/button");
         javaTools.click(p2add);
         checkout=myChromeDriver.findElementByLinkText("Checkout");
         Actions action=new Actions(myChromeDriver);
-        action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/div[1]/button"))).perform();
+        action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[6]/div/div/div/div/div/div[2]/div[2]/div/a"))).perform();
         javaTools.click(checkout);
         store();
 
 //        跳转下订单页面
-        proceed_to_checkout=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[2]/div[2]/div/a");
+        proceed_to_checkout=myChromeDriver.findElementByXPath("/html/body/div[6]/div/div/div/div/div/div[2]/div[2]/div/a");
         javaTools.click(proceed_to_checkout);
         store();
     }

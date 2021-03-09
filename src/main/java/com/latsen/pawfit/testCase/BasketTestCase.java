@@ -18,7 +18,9 @@ public class BasketTestCase {
     private static WebElement home;
     private static WebElement product;
     private static WebElement pawfit2;
-    private static WebElement accessory;
+    private static WebElement pawfit2_bundle;
+    private static WebElement accessory1;
+    private static WebElement accessory2;
     private static WebElement how;
     private static WebElement blog;
     private static WebElement story;
@@ -87,15 +89,36 @@ public class BasketTestCase {
         javaTools.click(pawfit2);
         javaTools.scrFile(driver);
     }
+
     @Test
-    public void testDaccessory() throws IOException {
-//        点击跳转到配件页
-        accessory=driver.findElementByXPath("/html/body/div[1]/div/div/div/div/nav/ul/li[1]/section/div/div[2]/div[4]");
+    public void testCpawfit2_bundle() throws IOException {
+//        点击跳转到gift deal页面
+        pawfit2_bundle=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[2]/a");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
-        javaTools.click(accessory);
+        javaTools.click(pawfit2_bundle);
         javaTools.scrFile(driver);
     }
+    @Test
+    public void testDaccessory1() throws IOException {
+//        点击跳转到设备配件页
+        accessory1=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[4]/a");
+        Actions action=new Actions(driver);
+        action.moveToElement(driver.findElementByLinkText("Products")).perform();
+        javaTools.jsclick(driver,accessory1);
+        javaTools.scrFile(driver);
+    }
+
+    @Test
+    public void testDaccessory2() throws IOException {
+        //        点击跳转到狗背带配件页
+        accessory2=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[3]/a");
+        Actions action=new Actions(driver);
+        action.moveToElement(driver.findElementByLinkText("Products")).perform();
+        javaTools.jsclick(driver,accessory2);
+        javaTools.scrFile(driver);
+    }
+
     @Test
     public void testEhow() throws IOException {
 //        点击跳转到how it works页面
