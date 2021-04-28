@@ -64,7 +64,7 @@ public class RegisterTestCase {
         elementStringHashMap.put(firstName, "Pawfit");
         elementStringHashMap.put(lastName, "latsen");
         select = new Select(country);
-        select.selectByVisibleText("United States");
+        select.selectByVisibleText("United Kingdom");
         elementStringHashMap.put(province, "广东省");
         elementStringHashMap.put(email, "email@test" + new Random().nextInt() + ".com");
         elementStringHashMap.put(password, "fk_liekkas04040");

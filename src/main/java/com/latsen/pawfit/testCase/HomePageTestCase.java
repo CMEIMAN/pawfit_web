@@ -98,23 +98,26 @@ public class HomePageTestCase {
         javaTools.back(myChromeDriver);
 
         System.out.println("点击learn more跳转到story");
-        story_learn_more=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div/div[1]/p[1]/a");
+//        story_learn_more=myChromeDriver.findElementByXPath("/html/body/section[11]/div/div/div[1]/p[1]/a");
+        story_learn_more=myChromeDriver.findElementByCssSelector("body > section.home_stores > div > div > div.col-lg-6.col-md-6.col-xs-12.col-sm-12.stores_content > p:nth-child(3) > a");
         javaTools.click(story_learn_more);
         javaTools.back(myChromeDriver);
     }
 
     @Test
     public void testDClick4() {
+        javaTools.scrollTobottom(myChromeDriver);
         System.out.println("点击跳转到articles");
-        latsen_articles=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div[1]/h3/a");
+        latsen_articles=myChromeDriver.findElementByXPath("/html/body/section[12]/div/div[1]/h3/a");
         javaTools.jsclick(myChromeDriver,latsen_articles);
         javaTools.back(myChromeDriver);
 
-        read_all_articel=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div[3]/div/a/button");
+        javaTools.scrollTobottom(myChromeDriver);
+        read_all_articel=myChromeDriver.findElementByXPath("/html/body/section[12]/div/div[3]/div/a/button");
         javaTools.jsclick(myChromeDriver,read_all_articel);
         javaTools.back(myChromeDriver);
 
-        read_all_articel1=myChromeDriver.findElementByXPath("/html/body/section[10]/div/div[2]/div[1]/div[2]/a");
+        read_all_articel1=myChromeDriver.findElementByXPath("/html/body/section[12]/div/div[2]/div[1]/div[2]/a");
         javaTools.jsclick(myChromeDriver,read_all_articel1);
         javaTools.back(myChromeDriver);
 

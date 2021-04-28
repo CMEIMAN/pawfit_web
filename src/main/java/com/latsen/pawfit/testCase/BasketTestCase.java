@@ -76,16 +76,17 @@ public class BasketTestCase {
     @Test
     public void testBproduct() throws IOException {
 //        点击跳转到product页面
-        product=driver.findElementByXPath("/html/body/div[1]/div[2]/div/div/div/nav/ul/li[1]/a");
+        product=driver.findElementByXPath("/html/body/div[2]/div/div/div/div/nav/ul/li[1]/a");
         javaTools.click(product);
         javaTools.scrFile(driver);
     }
     @Test
     public void testCpawfit2() throws IOException {
 //        点击跳转到Pawfit 2页面
-        pawfit2=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[1]/a");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
+        pawfit2=driver.findElementByLinkText("Pawfit 2");
+//        pawfit2=driver.findElementByXPath("/html/body/div[3]/div/div/nav/ul/li[1]/ul/li[1]/a");
         javaTools.click(pawfit2);
         javaTools.scrFile(driver);
     }
@@ -93,18 +94,20 @@ public class BasketTestCase {
     @Test
     public void testCpawfit2_bundle() throws IOException {
 //        点击跳转到gift deal页面
-        pawfit2_bundle=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[2]/a");
+//        pawfit2_bundle=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[2]/a");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
+        pawfit2_bundle=driver.findElementByLinkText("Pawfit 2 Gift Deal");
         javaTools.click(pawfit2_bundle);
         javaTools.scrFile(driver);
     }
     @Test
     public void testDaccessory1() throws IOException {
 //        点击跳转到设备配件页
-        accessory1=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[4]/a");
+//        accessory1=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[4]/a");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
+        accessory1=driver.findElementByLinkText("Pawfit 2 Accessories");
         javaTools.jsclick(driver,accessory1);
         javaTools.scrFile(driver);
     }
@@ -112,9 +115,10 @@ public class BasketTestCase {
     @Test
     public void testDaccessory2() throws IOException {
         //        点击跳转到狗背带配件页
-        accessory2=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[3]/a");
+//        accessory2=driver.findElementByXPath("/html/body/div[2]/div/div[2]/nav/ul/li[1]/ul/li[3]/a");
         Actions action=new Actions(driver);
         action.moveToElement(driver.findElementByLinkText("Products")).perform();
+        accessory2=driver.findElementByLinkText("Harnesses, Leashes & Collars");
         javaTools.jsclick(driver,accessory2);
         javaTools.scrFile(driver);
     }
@@ -220,7 +224,7 @@ public class BasketTestCase {
         join=driver.findElementByLinkText("Join Our Affiliate Programme");
         javaTools.click(join);
         javaTools.scrFile(driver);
-        join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span");
+        join_close=driver.findElementByCssSelector("#sorryPopUp > div > div > div.modal-header > button");
         javaTools.click(join_close);
     }
 
