@@ -20,15 +20,16 @@ import java.io.IOException;
 import java.util.HashMap;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Shopping_Process_guestTestcase {
+public class Shopping_Process_LoginTestcase {
     private static MyChromeDriverSingleton myChromeDriver;
     private static NewDriver driver;
     private static JavaTools javaTools;
     private static WebElement pawfit2_add;
     private static WebElement checkout;
-    private static WebElement guest;
-    private static WebElement guest_email;
-    private static WebElement guest_submit;
+    private static WebElement product;
+    private static WebElement password;
+    private static WebElement email;
+    private static WebElement submit;
     private Utils FileUtils;
     private static WebElement firstName;
     private static WebElement lastName;
@@ -37,18 +38,16 @@ public class Shopping_Process_guestTestcase {
     private static WebElement address2;
     private static WebElement city;
     private static WebElement country;
+    private static WebElement countrySelect2;
     private static WebElement province;
     private static WebElement postalCode;
     private static WebElement phoneNumber;
     private static WebElement submitOrder;
     private static WebElement checkboxOfOrderNote;
     private static HashMap<WebElement,String> webElements;
-    private static WebElement countrySelect1;
-    private static WebElement countrySelect2;
-    private static WebElement change_address1;
-    private static WebElement change_address2;
-    private static WebElement edit1;
-    private static WebElement edit2;
+    private static Select countrySelect;
+    private static WebElement login;
+    private static WebElement logout;
     private static WebElement giftCode;
     private static WebElement apply;
     private static WebElement submitOrder1;
@@ -59,84 +58,42 @@ public class Shopping_Process_guestTestcase {
     @BeforeClass
     public static void beforeClass() throws IOException {
         System.out.println("已经执行");
-        driver = new NewDriver(Const.PRODUCT_URL);
+        driver = new NewDriver(Const.LOGiN_URL);
         myChromeDriver = driver.connect();
         javaTools = new JavaTools();
         webElements=new HashMap<WebElement, String>();
-        pawfit2_add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div[1]/div[1]/div/div/div[3]/div[3]/a[2]/button");
+
+        email=myChromeDriver.findElementById("signin_userName");
+        email.sendKeys("1790039849@qq.com");
+        password=myChromeDriver.findElementById("signin_password");
+        password.sendKeys("12345678");
+        javaTools.sleep(2000);
+        submit=myChromeDriver.findElementById("genericLogin-button");
+        javaTools.click(submit);
 
     }
 
     @Test
-    public void testAClick() throws IOException {
+    public void testAClick(){
+        javaTools.sleep(2000);
+        product=myChromeDriver.findElementByClassName("Product-html");
+        javaTools.click(product);
 //        添加pawfit2加入购物车
+        pawfit2_add=myChromeDriver.findElementByXPath("/html/body/section[1]/div/div[1]/div[1]/div/div/div[3]/div[3]/a[2]/button");
         pawfit2_add.click();
         //        点击购物车跳转购物车页面
         Actions action=new Actions(myChromeDriver);
         action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/div[1]/button"))).perform();
         myChromeDriver.findElementByClassName("checkout-bg").click();
-        javaTools.sleep(2000);
-        javaTools.scrFile(myChromeDriver);
         //        点击跳转checkout页面
+        javaTools.sleep(2000);
         checkout=myChromeDriver.findElementByClassName("check-btn-div");
         javaTools.click(checkout);
     }
 
     @Test
-    public void testBGUEST () throws IOException {
-        javaTools.sleep(2000);
-        javaTools.scrFile(myChromeDriver);
-        guest=myChromeDriver.findElementByCssSelector("body > div.login-area.ptb-80 > div > div > div > div.container.login-bottom-container > div.login-button-father > a");
-        javaTools.click(guest);
-
-        for(int i=0;i<Const.getCommomText().length;i++){
-//            注入SQL
-            guest_email=myChromeDriver.findElementById("email");
-            guest_email.sendKeys(""+Const.getSQlText()[i]);
-            javaTools.clear(guest_email);
-            guest_submit=myChromeDriver.findElementById("emailSubmit");
-            javaTools.click(guest_submit);
-
-//            注入其他文本
-            guest_email=myChromeDriver.findElementById("email");
-            guest_email.sendKeys(""+Const.getCommomText()[i]);
-            javaTools.clear(guest_email);
-            guest_submit=myChromeDriver.findElementById("emailSubmit");
-            javaTools.click(guest_submit);
-        }
-    }
-@Test
-    public void testCGUEST_null () throws IOException {
-//        输入空
-        guest_email=myChromeDriver.findElementById("email");
-        guest_email.sendKeys(" ");
-        guest_submit=myChromeDriver.findElementById("emailSubmit");
-        javaTools.click(guest_submit);
-
-//        输入已存在邮箱
-        guest_email=myChromeDriver.findElementById("email");
-        guest_email.sendKeys("1790039849@qq.com");
-        guest_submit=myChromeDriver.findElementById("emailSubmit");
-        javaTools.jsclick(myChromeDriver,guest_submit);
-        javaTools.sleep(2000);
-        javaTools.scrFile(myChromeDriver);
-
-    }
-
-    @Test
-    public void testDGUEST_right(){
-//        输入正确游客邮箱
-        guest_email=myChromeDriver.findElementById("email");
-        javaTools.clear(guest_email);
-        guest_email.sendKeys("110@qq.com");
-        guest_submit=myChromeDriver.findElementById("emailSubmit");
-        javaTools.jsclick(myChromeDriver,guest_submit);
-    }
-
-    @Test
     //      定位元素
-
-    public void testEcheckFitstName() throws IOException {
+    public void testBcheckFitstName() throws IOException {
         /*长度判断*/
         firstName=myChromeDriver.findElement(By.id("firstName"));
         submitOrder=myChromeDriver.findElementById("submit");
@@ -148,7 +105,7 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testFcheckLastName() throws IOException {
+    public void testCcheckLastName() throws IOException {
         lastName=myChromeDriver.findElement(By.id("lastName"));
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(lastName,submitOrder,Tools.getUUIDText());
@@ -158,7 +115,7 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testGcheckCountry() {
+    public void testDcheckCountry() {
         country=myChromeDriver.findElement(By.id("country"));
         javaTools.click(country);
 //        countrySelect1=myChromeDriver.findElementById("countryList");
@@ -171,7 +128,7 @@ public class Shopping_Process_guestTestcase {
 
 
     @Test
-    public void testHcheckProvince() throws IOException {
+    public void testEcheckProvince() throws IOException {
         province=myChromeDriver.findElement(By.id("state"));
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(province,submitOrder,Tools.getUUIDText());
@@ -181,7 +138,7 @@ public class Shopping_Process_guestTestcase {
 
 
     @Test
-    public void testIcheakCity() throws IOException {
+    public void testFcheakCity() throws IOException {
         city=myChromeDriver.findElement(By.id("city"));
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(city,submitOrder,Tools.getUUIDText());
@@ -190,7 +147,7 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testJcheckPostalCode() throws IOException {
+    public void testGcheckPostalCode() throws IOException {
         postalCode=myChromeDriver.findElement(By.id("postcode"));
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(postalCode,submitOrder,Tools.getUUIDText());
@@ -199,7 +156,7 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testKcheakAddress() throws IOException {
+    public void testHcheakAddress() throws IOException {
         address=myChromeDriver.findElement(By.id("address1"));
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(address,submitOrder,Tools.getUUIDText());
@@ -212,11 +169,10 @@ public class Shopping_Process_guestTestcase {
 
         webElements.put(address,"中国广东顺德大良");
         webElements.put(address2,"中国广东顺德大良2");
-
     }
 
     @Test
-    public void testLcompany() throws IOException {
+    public void testIcompany() throws IOException {
         company=myChromeDriver.findElement(By.id("company"));
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(company,submitOrder,Tools.getUUIDText());
@@ -226,7 +182,7 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testMcheckPhoneNumber() throws IOException {
+    public void testJcheckPhoneNumber() throws IOException {
         phoneNumber=myChromeDriver.findElement(By.id("phone"));
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(phoneNumber,submitOrder,Tools.getUUIDText());
@@ -235,7 +191,7 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testNcheckCheckboxOfOrderNote() throws IOException {
+    public void testKcheckCheckboxOfOrderNote() throws IOException {
         checkboxOfOrderNote=myChromeDriver.findElementById("comments");
         submitOrder=myChromeDriver.findElementById("submit");
         Tools.setAllText(checkboxOfOrderNote,submitOrder,Tools.getUUIDText());
@@ -244,37 +200,16 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testOcheackSubmitOrder() throws IOException {
+    public void testLcheackSubmitOrder() {
         Tools.clearText(webElements);
         Tools.setText(webElements);
-        javaTools.sleep(2000);
-        javaTools.scrFile(myChromeDriver);
         submitOrder=myChromeDriver.findElementById("submit");
         javaTools.click(submitOrder);
-        javaTools.sleep(2000);
-        javaTools.scrFile(myChromeDriver);
 //        javaTools.back(driver);
     }
 
     @Test
-    public void testPChang_address(){
-//        点击change address按钮并返回
-        change_address1=myChromeDriver.findElementByXPath("/html/body/form/div/div/div[1]/div[3]/a");
-        javaTools.click(change_address1);
-        submitOrder=myChromeDriver.findElementById("submit");
-        javaTools.click(submitOrder);
-
-//        点击编辑购物车
-        edit2=myChromeDriver.findElementById("editCart");
-        javaTools.click(edit2);
-        checkout=myChromeDriver.findElementByClassName("check-btn-div");
-        javaTools.click(checkout);
-        submitOrder=myChromeDriver.findElementById("submit");
-        javaTools.click(submitOrder);
-    }
-
-    @Test
-    public void testQReferral_Code(){
+    public void testMReferral_Code(){
         javaTools.sleep(2000);
         for(int i=0;i<Const.getCommomText().length;i++) {
 //            注入SQL
@@ -295,22 +230,42 @@ public class Shopping_Process_guestTestcase {
     }
 
     @Test
-    public void testRSubmitOrder() throws IOException {
-        javaTools.sleep(2000);
-        change_address2=myChromeDriver.findElementByCssSelector("body > div.shopping > div.orderBtn > div.row.hidden-xs > div:nth-child(2) > div");
-        javaTools.click(change_address2);
-
-        submitOrder=myChromeDriver.findElementById("submit");
-        javaTools.click(submitOrder);
-        submitOrder1=myChromeDriver.findElementById("submit");
-        javaTools.click(submitOrder1);
-
+    public void testNSubmitOrder(){
         confirm=myChromeDriver.findElementByCssSelector("body > div.shopping > div.orderBtn > div.row.hidden-xs > div:nth-child(3) > div");
         javaTools.click(confirm);
 
-        javaTools.sleep(3000);
-        javaTools.scrFile(myChromeDriver);
+        javaTools.sleep(2000);
+        javaTools.back(myChromeDriver);
+    }
 
+    @Test
+    public void testO(){
+        login=myChromeDriver.findElementByXPath("/html/body/div[2]/div[2]/div/div/div/nav/ul/li[6]/a");
+        javaTools.click(login);
+
+//        退出登录
+        logout=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div[2]/div[1]/ul/li[4]/a");
+        javaTools.click(logout);
+
+        javaTools.sleep(2000);
+        //        点击购物车跳转购物车页面
+        Actions action=new Actions(myChromeDriver);
+        action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/div[1]/button"))).perform();
+        myChromeDriver.findElementByClassName("checkout-bg").click();
+        //        点击跳转checkout页面
+        checkout=myChromeDriver.findElementByClassName("check-btn-div");
+        javaTools.click(checkout);
+    }
+
+    @Test
+    public void testP(){
+        email=myChromeDriver.findElementById("signin_userName");
+        email.sendKeys("1790039849@qq.com");
+        password=myChromeDriver.findElementById("signin_password");
+        password.sendKeys("12345678");
+        javaTools.sleep(2000);
+        submit=myChromeDriver.findElementById("genericLogin-button");
+        javaTools.click(submit);
     }
 
     public void injectSQLs(WebElement element) throws IOException {
@@ -338,10 +293,9 @@ public class Shopping_Process_guestTestcase {
 
     }
 
-    @AfterClass
-    public static void alterClass() {
-        driver.disconnect();
-    }
 
+//    @AfterClass
+//    public static void alterClass() {
+//        driver.disconnect();
+//    }
 }
-
