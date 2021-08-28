@@ -22,34 +22,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="增加购物流程游客登录测试用例">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Shopping_Process_LoginTestcase.java" afterDir="false" />
+    <list default="true" id="fd54eb87-730e-4fee-8c5c-267eddf210e3" name="Default Changelist" comment="增加购物流程账号登录测试用例&#10;修改定位">
+      <change beforePath="$PROJECT_DIR$/.idea/web_test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/Const/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/Const/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Shopping_Process_guestTestcase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Shopping_Process_guestTestcase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/Const/Const.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/Const/Const.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/AboutTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/AboutTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ArticlesTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ArticlesTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/BasketTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/BasketTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ChangePasswordTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/EmailSubscriptionTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/EmailSubscriptionTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ForgotPasswordTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ForgotPasswordTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/HomePageTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/HomePageTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/How_it_worksTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/How_it_worksTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/BasketTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/BasketTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/HomePageTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/HomePageTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/InternationalTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/InternationalTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Login_logoutTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Login_logoutTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Referral_CodeTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Referral_CodeTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ShoppingCartTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/ShoppingCartTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Shopping_Process_LoginTestcase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/latsen/pawfit/testCase/Shopping_Process_LoginTestcase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/seleiumtest.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/BasketTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/BasketTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/KotlinDemoKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/KotlinDemoKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/LoginTestCase$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/LoginTestCase$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/LoginTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/LoginTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/Num$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/Num$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/Num.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/Num.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/StaticDemo$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/StaticDemo$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/StaticDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/StaticDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/TestEmpty$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/TestEmpty$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/TestEmpty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/kt/TestEmpty.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/InternationalTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/InternationalTestCase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Login_logoutTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PalpalInfoTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit2TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit2TestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit_collarEditTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Pawfit_collarEditTestCase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationEditTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/PersonalInformationSaveTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ProductTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ProductTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Recent_orderTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Recent_orderTestCase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Referral_CodeTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/Referral_CodeTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/RegisterTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/RegisterTestCase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ShoppingCartTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/ShoppingCartTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/StoryTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/StoryTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/SupportTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/testCase/SupportTestCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/latsen/pawfit/utils/Tools.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,16 +83,17 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/pythonrepo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="TestNG.Shopping_Process_guestTestcase">
-    <configuration name="ShoppingCartTestCase.testAClick" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="seleiumtest" />
+  <component name="RunManager" selected="TestNG.How_it_worksTestCase">
+    <configuration name="BasketTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="web_test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
@@ -99,25 +101,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.ShoppingCartTestCase" />
-      <option name="METHOD_NAME" value="testAClick" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Shopping_Process_LoginTestcase" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="seleiumtest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.Shopping_Process_LoginTestcase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.BasketTestCase" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -125,8 +109,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Shopping_Process_LoginTestcase.testAClick" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="seleiumtest" />
+    <configuration name="EmailSubscriptionTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="web_test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
@@ -134,25 +118,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.Shopping_Process_LoginTestcase" />
-      <option name="METHOD_NAME" value="testAClick" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Shopping_Process_guestTestcase" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="seleiumtest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.Shopping_Process_guestTestcase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.EmailSubscriptionTestCase" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -160,8 +126,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Shopping_Process_guestTestcase" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="seleiumtest" />
+    <configuration name="HomePageTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="web_test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
@@ -169,7 +135,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.Shopping_Process_guestTestcase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.HomePageTestCase" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -177,8 +143,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Shopping_Process_guestTestcase.testDGUEST_right" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="seleiumtest" />
+    <configuration name="How_it_worksTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="web_test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
@@ -186,9 +152,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
-      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.Shopping_Process_guestTestcase" />
-      <option name="METHOD_NAME" value="testDGUEST_right" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.How_it_worksTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login_logoutTestCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="web_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.latsen.pawfit.testCase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.latsen.pawfit.testCase" />
+      <option name="MAIN_CLASS_NAME" value="com.latsen.pawfit.testCase.Login_logoutTestCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -197,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Shopping_Process_guestTestcase" />
-        <item itemvalue="TestNG.Shopping_Process_LoginTestcase" />
-        <item itemvalue="TestNG.Shopping_Process_LoginTestcase.testAClick" />
-        <item itemvalue="TestNG.Shopping_Process_guestTestcase.testDGUEST_right" />
-        <item itemvalue="TestNG.Shopping_Process_guestTestcase" />
+        <item itemvalue="TestNG.How_it_worksTestCase" />
+        <item itemvalue="TestNG.HomePageTestCase" />
+        <item itemvalue="TestNG.EmailSubscriptionTestCase" />
+        <item itemvalue="TestNG.BasketTestCase" />
+        <item itemvalue="TestNG.Login_logoutTestCase" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619609040760</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="增加购物流程账号登录测试用例&#10;修改定位">
+      <created>1621062838999</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1621062838999</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,58 +329,8 @@
     <MESSAGE value="元素变化修改定位&#10;增加美国商店切换&#10;取消faq" />
     <MESSAGE value="修改定位元素" />
     <MESSAGE value="增加购物流程游客登录测试用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加购物流程游客登录测试用例" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="161" key="#Plugins" timestamp="1612344641395">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="161" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1612344641395" />
-    <state x="810" y="289" key="FileChooserDialogImpl" timestamp="1617268122345">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="810" y="289" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617268122345" />
-    <state width="1877" height="208" key="GridCell.Tab.0.bottom" timestamp="1620793506817">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620793506817" />
-    <state width="1877" height="208" key="GridCell.Tab.0.center" timestamp="1620793506817">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620793506817" />
-    <state width="1877" height="208" key="GridCell.Tab.0.left" timestamp="1620793506817">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620793506817" />
-    <state width="1877" height="208" key="GridCell.Tab.0.right" timestamp="1620793506817">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="208" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620793506817" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1615171122188">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="86" y="51" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1614944075004" />
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1615171122188" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619609074237">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1619609074237" />
-    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614653945453">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614653945453" />
-    <state x="511" y="130" key="new project wizard" timestamp="1617264973474">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="511" y="130" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1617264973474" />
-    <state x="678" y="221" width="628" height="732" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1615171106673">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="678" y="221" width="628" height="732" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615171106673" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1618904852003">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618904852003" />
+    <MESSAGE value="增加购物流程账号登录测试用例&#10;修改定位" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加购物流程账号登录测试用例&#10;修改定位" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

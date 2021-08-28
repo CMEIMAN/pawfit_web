@@ -67,7 +67,7 @@ public class PersonalInformationEditTestCase {
         lastName = myChromeDriver.findElement(By.id("lastName"));
         customer_country = myChromeDriver.findElement(By.id("customer_country"));
         province = myChromeDriver.findElement(By.id("stateProvince"));
-        street_address = myChromeDriver.findElement(By.id("address"));
+        street_address = myChromeDriver.findElement(By.id("address1"));
         phone = myChromeDriver.findElement(By.id("phone"));
         city = myChromeDriver.findElement(By.id("city"));
         postcode=myChromeDriver.findElementById("billingPostalCode");

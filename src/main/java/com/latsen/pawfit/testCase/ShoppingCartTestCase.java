@@ -49,25 +49,25 @@ public class ShoppingCartTestCase {
         action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/div[1]/button"))).perform();
         myChromeDriver.findElementByClassName("checkout-bg").click();
         //增加商品数量
-        add=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[1]/table/tbody/tr[1]/td[2]/img[1]");
+        add=myChromeDriver.findElementByCssSelector("#mainCartTable > div.col-lg-7.col-md-7.col-sm-7.col-xs-12 > div:nth-child(1) > div.col-lg-7.col-md-7.col-sm-6.col-xs-6.flex-container > div.cart-bottom > input.cart-icon.jia_cart");
         javaTools.click(add);
         javaTools.click(add);
         //        减少商品数量
-        reduce=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[1]/table/tbody/tr[1]/td[2]/img[2]");
+        reduce=myChromeDriver.findElementByXPath("#mainCartTable > div.col-lg-7.col-md-7.col-sm-7.col-xs-12 > div:nth-child(1) > div.col-lg-7.col-md-7.col-sm-6.col-xs-6.flex-container > div.cart-bottom > input.cart-icon.jian_cart");
         javaTools.click(reduce);
         javaTools.scrFile(myChromeDriver);
        //点击contine shopping按钮
-        continue_shopping=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[2]/div[1]/div/a");
+        continue_shopping=myChromeDriver.findElementByXPath("/html/body/div[6]/div/div/div/div/div/div/div[1]/div[1]/a/strong");
         javaTools.click(continue_shopping);
         javaTools.scrFile(myChromeDriver);
         javaTools.back(myChromeDriver);
         //        点击跳转checkout页面
-        checkout=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[2]/div[2]/div/a");
+        checkout=myChromeDriver.findElementByClassName("check-btn-div");
         javaTools.click(checkout);
         javaTools.scrFile(myChromeDriver);
         javaTools.back(myChromeDriver);
         //        删除购物车商品
-        cancal=myChromeDriver.findElementByXPath("/html/body/div[5]/div/div/div/div/div/div[1]/table/tbody/tr/td[4]/div/a");
+        cancal=myChromeDriver.findElementByCssSelector("#iDel");
         javaTools.click(cancal);
         javaTools.scrFile(myChromeDriver);
 

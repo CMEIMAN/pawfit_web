@@ -45,13 +45,15 @@ public class Shopping_Process_LoginTestcase {
     private static WebElement submitOrder;
     private static WebElement checkboxOfOrderNote;
     private static HashMap<WebElement,String> webElements;
-    private static Select countrySelect;
     private static WebElement login;
     private static WebElement logout;
     private static WebElement giftCode;
     private static WebElement apply;
     private static WebElement submitOrder1;
     private static WebElement confirm;
+
+    private static WebElement address_btn;
+    private static WebElement shopping_order_btn;
 
 
 
@@ -239,7 +241,7 @@ public class Shopping_Process_LoginTestcase {
     }
 
     @Test
-    public void testO(){
+    public void testO() throws IOException {
         login=myChromeDriver.findElementByXPath("/html/body/div[2]/div[2]/div/div/div/nav/ul/li[6]/a");
         javaTools.click(login);
 
@@ -255,10 +257,11 @@ public class Shopping_Process_LoginTestcase {
         //        点击跳转checkout页面
         checkout=myChromeDriver.findElementByClassName("check-btn-div");
         javaTools.click(checkout);
+        javaTools.scrFile(myChromeDriver);
     }
 
     @Test
-    public void testP(){
+    public void testP() throws IOException {
         email=myChromeDriver.findElementById("signin_userName");
         email.sendKeys("1790039849@qq.com");
         password=myChromeDriver.findElementById("signin_password");
@@ -266,9 +269,20 @@ public class Shopping_Process_LoginTestcase {
         javaTools.sleep(2000);
         submit=myChromeDriver.findElementById("genericLogin-button");
         javaTools.click(submit);
+        javaTools.sleep(2000);
+        javaTools.scrFile(myChromeDriver);
+
+        address_btn=myChromeDriver.findElementById("submit");
+        javaTools.click(address_btn);
+        javaTools.scrFile(myChromeDriver);
+
+        shopping_order_btn=myChromeDriver.findElementById("submit");
+        javaTools.click(shopping_order_btn);
+        javaTools.scrFile(myChromeDriver);
+
     }
 
-    public void injectSQLs(WebElement element) throws IOException {
+    public void injectSQLs(WebElement element) {
         String[] strings={
                 "and ascii(substr((select database()),1,1))>64",
                 "id=1 union select if(SUBSTRING(user(),1,4)='root',sleep(4),1),null,null",

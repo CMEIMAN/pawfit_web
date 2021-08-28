@@ -63,7 +63,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"",password);
         javaTools.click(submit);
         javaTools.sleep(3000);
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email和Password输入空",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
     }
@@ -75,7 +75,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"&%……￥#@*？~",password);
         javaTools.click(submit);
 
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email和Password输入特殊字符",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         javaTools.clear(email);
@@ -88,7 +88,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
         javaTools.inputText(myChromeDriver,"",password);
         javaTools.click(submit);
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email正确，Password输入空",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         javaTools.clear(email);
@@ -100,7 +100,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"111111111111",email);
         javaTools.inputText(myChromeDriver,"12345688",password);
         javaTools.click(submit);
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email错误，Password输入正确",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         javaTools.clear(email);
@@ -113,7 +113,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"&%……￥#@*？~/*",email);
         javaTools.inputText(myChromeDriver,"12345678",password);
         javaTools.click(submit);
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email输入特殊字符，Password输入正确误",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         javaTools.clear(email);
@@ -126,7 +126,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
         javaTools.inputText(myChromeDriver,"&%……￥#@*？~/*",password);
         javaTools.click(submit);
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email正确，Password输入特殊字符",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         javaTools.clear(email);
@@ -139,7 +139,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
         javaTools.inputText(myChromeDriver,"12",password);
         javaTools.click(submit);
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email正确，Password输入小于6字符长度",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         javaTools.clear(email);
@@ -152,7 +152,7 @@ public class Login_logoutTestCase {
         javaTools.inputText(myChromeDriver,"1790039849@qq.com",email);
         javaTools.inputText(myChromeDriver,"1213233455565767878243435645657678782342323243434454565465234435223234123",password);
         javaTools.click(submit);
-        warningMessage=myChromeDriver.findElementByXPath("/html/body/div[3]/div/div/div[1]/div[2]/div");
+        warningMessage=myChromeDriver.findElementById("loginError");
         warningMessageMap.put("Email正确，Password输入大于30字符长度",warningMessage.getText());
         javaTools.verifyassert(warningMessage.getText(),"Login failed. Username or Password is incorrect.","测试登录提示是否相同：");
         javaTools.clear(email);

@@ -255,8 +255,9 @@ public class BasketTestCase {
         javaTools.click(faq);
         javaTools.sleep(3000);
         javaTools.scrFile(driver);
-        join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span/svg");
-        join_close.click();
+        javaTools.back(driver);
+//        join_close=driver.findElementByXPath("/html/body/div[6]/div/div[1]/div[2]/div/div/div[1]/button/span/svg");
+//        join_close.click();
     }
 
     @Test

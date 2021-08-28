@@ -59,6 +59,9 @@ public class InternationalTestCase {
     private static WebElement referral;
     private static WebElement fcc;
 
+    private static WebElement address_btn;
+    private static WebElement submit;
+
 
     @BeforeClass
     public static void beforeClass() throws IOException {
@@ -340,12 +343,37 @@ public class InternationalTestCase {
         Actions action=new Actions(myChromeDriver);
         action.moveToElement(myChromeDriver.findElement(By.xpath("/html/body/div[6]/div/div/div/div/div/div[2]/div[2]/div/a"))).perform();
         javaTools.click(checkout);
-        store();
+        International();
 
-//        跳转下订单页面
-        proceed_to_checkout=myChromeDriver.findElementByXPath("/html/body/div[6]/div/div/div/div/div/div[2]/div[2]/div/a");
+//        跳转到登录页面
+        proceed_to_checkout=myChromeDriver.findElementByXPath("/html/body/div[6]/div/div/div/div/div/div/div[1]/div[2]/div/div[4]/div/a");
         javaTools.click(proceed_to_checkout);
-        store();
+        International();
+    }
+
+    @Test
+    public void testKDetail() throws IOException, InterruptedException {
+        //        登录账号,跳转到填写订单地址页面0
+        login_email_address=myChromeDriver.findElementById("signin_userName");
+        login_password=myChromeDriver.findElementById("signin_password");
+        login=myChromeDriver.findElementById("genericLogin-button");
+        javaTools.inputText(myChromeDriver,"1790039849@qq.com",login_email_address);
+        javaTools.inputText(myChromeDriver,"12345678",login_password);
+        javaTools.click(login);
+        javaTools.sleep(3000);
+//        订单填写页面
+        International();
+
+        address_btn=myChromeDriver.findElementByXPath("/html/body/div[4]/div/div[1]/form/div[12]/div/div");
+        address_btn.click();
+//        确认订单页面
+        International();
+
+        submit=myChromeDriver.findElementById("submit");
+        javaTools.click(submit);
+//        确认订单支付页面
+        International();
+
     }
 
     @AfterClass

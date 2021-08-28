@@ -54,7 +54,7 @@ public class HomePageTestCase {
         javaTools.back(myChromeDriver);
 
         System.out.println("点击about pawfit");
-        about_pawfit=myChromeDriver.findElementByXPath("/html/body/section[2]/div/div/div[2]/div[2]/a");
+        about_pawfit=myChromeDriver.findElementByXPath("/html/body/section[2]/div/div[1]/div/div[2]/a/button");
         javaTools.jsclick(myChromeDriver,about_pawfit);
         javaTools.back(myChromeDriver);
 
